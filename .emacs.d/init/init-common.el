@@ -55,6 +55,9 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; Set home directory
+(setq user-emacs-directory (file-truename "~/.emacs.d/"))
+
 ;; Set current user
 (setq user-full-name "Dmytro Stechenko")
 
