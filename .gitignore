@@ -1,0 +1,10 @@
+# macOS files
+*.DS_Store
+
+# Emacs packages
+.emacs.d/auto-save-list
+.emacs.d/elpa
+.emacs.d/ensime
+.emacs.d/snippets
+.emacs.d/projectile*
+.emacs.d/ido*
