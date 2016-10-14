@@ -8,7 +8,7 @@
 ;; Common packages configuration and tweaks.
 ;;
 ;; Includes the following:
-;; - zenburn-theme
+;; - solarized-theme
 ;; - neotree
 ;; - sunrise-commander
 ;; - projectile
@@ -100,9 +100,6 @@
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
 
-;; Set system pass blocker
-(setq mac-pass-command-to-system nil)
-
 ;; Set Mac OS X modifiers
 (setq
  mac-control-modifier nil
@@ -131,9 +128,9 @@
  tab-width 4
  c-basic-offset 4)
 
-(use-package zenburn-theme
+(use-package solarized-theme
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'solarized-dark t))
 
 (use-package neotree
   :commands
