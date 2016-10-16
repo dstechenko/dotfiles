@@ -79,7 +79,7 @@
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
 ;; Set spell check
-(add-hook 'text-mode-hook 'flyspell-mode)
+;; (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; Set yes/no shortcuts
@@ -169,7 +169,7 @@
   (setq projectile-use-git-grep t)
 
   :config
-  (projectile-global-mode 1)
+  (projectile-mode 1)
   (setq projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
@@ -247,7 +247,7 @@
   (magit-auto-revert-mode -1)
 
   :bind
-  ("s-g" . magit-status))
+  ("H-g" . magit-status))
 
 (use-package git-gutter
   :diminish
@@ -261,11 +261,11 @@
    '(git-gutter:deleted-sign " "))
 
   :bind
-  ("s-y" . git-gutter:revert-hunk))
+  ("H-r" . git-gutter:revert-hunk))
 
 (use-package git-timemachine
   :bind
-  ("s-t" . git-timemachine-toggle))
+  ("H-t" . git-timemachine-toggle))
 
 (use-package company
   :diminish
@@ -429,14 +429,15 @@
 
 ;; Set general bindings
 (global-set-key (kbd "C-s-<backspace>") 'contextual-backspace)
-(global-set-key (kbd "S-s-<backspace>") 'kill-whole-line)
 
 (global-set-key (kbd "C-M-g") 'goto-line-and-column)
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
-(global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-l") 'toggle-line-mode)
+(global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "s-y") 'kill-whole-line)
 (global-set-key (kbd "s-z") 'undo)
 
 ;; Init package
