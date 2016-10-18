@@ -412,6 +412,15 @@
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
 
+;; Set I-search selection
+(defun search-selection (beg end)
+  "Search for the selected text with I-search, providing beginning as BEG, and ending with END."
+  (interactive "r")
+  (let ((selection (buffer-substring-no-properties beg end)))
+    (deactivate-mark)
+    (isearch-mode t)
+    (isearch-yank-string selection)))
+
 ;; Set lock for mouse actions
 (dolist (type '(mouse down-mouse drag-mouse double-mouse triple-mouse))
   (dolist (prefix '("" C- M- S- M-S- C-M- C-S- C-M-S-))
@@ -428,16 +437,17 @@
 
 
 ;; Set general bindings
+(global-set-key (kbd "C-S-k") 'kill-whole-line)
+(global-set-key (kbd "C-M-g") 'goto-line-and-column)
 (global-set-key (kbd "C-s-<backspace>") 'contextual-backspace)
 
-(global-set-key (kbd "C-M-g") 'goto-line-and-column)
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-l") 'toggle-line-mode)
 (global-set-key (kbd "s-s") 'save-buffer)
-(global-set-key (kbd "s-y") 'kill-whole-line)
+(global-set-key (kbd "s-w") 'search-selection)
 (global-set-key (kbd "s-z") 'undo)
 
 ;; Init package
