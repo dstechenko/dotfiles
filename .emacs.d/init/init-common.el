@@ -254,11 +254,11 @@
   git-gutter-mode
 
   :config
-
+  (global-git-gutter-mode t)
   (custom-set-variables
-   '(git-gutter:modified-sign " ")
-   '(git-gutter:added-sign " ")
-   '(git-gutter:deleted-sign " "))
+   '(git-gutter:modified-sign "*")
+   '(git-gutter:added-sign "+")
+   '(git-gutter:deleted-sign "-"))
 
   :bind
   ("H-r" . git-gutter:revert-hunk))
@@ -384,14 +384,6 @@
         (move-to-column column))
     (error "Wrong arguments, try <line:column> or simply <line>")))
 
-;; Set line number toggle
-(defun toggle-line-mode ()
-  "Toggle linum mode on each call."
-  (interactive)
-  (if (bound-and-true-p linum-mode)
-      (linum-mode 0)
-    (linum-mode 1)))
-
 ;; Set context for backspace
 (defun contextual-backspace ()
   "Hungry whitespace or delete word depending on context."
@@ -445,7 +437,6 @@
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-e") 'ispell-word)
-(global-set-key (kbd "s-l") 'toggle-line-mode)
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "s-w") 'search-selection)
 (global-set-key (kbd "s-z") 'undo)
