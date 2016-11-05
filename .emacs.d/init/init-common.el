@@ -152,7 +152,7 @@
       (neotree-toggle)))
 
   :bind
-  ("s-o" . toggle-neotree-projectile-mode))
+  ("H-o" . toggle-neotree-projectile-mode))
 
 (use-package sunrise-commander
   :commands
@@ -160,7 +160,7 @@
    sr-select-window)
 
   :bind
-  ("H-o" . sunrise))
+  ("H-O" . sunrise))
 
 (use-package sunrise-x-buttons)
 
@@ -173,8 +173,8 @@
   (setq projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
-  (("s-f" . projectile-find-file)
-   ("s-F" . projectile-grep)))
+  (("H-f" . projectile-find-file)
+   ("H-F" . projectile-grep)))
 
 (use-package highlight-symbol
   :diminish
@@ -356,7 +356,7 @@
   er/expand-region
 
   :bind
-  ("C-=" . er/expand-region))
+  ("s-w" . er/expand-region))
 
 (use-package subword
   :diminish
@@ -383,20 +383,6 @@
         (forward-line (1- line))
         (move-to-column column))
     (error "Wrong arguments, try <line:column> or simply <line>")))
-
-;; Set context for backspace
-(defun contextual-backspace ()
-  "Hungry whitespace or delete word depending on context."
-  (interactive)
-  (if (looking-back "[[:space:]\n]\\{2,\\}" (- (point) 2))
-      (while (looking-back "[[:space:]\n]" (- (point) 1))
-        (delete-char -1))
-    (cond
-     ((and (boundp 'smartparens-strict-mode) smartparens-strict-mode)
-      (sp-backward-kill-word 1))
-     ((and (boundp 'subword-mode) subword-mode)
-      (subword-backward-kill 1))
-     (t (backward-kill-word 1)))))
 
 ;; Set comment toggle
 (defun toggle-comment-on-line ()
@@ -427,19 +413,18 @@
       (let ((binding (format "<%s%s%s>" prefix type side)))
         (global-set-key (kbd binding) #'ignore)))))
 
-
 ;; Set general bindings
-(global-set-key (kbd "C-S-k") 'kill-whole-line)
-(global-set-key (kbd "C-M-g") 'goto-line-and-column)
-(global-set-key (kbd "C-s-<backspace>") 'contextual-backspace)
-
-(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+(global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "C-S-k") 'kill-line)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-e") 'ispell-word)
+(global-set-key (kbd "s-l") 'goto-line-and-column)
+(global-set-key (kbd "s-q") 'search-selection)
 (global-set-key (kbd "s-s") 'save-buffer)
-(global-set-key (kbd "s-w") 'search-selection)
 (global-set-key (kbd "s-z") 'undo)
+(global-set-key (kbd "s-;") 'toggle-comment-on-line)
+
 
 ;; Init package
 (provide 'init-common)

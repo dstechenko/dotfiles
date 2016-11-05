@@ -8,3 +8,4 @@
 .emacs.d/snippets
 .emacs.d/projectile*
 .emacs.d/ido*
+.emacs.d/.mc*
