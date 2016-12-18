@@ -8,7 +8,7 @@
 ;; Common packages configuration and tweaks.
 ;;
 ;; Includes the following:
-;; - solarized-theme
+;; - zenburn-theme
 ;; - neotree
 ;; - sunrise-commander
 ;; - projectile
@@ -90,6 +90,7 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 (global-hl-line-mode 1)
+(global-auto-revert-mode t)
 
 ;; Disable minor modes
 (scroll-bar-mode -1)
@@ -129,9 +130,18 @@
  tab-width 4
  c-basic-offset 4)
 
-(use-package solarized-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'solarized-dark t))
+  (load-theme 'zenburn t))
+
+
+(use-package powerline
+  :config
+  (setq
+   powerline-default-separator 'utf-8
+   powerline-utf-8-separator-left #x0020
+   powerline-utf-8-separator-right #x0020)
+  (powerline-center-theme))
 
 (use-package neotree
   :commands

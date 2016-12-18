@@ -55,9 +55,16 @@
   "Smartparens restriction on `SYM' for C-derived parenthesis."
   (sp-restrict-to-pairs-interactive "{([" sym))
 
+;; Set formatting function
+(defun run-cli-scalafmt ()
+  "Format current project using `scalafmt'."
+  (interactive)
+  (call-process "scalafmt"))
+
 ;; Set bindings
 (defun scala-mode-bindings ()
   "Bind all Scala custom keys."
+  (bind-key "H-l" 'run-cli-scalafmt scala-mode-map)
   (bind-key "RET" 'scala-mode-newline-comments scala-mode-map)
   (bind-key "s-<delete>" (sp-restrict-c 'sp-kill-sexp) scala-mode-map)
   (bind-key "s-<backspace>" (sp-restrict-c 'sp-backward-kill-sexp) scala-mode-map)
