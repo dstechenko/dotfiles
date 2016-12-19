@@ -119,6 +119,7 @@
  initial-scratch-message nil
  create-lockfiles nil
  make-backup-files nil
+ tooltip-mode nil
  scroll-error-top-bottom t
  show-paren-delay 0.5
  sentence-end-double-space nil
@@ -126,6 +127,7 @@
 
 ;; Set default buffer local configuration
 (setq-default
+ fill-column 80
  indent-tabs-mode nil
  tab-width 4
  c-basic-offset 4)

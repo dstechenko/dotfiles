@@ -21,7 +21,10 @@
   scala-indent:insert-asterisk-on-multiline-comment
 
   :interpreter
-  ("scala" . scala-mode))
+  ("scala" . scala-mode)
+
+  :bind
+  ("H-s" . scala-mode))
 
 (use-package ensime
   :pin
@@ -57,9 +60,11 @@
 
 ;; Set formatting function
 (defun run-cli-scalafmt ()
-  "Format current project using `scalafmt'."
+  "Format current project using `scalafmt' command line interface."
   (interactive)
-  (call-process "scalafmt"))
+  (if (projectile-project-p)
+      (call-process "scalafmt")
+    (message "Not in a project to format code")))
 
 ;; Set bindings
 (defun scala-mode-bindings ()
