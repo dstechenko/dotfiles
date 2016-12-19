@@ -73,7 +73,7 @@
 (setq shell-file-name "/bin/bash")
 
 ;; Set default font
-(set-frame-font "Menlo")
+(set-frame-font "Source Code Pro")
 
 ;; Set fullscreen on startup
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
