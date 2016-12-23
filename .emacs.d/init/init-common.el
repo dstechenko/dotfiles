@@ -8,7 +8,7 @@
 ;; Common packages configuration and tweaks.
 ;;
 ;; Includes the following:
-;; - zenburn-theme
+;; - leuven-theme
 ;; - neotree
 ;; - sunrise-commander
 ;; - projectile
@@ -132,10 +132,9 @@
  tab-width 4
  c-basic-offset 4)
 
-(use-package zenburn-theme
+(use-package leuven-theme
   :config
-  (load-theme 'zenburn t))
-
+  (load-theme 'leuven t))
 
 (use-package powerline
   :config
