@@ -10,5 +10,8 @@
 .emacs.d/ido*
 .emacs.d/.mc*
 
-# Sources
+# Emacs Sources
 .emacs.d/lisp
+
+# Emacs Generated
+.emacs.d/custom.el
