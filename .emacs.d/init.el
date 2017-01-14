@@ -24,15 +24,13 @@
 (add-to-list 'load-path
              (expand-file-name "init" user-emacs-directory))
 
-(add-to-list 'load-path
-             (expand-file-name "themes" user-emacs-directory))
-
 ;; Init bootstrap
 (require 'init-common)
 (require 'init-elisp)
 (require 'init-scala)
 (require 'init-python)
 (require 'init-markdown)
+(require 'init-coq)
 
 ;; Init package
 (provide 'init)
@@ -46,9 +44,12 @@
  '(custom-safe-themes
    (quote
     ("d9aa9a847dd90dd32164a2377c788a5cbd7b44d096c67ee194c78291fec8c722" default)))
+ '(git-gutter:added-sign "+")
+ '(git-gutter:deleted-sign "-")
+ '(git-gutter:modified-sign "*")
  '(package-selected-packages
    (quote
-    (leuven-theme zenburn-theme whitespace-cleanup-mode use-package undo-tree sunrise-x-buttons solarized-theme smartparens smart-mode-line-powerline-theme rainbow-delimiters py-autopep8 projectile popup-imenu neotree multiple-cursors move-dup markdown-mode magit highlight-symbol goto-chg git-timemachine git-gutter flycheck expand-region ensime elpy color-theme auto-compile aggressive-indent))))
+    (idris-mode white-theme leuven-theme zenburn-theme whitespace-cleanup-mode use-package undo-tree sunrise-x-buttons solarized-theme smartparens smart-mode-line-powerline-theme rainbow-delimiters py-autopep8 projectile popup-imenu neotree multiple-cursors move-dup markdown-mode magit highlight-symbol goto-chg git-timemachine git-gutter flycheck expand-region ensime elpy color-theme auto-compile aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

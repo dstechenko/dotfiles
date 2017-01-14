@@ -9,3 +9,6 @@
 .emacs.d/projectile*
 .emacs.d/ido*
 .emacs.d/.mc*
+
+# Sources
+.emacs.d/lisp
