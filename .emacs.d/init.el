@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs configuration
 
-;; Copyright (C) 2016 Dmytro Stechenko
+;; Copyright (C) 2017 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -19,6 +19,7 @@
 
 ;;; Code:
 
+;; Load customized configuration
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
