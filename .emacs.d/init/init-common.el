@@ -433,10 +433,12 @@
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-l") 'goto-line-and-column)
 (global-set-key (kbd "s-q") 'search-selection)
+(global-set-key (kbd "s-r") 'replace-string)
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-;") 'toggle-comment-on-line)
 
+(global-set-key (kbd "H-r") 'shr-render-buffer)
 
 ;; Init package
 (provide 'init-common)
