@@ -438,7 +438,7 @@
 (global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-;") 'toggle-comment-on-line)
 
-(global-set-key (kbd "H-r") 'shr-render-buffer)
+(global-set-key (kbd "H-h") 'shr-render-buffer)
 
 ;; Init package
 (provide 'init-common)
