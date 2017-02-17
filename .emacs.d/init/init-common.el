@@ -9,6 +9,7 @@
 ;;
 ;; Includes the following:
 ;; - leuven-theme
+;; - powerline
 ;; - neotree
 ;; - sunrise-commander
 ;; - projectile
