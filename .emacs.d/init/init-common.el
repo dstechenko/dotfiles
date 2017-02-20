@@ -12,6 +12,10 @@
 ;; - powerline
 ;; - neotree
 ;; - sunrise-commander
+;; - sunrise-x-buttons
+;; - smex
+;; - anzu
+;; - dashboard
 ;; - projectile
 ;; - highlight-symbol
 ;; - flx
@@ -177,7 +181,27 @@
 
 (use-package sunrise-x-buttons)
 
+(use-package smex
+  :bind
+  ("M-x" . smex)
+  ("M-X" . smex-major-mode-commands))
+
+(use-package anzu
+  :config
+  (set-face-attribute 'anzu-mode-line nil
+                      :background "gold"
+                      :foreground "black"
+                      :weight 'bold)
+  (global-anzu-mode 1))
+
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+
 (use-package projectile
+  :diminish
+  projectile-mode
+
   :demand
   (setq projectile-use-git-grep t)
 
@@ -186,8 +210,8 @@
   (setq projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
-  (("H-f" . projectile-find-file)
-   ("H-F" . projectile-grep)))
+  ("H-f" . projectile-find-file)
+  ("H-F" . projectile-grep))
 
 (use-package highlight-symbol
   :diminish

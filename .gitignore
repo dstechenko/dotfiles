@@ -9,9 +9,11 @@
 .emacs.d/projectile*
 .emacs.d/ido*
 .emacs.d/.mc*
+.emacs.d/smex*
+.emacs.d/recentf
 
-# Emacs Sources
+# Emacs sources
 .emacs.d/lisp
 
-# Emacs Generated
+# Emacs configuration
 .emacs.d/custom.el
