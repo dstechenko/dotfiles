@@ -187,6 +187,8 @@
   ("M-X" . smex-major-mode-commands))
 
 (use-package anzu
+  :diminish
+  anzu-mode
   :config
   (set-face-attribute 'anzu-mode-line nil
                       :background "gold"
