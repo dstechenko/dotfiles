@@ -16,6 +16,9 @@
 (load "~/.emacs.d/lisp/proof-general/generic/proof-site")
 
 (use-package company-coq
+  :diminish
+  company-coq-mode
+
   :config
   (add-hook 'coq-mode-hook #'company-coq-mode))
 

@@ -37,7 +37,9 @@
 
 (use-package rainbow-delimiters)
 
-(use-package aggressive-indent)
+(use-package aggressive-indent
+  :diminish
+  aggressive-indent-mode)
 
 ;; Set indentation
 (defun indent-buffer ()
@@ -58,11 +60,8 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (setq show-trailing-whitespace t)
-
             (emacs-lisp-mode-bindings)
-
             (aggressive-indent-mode 1)
-
             (rainbow-delimiters-mode)
             (prettify-symbols-mode)
             (eldoc-mode)

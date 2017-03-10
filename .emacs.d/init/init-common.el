@@ -8,8 +8,8 @@
 ;; Common packages configuration and tweaks.
 ;;
 ;; Includes the following:
-;; - leuven-theme
-;; - powerline
+;; - zenburn-theme
+;; - smart-mode-line
 ;; - neotree
 ;; - sunrise-commander
 ;; - sunrise-x-buttons
@@ -84,7 +84,7 @@
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
 ;; Set spell check
-;; (add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; Set yes/no shortcuts
@@ -137,17 +137,15 @@
  tab-width 4
  c-basic-offset 4)
 
-(use-package leuven-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'leuven t))
+  (load-theme 'zenburn t))
 
-(use-package powerline
+(use-package smart-mode-line
   :config
-  (setq
-   powerline-default-separator 'utf-8
-   powerline-utf-8-separator-left #x0020
-   powerline-utf-8-separator-right #x0020)
-  (powerline-center-theme))
+  (setq sml/no-confirm-load-theme t)
+  (setq sml/theme 'respectful)
+  (sml/setup))
 
 (use-package neotree
   :commands
@@ -189,15 +187,13 @@
 (use-package anzu
   :diminish
   anzu-mode
+
   :config
-  (set-face-attribute 'anzu-mode-line nil
-                      :background "gold"
-                      :foreground "black"
-                      :weight 'bold)
   (global-anzu-mode 1))
 
 (use-package dashboard
   :config
+  (setq dashboard-startup-banner 'logo)
   (dashboard-setup-startup-hook))
 
 (use-package projectile
@@ -427,7 +423,9 @@
 (defun toggle-comment-on-line ()
   "Toggle comment on the current line."
   (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position))
+  (move-beginning-of-line 1)
+  (forward-line 1))
 
 ;; Set I-search selection
 (defun search-selection (beg end)
