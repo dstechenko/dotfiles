@@ -13,6 +13,7 @@
 ;; - Python
 ;; - Markdown
 ;; - Coq
+;; - Octave
 ;;
 ;; Configuration is broken down into sections.
 ;; Sections outline common modes, hacks or tweaks.
@@ -25,9 +26,7 @@
 
 ;; Load init configuration
 (package-initialize)
-
-(add-to-list 'load-path
-             (expand-file-name "init" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 ;; Init bootstrap
 (require 'init-common)
@@ -36,6 +35,7 @@
 (require 'init-python)
 (require 'init-markdown)
 (require 'init-coq)
+(require 'init-octave)
 
 ;; Init package
 (provide 'init)
