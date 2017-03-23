@@ -34,7 +34,9 @@
 (defun run-cli-scalafmt ()
   "Format current file using `scalafmt' command line interface."
   (interactive)
-  (call-process "scalafmt" nil nil nil (format "-i -f %s" (buffer-file-name))))
+  (save-buffer)
+  (call-process "scalafmt" nil nil nil (format "-i -f %s" (buffer-file-name)))
+  (revert-buffer :ignore-auto :noconfirm))
 
 ;; Set key bindings
 (defun scala-mode-bindings ()
@@ -76,7 +78,7 @@
 
             (scala-mode-bindings)
             (scala-mode-multi-line-comments)
-            (scala-mode-prettify-symbols)
+            ;; (scala-mode-prettify-symbols)
             (scala-mode-smartparens)
 
             (scala-mode:goto-start-of-code)))
