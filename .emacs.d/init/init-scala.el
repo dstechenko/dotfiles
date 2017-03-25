@@ -31,12 +31,13 @@
   (sp-restrict-to-pairs-interactive "{([" sym))
 
 ;; Set formatting function
-(defun run-cli-scalafmt ()
-  "Format current file using `scalafmt' command line interface."
-  (interactive)
+(defun run-cli-scalafmt (pos)
+  "Format current file using `scalafmt' command line interface, preserving position `POS'."
+  (interactive "d")
   (save-buffer)
   (call-process "scalafmt" nil nil nil (format "-i -f %s" (buffer-file-name)))
-  (revert-buffer :ignore-auto :noconfirm))
+  (revert-buffer :ignore-auto :noconfirm)
+  (goto-char pos))
 
 ;; Set key bindings
 (defun scala-mode-bindings ()
