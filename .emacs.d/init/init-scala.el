@@ -78,7 +78,7 @@
 
             (scala-mode-bindings)
             (scala-mode-multi-line-comments)
-            ;; (scala-mode-prettify-symbols)
+            (scala-mode-prettify-symbols)
             (scala-mode-smartparens)
 
             (scala-mode:goto-start-of-code)))
