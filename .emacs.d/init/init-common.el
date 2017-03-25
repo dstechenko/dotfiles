@@ -263,7 +263,7 @@
   (global-undo-tree-mode 1)
 
   :bind
-  ("s-/" . undo-tree-visualize))
+  ("C-?" . undo-tree-visualize))
 
 (use-package goto-chg
   :commands
@@ -404,7 +404,7 @@
 
 ;; Set a proper goto command
 (defun goto-line-and-column (input)
-  "Go to a line, an optional column could be provided using 'line:column' as INPUT."
+  "Go to a line, an optional column could be provided using 'line:column' as `INPUT'."
   (interactive "sGoto: ")
   (if (and (stringp input)
            (string-match "\\([0-9]+\\)\\(:[0-9]+\\)?" input))
@@ -458,7 +458,6 @@
 (global-set-key (kbd "s-l") 'goto-line-and-column)
 (global-set-key (kbd "s-q") 'search-selection)
 (global-set-key (kbd "s-r") 'replace-string)
-(global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-;") 'toggle-comment-on-line)
 
