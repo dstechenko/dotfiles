@@ -35,7 +35,6 @@
 ;; - multiple-cursors
 ;; - expand-region
 ;; - subword
-;;
 
 ;;; Code:
 
@@ -108,9 +107,9 @@
 
 ;; Set Mac OS X modifiers
 (setq
- mac-control-modifier nil
- mac-command-modifier 'control
- mac-option-modifier 'meta
+ mac-control-modifier 'control
+ mac-command-modifier 'meta
+ mac-option-modifier 'nil
  mac-right-command-modifier 'super
  mac-right-option-modifier 'hyper)
 
