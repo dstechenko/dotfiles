@@ -435,23 +435,11 @@
     (isearch-mode t)
     (isearch-yank-string selection)))
 
-;; Set lock for mouse actions
-(dolist (type '(mouse down-mouse drag-mouse double-mouse triple-mouse))
-  (dolist (prefix '("" C- M- S- M-S- C-M- C-S- C-M-S-))
-    (dotimes (index 7)
-      (let ((binding (format "%s%s-%s" prefix type index)))
-        (global-set-key (vector (intern binding)) #'ignore)))))
-
-;; Set lock for keyboard arrow actions
-(dolist (side '(left right up down))
-  (dolist (type '("" wheel- double-wheel- tripple-wheel-))
-    (dolist (prefix '("" C- M- S- M-S C-M- C-S- C-M-S-))
-      (let ((binding (format "<%s%s%s>" prefix type side)))
-        (global-set-key (kbd binding) #'ignore)))))
-
 ;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-S-k") 'kill-line)
+
+(global-set-key (kbd "M-o") 'other-window)
 
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-e") 'ispell-word)
