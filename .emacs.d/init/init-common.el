@@ -421,15 +421,6 @@
   (move-beginning-of-line 1)
   (forward-line 1))
 
-;; Set I-search selection
-(defun search-selection (beg end)
-  "Search for the selected text with I-search, providing beginning as BEG, and ending with END."
-  (interactive "r")
-  (let ((selection (buffer-substring-no-properties beg end)))
-    (deactivate-mark)
-    (isearch-mode t)
-    (isearch-yank-string selection)))
-
 ;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-M-y") 'sp-down-sexp)
@@ -437,10 +428,8 @@
 
 (global-set-key (kbd "M-o") 'other-window)
 
-(global-set-key (kbd "s-a") 'mark-whole-buffer)
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-l") 'goto-line-and-column)
-(global-set-key (kbd "s-q") 'search-selection)
 (global-set-key (kbd "s-r") 'replace-string)
 (global-set-key (kbd "s-;") 'toggle-comment-on-line)
 
