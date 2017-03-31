@@ -100,6 +100,8 @@
 ;; Disable minor modes
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
+(tool-bar-mode -1)
+(tooltip-mode -1)
 (mouse-wheel-mode -1)
 (electric-indent-mode -1)
 
@@ -351,17 +353,9 @@
   :config
   (require 'smartparens-config)
   (sp-use-smartparens-bindings)
-
   (sp-pair "(" ")" :wrap "s-(")
   (sp-pair "[" "]" :wrap "s-[")
-  (sp-pair "{" "}" :wrap "s-{")
-
-  ;; WORKAROUND https://github.com/Fuco1/smartparens/issues/543
-  (bind-key "C-<left>" nil smartparens-mode-map)
-  (bind-key "C-<right>" nil smartparens-mode-map)
-
-  (bind-key "s-<kp-delete>" 'sp-kill-sexp smartparens-mode-map)
-  (bind-key "s-<backspace>" 'sp-backward-kill-sexp smartparens-mode-map))
+  (sp-pair "{" "}" :wrap "s-{"))
 
 (use-package move-dup
   :bind
@@ -448,7 +442,6 @@
 (global-set-key (kbd "s-l") 'goto-line-and-column)
 (global-set-key (kbd "s-q") 'search-selection)
 (global-set-key (kbd "s-r") 'replace-string)
-(global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-;") 'toggle-comment-on-line)
 
 (global-set-key (kbd "H-h") 'shr-render-buffer)
