@@ -397,30 +397,6 @@
   :config
   (global-subword-mode t))
 
-;; Set a proper goto command
-(defun goto-line-and-column (input)
-  "Go to a line, an optional column could be provided using 'line:column' as `INPUT'."
-  (interactive "sGoto: ")
-  (if (and (stringp input)
-           (string-match "\\([0-9]+\\)\\(:[0-9]+\\)?" input))
-      (let* ((line-string (match-string 1 input))
-             (column-string (match-string 2 input))
-             (line (string-to-number line-string))
-             (column (if (null column-string)
-                         0 (string-to-number (substring column-string 1)))))
-        (goto-char (point-min))
-        (forward-line (1- line))
-        (move-to-column column))
-    (error "Wrong arguments, try <line:column> or simply <line>")))
-
-;; Set comment toggle
-(defun toggle-comment-on-line ()
-  "Toggle comment on the current line."
-  (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-  (move-beginning-of-line 1)
-  (forward-line 1))
-
 ;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-M-y") 'sp-down-sexp)
@@ -429,9 +405,7 @@
 (global-set-key (kbd "M-o") 'other-window)
 
 (global-set-key (kbd "s-e") 'ispell-word)
-(global-set-key (kbd "s-l") 'goto-line-and-column)
 (global-set-key (kbd "s-r") 'replace-string)
-(global-set-key (kbd "s-;") 'toggle-comment-on-line)
 
 (global-set-key (kbd "H-h") 'shr-render-buffer)
 
