@@ -438,6 +438,7 @@
 
 ;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "C-M-y") 'sp-down-sexp)
 (global-set-key (kbd "C-S-k") 'kill-line)
 
 (global-set-key (kbd "M-o") 'other-window)
