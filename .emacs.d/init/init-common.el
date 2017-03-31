@@ -95,6 +95,7 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 (global-hl-line-mode 1)
+(global-visual-line-mode 1)
 
 ;; Disable minor modes
 (scroll-bar-mode -1)
