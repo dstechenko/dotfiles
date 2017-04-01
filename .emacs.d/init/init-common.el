@@ -367,6 +367,10 @@
   :bind
   ("s-w" . er/expand-region))
 
+(use-package whole-line-or-region
+  :config
+  (whole-line-or-region-mode))
+
 ;; Set general bindings
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-r") 'replace-string)
