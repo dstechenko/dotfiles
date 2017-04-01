@@ -29,12 +29,9 @@
 ;; - company
 ;; - yasnippet
 ;; - smartparens
-;; - move-dup
 ;; - aggressive-indent
-;; - whitespace-cleanup-modec
-;; - multiple-cursors
+;; - whitespace-cleanup-mode
 ;; - expand-region
-;; - subword
 ;;
 
 ;;; Code:
@@ -205,6 +202,9 @@
   :demand
   (setq projectile-use-git-grep t)
 
+  :commands
+  projectile-project-p
+
   :config
   (projectile-mode 1)
   (setq projectile-switch-project-action 'neotree-projectile-action)
@@ -341,27 +341,17 @@
   smartparens-mode
 
   :commands
-  (smartparens-strict-mode
-   smartparens-mode
-   sp-pair
-   sp-local-pair
-   sp-kill-sexp
-   sp-backward-kill-sexp
-   sp-backward-kill-word
-   sp-restrict-to-pairs-interactive)
+  sp-pair
 
   :config
   (require 'smartparens-config)
   (sp-use-smartparens-bindings)
   (sp-pair "(" ")" :wrap "s-(")
   (sp-pair "[" "]" :wrap "s-[")
-  (sp-pair "{" "}" :wrap "s-{"))
+  (sp-pair "{" "}" :wrap "s-{")
 
-(use-package move-dup
   :bind
-  ("s-p" . md/move-lines-up)
-  ("s-n" . md/move-lines-down)
-  ("s-d" . md/duplicate-down))
+  ("C-M-y" . sp-down-sexp))
 
 (use-package whitespace-cleanup-mode
   :diminish
@@ -370,16 +360,6 @@
   :config
   (global-whitespace-cleanup-mode 1))
 
-(use-package multiple-cursors
-  :commands
-  rrm/switch-to-multiple-cursors
-
-  :bind
-  ("s-[" . mc/mark-previous-like-this)
-  ("s-]" . mc/mark-next-like-this)
-  ("s-\\" . mc/mark-all-like-this)
-  ("s-|" . mc/edit-lines))
-
 (use-package expand-region
   :commands
   er/expand-region
@@ -387,26 +367,9 @@
   :bind
   ("s-w" . er/expand-region))
 
-(use-package subword
-  :diminish
-  subword-mode
-
-  :commands
-  subword-backward-kill
-
-  :config
-  (global-subword-mode t))
-
 ;; Set general bindings
-(global-set-key (kbd "C-k") 'kill-whole-line)
-(global-set-key (kbd "C-M-y") 'sp-down-sexp)
-(global-set-key (kbd "C-S-k") 'kill-line)
-
-(global-set-key (kbd "M-o") 'other-window)
-
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-r") 'replace-string)
-
 (global-set-key (kbd "H-h") 'shr-render-buffer)
 
 ;; Init package
