@@ -106,7 +106,7 @@
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
 
-;; Set Mac OS X modifiers
+;; Set macOS modifiers
 (setq
  mac-control-modifier 'control
  mac-command-modifier 'meta
@@ -192,7 +192,8 @@
 
 (use-package dashboard
   :config
-  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-items '((recents  . 5) (projects . 5) (bookmarks . 5)))
+  (setq dashboard-startup-banner 'official)
   (dashboard-setup-startup-hook))
 
 (use-package projectile
@@ -372,6 +373,7 @@
   (whole-line-or-region-mode))
 
 ;; Set general bindings
+(global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-r") 'replace-string)
 (global-set-key (kbd "H-h") 'shr-render-buffer)
