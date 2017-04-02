@@ -11,8 +11,6 @@
 ;; - zenburn-theme
 ;; - smart-mode-line
 ;; - neotree
-;; - sunrise-commander
-;; - sunrise-x-buttons
 ;; - smex
 ;; - anzu
 ;; - dashboard
@@ -20,8 +18,6 @@
 ;; - flx
 ;; - ido
 ;; - popup-imenu
-;; - undo-tree
-;; - goto-chg
 ;; - magit
 ;; - git-gutter
 ;; - git-timemachine
@@ -168,16 +164,6 @@
   :bind
   ("H-o" . toggle-neotree-projectile-mode))
 
-(use-package sunrise-commander
-  :commands
-  (sr-detect-switch
-   sr-select-window)
-
-  :bind
-  ("H-O" . sunrise))
-
-(use-package sunrise-x-buttons)
-
 (use-package smex
   :bind
   ("M-x" . smex)
@@ -241,24 +227,6 @@
   :bind
   ("M-i" . popup-imenu))
 
-(use-package undo-tree
-  :diminish
-  undo-tree-mode
-
-  :config
-  (global-undo-tree-mode 1)
-
-  :bind
-  ("C-?" . undo-tree-visualize))
-
-(use-package goto-chg
-  :commands
-  goto-last-change
-
-  :bind
-  ("C-<" . goto-last-change)
-  ("C->" . goto-last-change-reverse))
-
 (use-package magit
   :commands
   magit-status
@@ -274,14 +242,13 @@
   git-gutter-mode
 
   :config
-  (global-git-gutter-mode t)
-  (custom-set-variables
-   '(git-gutter:modified-sign "*")
-   '(git-gutter:added-sign "+")
-   '(git-gutter:deleted-sign "-"))
+  (custom-set-variables '(git-gutter:modified-sign "*")
+                        '(git-gutter:added-sign "+")
+                        '(git-gutter:deleted-sign "-"))
 
   :bind
-  ("H-r" . git-gutter:revert-hunk))
+  ("H-r" . git-gutter-mode)
+  ("H-R" . git-gutter:revert-hunk))
 
 (use-package git-timemachine
   :bind
