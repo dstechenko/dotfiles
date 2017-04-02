@@ -156,7 +156,7 @@
       (neotree-toggle)))
 
   :bind
-  ("H-o" . toggle-neotree-projectile-mode))
+  ("s-o" . toggle-neotree-projectile-mode))
 
 (use-package smex
   :bind
@@ -192,8 +192,8 @@
   (setq projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
-  ("H-p" . projectile-find-file)
-  ("H-P" . projectile-grep))
+  ("s-p" . projectile-find-file)
+  ("s-P" . projectile-grep))
 
 (use-package flx-ido
   :demand
@@ -230,11 +230,11 @@
   (magit-auto-revert-mode -1)
 
   :bind
-  ("H-g" . magit-status))
+  ("s-g" . magit-status))
 
 (use-package git-timemachine
   :bind
-  ("H-G" . git-timemachine-toggle))
+  ("s-G" . git-timemachine-toggle))
 
 (use-package git-gutter
   :diminish
@@ -246,8 +246,8 @@
                         '(git-gutter:deleted-sign "-"))
 
   :bind
-  ("H-h" . git-gutter-mode)
-  ("H-H" . git-gutter:revert-hunk))
+  ("s-t" . git-gutter-mode)
+  ("s-T" . git-gutter:revert-hunk))
 
 (use-package company
   :diminish
