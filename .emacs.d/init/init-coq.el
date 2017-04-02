@@ -14,7 +14,7 @@
 
 (use-package company-coq
   :diminish
-  company-coq-mode
+  company-coq-mode "cc"
 
   :config
   (add-hook 'coq-mode-hook #'company-coq-mode))

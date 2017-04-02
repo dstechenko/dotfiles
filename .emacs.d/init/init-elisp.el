@@ -17,25 +17,25 @@
 
 (use-package eldoc
   :diminish
-  eldoc-mode
+  eldoc-mode "ed"
 
   :commands
   eldoc-mode)
 
 (use-package flycheck
   :diminish
-  flycheck-mode
+  flycheck-mode "fc"
 
   :config
   (setq-default flycheck-emacs-lisp-load-path 'inherit))
 
 (use-package rainbow-delimiters
   :diminish
-  rainbow-delimiters-mode)
+  rainbow-delimiters-mode "rd")
 
 (use-package aggressive-indent
   :diminish
-  aggressive-indent-mode)
+  aggressive-indent-mode "ai")
 
 ;; Set bindings
 (defun emacs-lisp-mode-bindings ()

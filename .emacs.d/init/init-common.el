@@ -75,8 +75,8 @@
 (electric-indent-mode -1)
 
 ;; Diminish minor modes
-(diminish 'visual-line-mode)
-(diminish 'flyspell-mode)
+(diminish 'visual-line-mode "vl")
+(diminish 'flyspell-mode "fs")
 
 ;; Set macOS modifiers
 (setq
@@ -112,7 +112,7 @@
 
 (use-package disable-mouse
   :diminish
-  global-disable-mouse-mode
+  global-disable-mouse-mode "dm"
 
   :config
   (global-disable-mouse-mode))
@@ -157,7 +157,7 @@
 
 (use-package anzu
   :diminish
-  anzu-mode
+  anzu-mode "az"
 
   :config
   (global-anzu-mode 1))
@@ -171,7 +171,7 @@
 
 (use-package projectile
   :diminish
-  projectile-mode
+  projectile-mode "pj"
 
   :demand
   (setq projectile-use-git-grep t)
@@ -226,7 +226,7 @@
 
 (use-package git-gutter
   :diminish
-  git-gutter-mode
+  git-gutter-mode "gg"
 
   :config
   (custom-set-variables '(git-gutter:modified-sign "*")
@@ -243,7 +243,7 @@
 
 (use-package company
   :diminish
-  company-mode
+  company-mode "cm"
 
   :commands
   company-mode
@@ -264,7 +264,7 @@
 
 (use-package yasnippet
   :diminish
-  yas-minor-mode
+  yas-minor-mode "ys"
 
   :commands
   (yas-minor-mode yas-reload-all)
@@ -274,7 +274,7 @@
 
 (use-package smartparens
   :diminish
-  smartparens-mode
+  smartparens-mode "sp"
 
   :commands
   sp-pair
@@ -291,7 +291,7 @@
 
 (use-package whitespace-cleanup-mode
   :diminish
-  whitespace-cleanup-mode
+  whitespace-cleanup-mode "wc"
 
   :config
   (global-whitespace-cleanup-mode 1))
@@ -305,7 +305,7 @@
 
 (use-package whole-line-or-region
   :diminish
-  whole-line-or-region-mode
+  whole-line-or-region-mode "wl"
 
   :config
   (whole-line-or-region-mode))
