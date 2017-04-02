@@ -19,6 +19,24 @@
   :config
   (add-hook 'coq-mode-hook #'company-coq-mode))
 
+;; Diminish modes
+(defun coq-mode-diminish ()
+  "Abbreviate Coq minor modes."
+  (diminish 'holes-mode "hl")
+  (diminish 'outline-minor-mode "ol"))
+
+;; Set configuration
+(defun coq-mode-configuration ()
+  "Configure all Coq mode properties."
+  (defvar coq-modeline-string0)
+  (setq coq-modeline-string0 " sc("))
+
+(add-hook 'coq-mode-hook
+          (lambda ()
+            (company-coq-mode)
+            (coq-mode-diminish)
+            (coq-mode-configuration)))
+
 (provide 'init-coq)
 
 ;;; init-coq.el ends here

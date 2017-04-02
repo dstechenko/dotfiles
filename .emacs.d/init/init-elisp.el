@@ -50,8 +50,6 @@
 ;; Set hooks
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            (emacs-lisp-mode-bindings)
-            (emacs-lisp-mode-configuration)
             (aggressive-indent-mode 1)
             (rainbow-delimiters-mode)
             (prettify-symbols-mode)
@@ -60,7 +58,9 @@
             (yas-minor-mode)
             (company-mode)
             (show-paren-mode)
-            (smartparens-strict-mode)))
+            (smartparens-strict-mode)
+            (emacs-lisp-mode-bindings)
+            (emacs-lisp-mode-configuration)))
 
 ;; Init package
 (provide 'init-elisp)

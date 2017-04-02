@@ -74,10 +74,6 @@
 (mouse-wheel-mode -1)
 (electric-indent-mode -1)
 
-;; Diminish minor modes
-(diminish 'visual-line-mode "vl")
-(diminish 'flyspell-mode "fs")
-
 ;; Set macOS modifiers
 (setq
  mac-control-modifier 'control
@@ -108,7 +104,19 @@
  tab-width 4
  c-basic-offset 4)
 
+;; Diminish minor modes
+(diminish 'visual-line-mode "vl")
+(diminish 'defining-kbd-macro "dm")
+
 (require 'dired-x)
+
+(use-package page-break-lines
+  :diminish
+  page-break-lines-mode "pb")
+
+(use-package flyspell
+  :diminish
+  flyspell-mode "fs")
 
 (use-package disable-mouse
   :diminish

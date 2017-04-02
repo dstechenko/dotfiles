@@ -68,12 +68,10 @@
             (yas-minor-mode)
             (git-gutter-mode)
             (company-mode)
-
             (scala-mode-bindings)
             (scala-mode-multi-line-comments)
             (scala-mode-prettify-symbols)
             (scala-mode-smartparens)
-
             (scala-mode:goto-start-of-code)))
 
 ;; Init package
