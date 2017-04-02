@@ -74,9 +74,9 @@
 (mouse-wheel-mode -1)
 (electric-indent-mode -1)
 
-(when window-system
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1))
+;; Diminish minor modes
+(diminish 'visual-line-mode)
+(diminish 'flyspell-mode)
 
 ;; Set macOS modifiers
 (setq
@@ -304,6 +304,9 @@
   ("s-w" . er/expand-region))
 
 (use-package whole-line-or-region
+  :diminish
+  whole-line-or-region-mode
+
   :config
   (whole-line-or-region-mode))
 
