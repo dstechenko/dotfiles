@@ -17,7 +17,6 @@
 ;; - anzu
 ;; - dashboard
 ;; - projectile
-;; - highlight-symbol
 ;; - flx
 ;; - ido
 ;; - popup-imenu
@@ -32,6 +31,7 @@
 ;; - aggressive-indent
 ;; - whitespace-cleanup-mode
 ;; - expand-region
+;; - whole-line-or-region
 ;;
 
 ;;; Code:
@@ -213,24 +213,6 @@
   :bind
   ("H-f" . projectile-find-file)
   ("H-g" . projectile-grep))
-
-(use-package highlight-symbol
-  :diminish
-  highlight-symbol-mode
-
-  :commands
-  highlight-symbol
-
-  :config
-  (defun toggle-highlight-symbol ()
-    (interactive)
-    (if (bound-and-true-p highlight-symbol-nav-mode)
-        (highlight-symbol-nav-mode -1)
-      (highlight-symbol-nav-mode 1))
-    (highlight-symbol))
-
-  :bind
-  ("M-h" . toggle-highlight-symbol))
 
 (use-package flx-ido
   :demand
