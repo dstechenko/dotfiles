@@ -8,6 +8,8 @@
 ;; Common packages configuration and tweaks.
 ;;
 ;; Includes the following:
+;; - dired-x
+;; - disable-mouse
 ;; - zenburn-theme
 ;; - smart-mode-line
 ;; - neotree
@@ -39,8 +41,7 @@
                          ("org" . "http://orgmode.org/elpa/")
                          ("melpa" . "http://melpa.org/packages/")
                          ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("elpy" . "http://jorgenschaefer.github.io/packages/")
-                         ("sc"  . "http://joseito.republika.pl/sunrise-commander/")))
+                         ("elpy" . "http://jorgenschaefer.github.io/packages/")))
 
 (package-initialize)
 
@@ -132,6 +133,12 @@
  tab-width 4
  c-basic-offset 4)
 
+(require 'dired-x)
+
+(use-package disable-mouse
+  :config
+  (global-disable-mouse-mode))
+
 (use-package zenburn-theme
   :config
   (load-theme 'zenburn t))
@@ -162,7 +169,7 @@
       (neotree-toggle)))
 
   :bind
-  ("H-o" . toggle-neotree-projectile-mode))
+  ("H-n" . toggle-neotree-projectile-mode))
 
 (use-package smex
   :bind
