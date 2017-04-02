@@ -377,6 +377,7 @@
 (global-set-key (kbd "s-e") 'ispell-word)
 (global-set-key (kbd "s-r") 'replace-string)
 (global-set-key (kbd "H-h") 'shr-render-buffer)
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 ;; Init package
 (provide 'init-common)
