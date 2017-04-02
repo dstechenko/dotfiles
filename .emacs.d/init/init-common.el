@@ -212,7 +212,7 @@
 
   :bind
   ("H-f" . projectile-find-file)
-  ("H-F" . projectile-grep))
+  ("H-g" . projectile-grep))
 
 (use-package highlight-symbol
   :diminish
@@ -285,7 +285,7 @@
   (magit-auto-revert-mode -1)
 
   :bind
-  ("H-g" . magit-status))
+  ("H-m" . magit-status))
 
 (use-package git-gutter
   :diminish
@@ -374,8 +374,6 @@
 
 ;; Set general bindings
 (global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "s-e") 'ispell-word)
-(global-set-key (kbd "s-r") 'replace-string)
 (global-set-key (kbd "H-h") 'shr-render-buffer)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
