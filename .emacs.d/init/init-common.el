@@ -156,7 +156,7 @@
       (neotree-toggle)))
 
   :bind
-  ("H-n" . toggle-neotree-projectile-mode))
+  ("H-o" . toggle-neotree-projectile-mode))
 
 (use-package smex
   :bind
@@ -230,7 +230,11 @@
   (magit-auto-revert-mode -1)
 
   :bind
-  ("H-m" . magit-status))
+  ("H-g" . magit-status))
+
+(use-package git-timemachine
+  :bind
+  ("H-G" . git-timemachine-toggle))
 
 (use-package git-gutter
   :diminish
@@ -242,12 +246,8 @@
                         '(git-gutter:deleted-sign "-"))
 
   :bind
-  ("H-r" . git-gutter-mode)
-  ("H-R" . git-gutter:revert-hunk))
-
-(use-package git-timemachine
-  :bind
-  ("H-M" . git-timemachine-toggle))
+  ("H-h" . git-gutter-mode)
+  ("H-H" . git-gutter:revert-hunk))
 
 (use-package company
   :diminish
@@ -321,7 +321,6 @@
 ;; Set general bindings
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "s-i") 'ispell-word)
-(global-set-key (kbd "H-h") 'shr-render-buffer)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 ;; Init package
