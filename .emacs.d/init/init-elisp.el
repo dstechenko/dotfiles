@@ -41,20 +41,10 @@
   :diminish
   aggressive-indent-mode)
 
-;; Set indentation
-(defun indent-buffer ()
-  "Indent the entire buffer."
-  (interactive)
-  (save-excursion
-    (delete-trailing-whitespace)
-    (indent-region (point-min) (point-max) nil)
-    (untabify (point-min) (point-max))))
-
 ;; Set bindings
 (defun emacs-lisp-mode-bindings ()
   "Bind all Emacs Lisp custom keys."
-  (bind-key "RET" 'comment-indent-new-line emacs-lisp-mode-map)
-  (bind-key "s-i" 'indent-buffer emacs-lisp-mode-map))
+  (bind-key "RET" 'comment-indent-new-line emacs-lisp-mode-map))
 
 ;; Set hooks
 (add-hook 'emacs-lisp-mode-hook

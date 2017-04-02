@@ -374,6 +374,7 @@
 
 ;; Set general bindings
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "s-i") 'ispell-word)
 (global-set-key (kbd "H-h") 'shr-render-buffer)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
