@@ -6,14 +6,11 @@
 ;;; Commentary:
 ;;
 ;; Coq packages configuration and tweaks.
-;; Includes the following:
-;; - proof-general
-;; - company-coq
 ;;
 
 ;;; Code:
 
-(load "~/.emacs.d/lisp/proof-general/generic/proof-site")
+(load (expand-file-name "./lisp/proof-general/generic/proof-site" user-emacs-directory))
 
 (use-package company-coq
   :diminish

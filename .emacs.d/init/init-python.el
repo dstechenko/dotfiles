@@ -6,9 +6,6 @@
 ;;; Commentary:
 ;;
 ;; Python packages configuration and tweaks.
-;; Includes the following:
-;; - elpy
-;; - py-autopep8
 ;;
 
 ;;; Code:

@@ -7,30 +7,6 @@
 ;;
 ;; Common packages configuration and tweaks.
 ;;
-;; Includes the following:
-;; - dired-x
-;; - disable-mouse
-;; - zenburn-theme
-;; - smart-mode-line
-;; - neotree
-;; - smex
-;; - anzu
-;; - dashboard
-;; - projectile
-;; - flx
-;; - ido
-;; - popup-imenu
-;; - magit
-;; - git-gutter
-;; - git-timemachine
-;; - company
-;; - yasnippet
-;; - smartparens
-;; - aggressive-indent
-;; - whitespace-cleanup-mode
-;; - expand-region
-;; - whole-line-or-region
-;;
 
 ;;; Code:
 
@@ -136,6 +112,9 @@
 (require 'dired-x)
 
 (use-package disable-mouse
+  :diminish
+  global-disable-mouse-mode
+
   :config
   (global-disable-mouse-mode))
 
@@ -145,8 +124,9 @@
 
 (use-package smart-mode-line
   :config
-  (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'respectful)
+  (setq
+   sml/no-confirm-load-theme t
+   sml/theme 'respectful)
   (sml/setup))
 
 (use-package neotree
@@ -185,9 +165,10 @@
 
 (use-package dashboard
   :config
-  (setq dashboard-items '((recents  . 5) (projects . 5) (bookmarks . 5)))
-  (setq dashboard-startup-banner 'official)
-  (dashboard-setup-startup-hook))
+  (dashboard-setup-startup-hook)
+  (setq
+   dashboard-startup-banner 'official
+   dashboard-items '((recents  . 5) (projects . 5) (bookmarks . 5))))
 
 (use-package projectile
   :diminish
@@ -204,8 +185,8 @@
   (setq projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
-  ("H-f" . projectile-find-file)
-  ("H-g" . projectile-grep))
+  ("H-p" . projectile-find-file)
+  ("H-P" . projectile-grep))
 
 (use-package flx-ido
   :demand
@@ -259,7 +240,7 @@
 
 (use-package git-timemachine
   :bind
-  ("H-t" . git-timemachine-toggle))
+  ("H-M" . git-timemachine-toggle))
 
 (use-package company
   :diminish
@@ -287,8 +268,7 @@
   yas-minor-mode
 
   :commands
-  (yas-minor-mode
-   yas-reload-all)
+  (yas-minor-mode yas-reload-all)
 
   :config
   (yas-reload-all))

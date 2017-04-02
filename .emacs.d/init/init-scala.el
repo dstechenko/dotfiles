@@ -7,9 +7,6 @@
 ;;
 ;; Scala packages configuration and tweaks.
 ;;
-;; Includes the following:
-;; - scala-mode
-;;
 
 ;;; Code:
 
@@ -20,10 +17,7 @@
   melpa-stable
 
   :interpreter
-  ("scala" . scala-mode)
-
-  :bind
-  ("H-s" . scala-mode))
+  ("scala" . scala-mode))
 
 ;; Set parenthesis restriction
 (defun scala-restrict-sp (sym)

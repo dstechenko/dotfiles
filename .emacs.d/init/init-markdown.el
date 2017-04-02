@@ -6,8 +6,6 @@
 ;;; Commentary:
 ;;
 ;; Markdown packages configuration.
-;; Includes the following:
-;; - markdown-mode
 ;;
 
 ;;; Code:

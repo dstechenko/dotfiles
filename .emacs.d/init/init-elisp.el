@@ -7,12 +7,6 @@
 ;;
 ;; Emacs Lisp packages configuration and tweaks.
 ;;
-;; Includes the following:
-;; - auto-compile
-;; - eldoc
-;; - flycheck
-;; - rainbow-delimiters
-;;
 
 ;;; Code:
 
@@ -35,7 +29,9 @@
   :config
   (setq-default flycheck-emacs-lisp-load-path 'inherit))
 
-(use-package rainbow-delimiters)
+(use-package rainbow-delimiters
+  :diminish
+  rainbow-delimiters-mode)
 
 (use-package aggressive-indent
   :diminish
@@ -46,11 +42,16 @@
   "Bind all Emacs Lisp custom keys."
   (bind-key "RET" 'comment-indent-new-line emacs-lisp-mode-map))
 
+;; Set configuration
+(defun emacs-lisp-mode-configuration ()
+  "Configure all Emacs Lisp properties."
+  (setq show-trailing-whitespace t))
+
 ;; Set hooks
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            (setq show-trailing-whitespace t)
             (emacs-lisp-mode-bindings)
+            (emacs-lisp-mode-configuration)
             (aggressive-indent-mode 1)
             (rainbow-delimiters-mode)
             (prettify-symbols-mode)
