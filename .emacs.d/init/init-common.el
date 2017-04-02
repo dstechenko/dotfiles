@@ -123,6 +123,10 @@
   (load-theme 'zenburn t))
 
 (use-package smart-mode-line
+  :commands
+  (sml/faces-from-theme
+   sml/theme-p)
+
   :config
   (setq
    sml/no-confirm-load-theme t

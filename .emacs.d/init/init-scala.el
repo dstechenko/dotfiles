@@ -1,6 +1,6 @@
 ;;; init-scala.el --- Emacs configuration
 
-;; Copyright (C) 2016 Dmytro Stechenko
+;; Copyright (C) 2017 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -40,8 +40,6 @@
   (bind-key "M-<return>" 'dabbrev-expand scala-mode-map)
   (bind-key "s-<delete>" (scala-restrict-sp 'sp-kill-sexp) scala-mode-map)
   (bind-key "s-<backspace>" (scala-restrict-sp 'sp-backward-kill-sexp) scala-mode-map)
-  (bind-key "s-<home>" (scala-restrict-sp 'sp-beginning-of-sexp) scala-mode-map)
-  (bind-key "s-<end>" (scala-restrict-sp 'sp-end-of-sexp) scala-mode-map)
   (bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map))
 
 ;; Set multi-line comments
