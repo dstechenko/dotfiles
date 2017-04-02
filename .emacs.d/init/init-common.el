@@ -64,7 +64,6 @@
 (line-number-mode 1)
 (column-number-mode 1)
 (show-paren-mode 1)
-(global-hl-line-mode 1)
 (global-visual-line-mode 1)
 
 ;; Disable minor modes
@@ -118,15 +117,11 @@
   :config
   (global-disable-mouse-mode))
 
-(use-package zenburn-theme
+(use-package monokai-theme
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'monokai t))
 
 (use-package smart-mode-line
-  :commands
-  (sml/faces-from-theme
-   sml/theme-p)
-
   :config
   (setq
    sml/no-confirm-load-theme t
