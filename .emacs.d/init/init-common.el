@@ -174,7 +174,7 @@
   :config
   (dashboard-setup-startup-hook)
   (setq
-   dashboard-startup-banner 'official
+   dashboard-startup-banner 'logo
    dashboard-items '((recents  . 5) (projects . 5) (bookmarks . 5))))
 
 (use-package projectile
@@ -257,17 +257,6 @@
   company-mode
 
   :config
-  (defvar company-dabbrev-code-ignore-case)
-  (defvar company-dabbrev-ignore-case)
-  (defvar company-dabbrev-downcase)
-
-  (setq
-   company-dabbrev-ignore-case nil
-   company-dabbrev-code-ignore-case nil
-   company-dabbrev-downcase nil
-   company-idle-delay 0
-   company-minimum-prefix-length 4)
-
   (define-key company-active-map [tab] nil))
 
 (use-package yasnippet
@@ -278,7 +267,10 @@
   (yas-minor-mode yas-reload-all)
 
   :config
-  (yas-reload-all))
+  (yas-reload-all)
+
+  :bind
+  ("S-<tab>" . yas-describe-tables))
 
 (use-package smartparens
   :diminish
@@ -310,13 +302,6 @@
 
   :bind
   ("s-w" . er/expand-region))
-
-(use-package whole-line-or-region
-  :diminish
-  whole-line-or-region-mode "wl"
-
-  :config
-  (whole-line-or-region-mode))
 
 ;; Set general bindings
 (global-set-key (kbd "M-o") 'other-window)
