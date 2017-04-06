@@ -190,13 +190,15 @@
   :config
   (projectile-mode 1)
   (setq
+   projectile-tags-backend 'etags-select
    projectile-tags-command "/usr/local/bin/ctags -Re -f \"%s\" %s"
    projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
-  ("s-p" . projectile-find-file)
-  ("s-P" . projectile-grep)
-  ("s-o" . projectile-find-tag)
+  ("s-o" . projectile-find-file)
+  ("s-p" . projectile-grep)
+  ("M-." . projectile-find-tag)
+  ("M-," . pop-tag-mark)
   ("s-O" . projectile-regenerate-tags))
 
 (use-package flx-ido
