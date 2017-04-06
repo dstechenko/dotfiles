@@ -189,7 +189,9 @@
 
   :config
   (projectile-mode 1)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (setq
+   projectile-tags-command "/usr/local/bin/ctags -Re -f \"%s\" %s"
+   projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
   ("s-p" . projectile-find-file)
@@ -302,6 +304,9 @@
 
   :bind
   ("s-w" . er/expand-region))
+
+(use-package etags-select
+  :commands etags-select-find-tag)
 
 ;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
