@@ -199,7 +199,7 @@
   ("s-p" . projectile-grep)
   ("M-." . projectile-find-tag)
   ("M-," . pop-tag-mark)
-  ("s-O" . projectile-regenerate-tags))
+  ("s-'" . projectile-regenerate-tags))
 
 (use-package flx-ido
   :demand
