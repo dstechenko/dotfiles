@@ -276,7 +276,7 @@
   (yas-reload-all)
 
   :bind
-  ("S-<tab>" . yas-describe-tables))
+  ("C-<tab>" . yas-describe-tables))
 
 (use-package smartparens
   :diminish
