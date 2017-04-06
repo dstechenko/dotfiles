@@ -19,12 +19,15 @@
   :interpreter
   ("scala" . scala-mode))
 
-;; Set parenthesis restriction
+(use-package sbt-mode
+  :commands
+  sbt-start
+  sbt-command)
+
 (defun scala-restrict-sp (sym)
   "Parenthesis restriction on `SYM' for Scala."
   (sp-restrict-to-pairs-interactive "{([" sym))
 
-;; Set formatting function
 (defun run-cli-scalafmt (pos)
   "Format current file using `scalafmt' command line interface, preserving position `POS'."
   (interactive "d")
@@ -33,16 +36,6 @@
   (revert-buffer :ignore-auto :noconfirm)
   (goto-char pos))
 
-;; Set key bindings
-(defun scala-mode-bindings ()
-  "Bind all Scala custom keys."
-  (bind-key "H-l" 'run-cli-scalafmt scala-mode-map)
-  (bind-key "M-<return>" 'dabbrev-expand scala-mode-map)
-  (bind-key "s-<delete>" (scala-restrict-sp 'sp-kill-sexp) scala-mode-map)
-  (bind-key "s-<backspace>" (scala-restrict-sp 'sp-backward-kill-sexp) scala-mode-map)
-  (bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map))
-
-;; Set multi-line comments
 (defun scala-mode-multi-line-comments ()
   "Bind multi-line comments."
   (setq comment-start "/* "
@@ -60,7 +53,21 @@
   (sp-local-pair 'scala-mode "(" nil :post-handlers '(("||\n[i]" "RET")))
   (sp-local-pair 'scala-mode "{" nil :post-handlers '(("||\n[i]" "RET") ("| " "SPC"))))
 
-;; Set mode hook
+(defun scala-mode-newline-comments ()
+  "Extend newline operation for `scala-mode' comments."
+  (interactive)
+  (newline-and-indent)
+  (scala-indent:insert-asterisk-on-multiline-comment))
+
+(defun scala-mode-bindings ()
+  "Bind all Scala custom keys."
+  (bind-key "RET" 'scala-mode-newline-comments scala-mode-map)
+  (bind-key "H-l" 'run-cli-scalafmt scala-mode-map)
+  (bind-key "M-<return>" 'dabbrev-expand scala-mode-map)
+  (bind-key "s-<delete>" (scala-restrict-sp 'sp-kill-sexp) scala-mode-map)
+  (bind-key "s-<backspace>" (scala-restrict-sp 'sp-backward-kill-sexp) scala-mode-map)
+  (bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map))
+
 (add-hook 'scala-mode-hook
           (lambda ()
             (show-paren-mode)

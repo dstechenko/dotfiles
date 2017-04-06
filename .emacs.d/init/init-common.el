@@ -46,6 +46,7 @@
 
 ;; Set default shell
 (setq shell-file-name "/bin/bash")
+(setq shell-command-switch "-ic")
 
 ;; Set default font
 (set-frame-font "Source Code Pro")
