@@ -156,7 +156,7 @@
       (neotree-toggle)))
 
   :bind
-  ("s-o" . toggle-neotree-projectile-mode))
+  ("H-o" . toggle-neotree-projectile-mode))
 
 (use-package smex
   :bind
@@ -195,7 +195,9 @@
 
   :bind
   ("s-p" . projectile-find-file)
-  ("s-P" . projectile-grep))
+  ("s-P" . projectile-grep)
+  ("s-o" . projectile-find-tag)
+  ("s-O" . projectile-regenerate-tags))
 
 (use-package flx-ido
   :demand
