@@ -37,7 +37,7 @@
 (setq user-full-name "Dmytro Stechenko")
 
 ;; Set execution path
-(setq exec-path (append exec-path '("/usr/local/bin")))
+(add-to-list 'exec-path "/usr/local/bin")
 
 ;; Set debug mode
 (setq
@@ -191,7 +191,6 @@
   (projectile-mode 1)
   (setq
    projectile-tags-backend 'etags-select
-   projectile-tags-command "/usr/local/bin/ctags -Re -f \"%s\" %s"
    projectile-switch-project-action 'neotree-projectile-action)
 
   :bind
