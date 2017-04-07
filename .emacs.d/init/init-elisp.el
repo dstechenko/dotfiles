@@ -10,6 +10,8 @@
 
 ;;; Code:
 
+(require 'init-common)
+
 (use-package auto-compile
   :init
   (auto-compile-on-load-mode 1)
@@ -45,11 +47,14 @@
 ;; Set configuration
 (defun emacs-lisp-mode-configuration ()
   "Configure all Emacs Lisp properties."
+  (setq-local prettify-symbols-alist greek-symbols-alist)
   (setq show-trailing-whitespace t))
 
 ;; Set hooks
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
+            (emacs-lisp-mode-bindings)
+            (emacs-lisp-mode-configuration)
             (aggressive-indent-mode 1)
             (rainbow-delimiters-mode)
             (prettify-symbols-mode)
@@ -58,9 +63,7 @@
             (yas-minor-mode)
             (company-mode)
             (show-paren-mode)
-            (smartparens-strict-mode)
-            (emacs-lisp-mode-bindings)
-            (emacs-lisp-mode-configuration)))
+            (smartparens-strict-mode)))
 
 ;; Init package
 (provide 'init-elisp)

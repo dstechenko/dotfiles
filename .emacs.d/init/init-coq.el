@@ -10,14 +10,13 @@
 
 ;;; Code:
 
+(require 'init-common)
+
 (load (expand-file-name "./lisp/proof-general/generic/proof-site" user-emacs-directory))
 
 (use-package company-coq
   :diminish
-  company-coq-mode "cc"
-
-  :config
-  (add-hook 'coq-mode-hook #'company-coq-mode))
+  company-coq-mode "cc")
 
 ;; Diminish modes
 (defun coq-mode-diminish ()
@@ -33,6 +32,7 @@
 
 (add-hook 'coq-mode-hook
           (lambda ()
+            (setq-local prettify-symbols-alist greek-symbols-alist)
             (company-coq-mode)
             (coq-mode-diminish)
             (coq-mode-configuration)))
