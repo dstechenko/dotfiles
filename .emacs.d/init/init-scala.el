@@ -10,6 +10,7 @@
 
 ;;; Code:
 
+(require 'init-symbols)
 (require 'init-common)
 
 (use-package scala-mode

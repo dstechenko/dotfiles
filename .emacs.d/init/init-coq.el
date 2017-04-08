@@ -10,7 +10,7 @@
 
 ;;; Code:
 
-(require 'init-common)
+(require 'init-symbols)
 
 (load (expand-file-name "./lisp/proof-general/generic/proof-site" user-emacs-directory))
 

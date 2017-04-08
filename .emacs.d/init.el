@@ -29,6 +29,7 @@
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 ;; Init bootstrap
+(require 'init-symbols)
 (require 'init-common)
 (require 'init-elisp)
 (require 'init-scala)

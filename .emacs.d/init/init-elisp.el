@@ -10,7 +10,7 @@
 
 ;;; Code:
 
-(require 'init-common)
+(require 'init-symbols)
 
 (use-package auto-compile
   :init
