@@ -45,7 +45,9 @@
 
 (defun scala-mode-prettify-symbols ()
   "Bind prettified symbols."
-  (setq prettify-symbols-alist scala-prettify-symbols-alist)
+  (setq-local prettify-symbols-alist (append
+                                      greek-symbols-alist
+                                      scala-prettify-symbols-alist))
   (prettify-symbols-mode))
 
 (defun scala-mode-smartparens ()
