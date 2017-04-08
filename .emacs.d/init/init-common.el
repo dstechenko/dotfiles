@@ -198,7 +198,6 @@
   ("s-o" . projectile-find-file)
   ("s-p" . projectile-grep)
   ("M-." . projectile-find-tag)
-  ("M-," . pop-tag-mark)
   ("s-'" . projectile-regenerate-tags))
 
 (use-package flx-ido
@@ -314,6 +313,7 @@
 
 ;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "C-.") 'xref-find-definitions)
 (global-set-key (kbd "C-S-k") 'kill-visual-line)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "s-i") 'ispell-word)
