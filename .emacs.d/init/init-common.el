@@ -126,9 +126,9 @@
   :config
   (global-disable-mouse-mode))
 
-(use-package zenburn-theme
+(use-package base16-theme
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'base16-tomorrow-night t))
 
 (use-package smart-mode-line
   :config
