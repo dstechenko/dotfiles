@@ -49,7 +49,7 @@
 (setq shell-command-switch "-ic")
 
 ;; Set default font
-(set-frame-font "Source Code Pro")
+(set-frame-font "PragmataPro")
 
 ;; Set fullscreen on startup
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
@@ -126,9 +126,9 @@
   :config
   (global-disable-mouse-mode))
 
-(use-package base16-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'base16-tomorrow-night t))
+  (load-theme 'zenburn t))
 
 (use-package smart-mode-line
   :config
