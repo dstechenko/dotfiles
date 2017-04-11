@@ -12,20 +12,18 @@
 
 (require 'octave)
 
-;; Set mode files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 (add-to-list 'auto-mode-alist '("\\.oct$" . octave-mode))
 
-;; Set octave inferior interactive mode
 (setq inferior-octave-startup-args '("-i"))
 
-;; Set mode hook
-(add-hook 'octave-mode-hook
-          (lambda ()
-            (auto-fill-mode 1)
-            (font-lock-mode 1)))
+(defun octave-mode-tweaks ()
+  "Add all Octave mode tweaks in the right order."
+  (auto-fill-mode 1)
+  (font-lock-mode 1))
 
-;; Init package
+(add-hook 'octave-mode-hook 'octave-mode-tweaks)
+
 (provide 'init-octave)
 
 ;;; init-octave.el ends here

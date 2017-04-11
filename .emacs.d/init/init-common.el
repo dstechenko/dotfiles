@@ -30,44 +30,31 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; Set home directory
-(setq user-emacs-directory (file-truename "~/.emacs.d/"))
-
-;; Set current user
-(setq user-full-name "Dmytro Stechenko")
-
-;; Set execution path
 (add-to-list 'exec-path "/usr/local/bin")
 
-;; Set debug mode
+(setq
+ user-full-name "Dmytro Stechenko"
+ user-emacs-directory (file-truename "~/.emacs.d/"))
+
 (setq
  debug-on-error nil
  debug-on-quit nil)
 
-;; Set default shell
-(setq shell-file-name "/bin/bash")
-(setq shell-command-switch "-ic")
+(setq
+ shell-file-name "/bin/bash"
+ shell-command-switch "-ic")
 
-;; Set default font
 (set-frame-font "PragmataPro")
+(fset 'yes-or-no-p 'y-or-n-p)
 
-;; Set fullscreen on startup
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
-
-;; Set spell check
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-;; Set yes/no shortcuts
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; Set minor modes
 (line-number-mode 1)
 (column-number-mode 1)
 (show-paren-mode 1)
 (global-visual-line-mode 1)
-
-;; Disable minor modes
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -75,7 +62,6 @@
 (mouse-wheel-mode -1)
 (electric-indent-mode -1)
 
-;; Set macOS modifiers
 (setq
  mac-control-modifier 'control
  mac-command-modifier 'meta
@@ -83,10 +69,6 @@
  mac-right-command-modifier 'super
  mac-right-option-modifier 'hyper)
 
-;; Set undefined configuration
-(defvar show-paren-delay)
-
-;; Set default configuration
 (setq
  inhibit-startup-screen t
  initial-scratch-message nil
@@ -94,18 +76,15 @@
  make-backup-files nil
  tooltip-mode nil
  scroll-error-top-bottom t
- show-paren-delay 0.5
  sentence-end-double-space nil
  ring-bell-function 'ignore)
 
-;; Set default buffer local configuration
 (setq-default
  fill-column 80
  indent-tabs-mode nil
  tab-width 4
  c-basic-offset 4)
 
-;; Diminish minor modes
 (diminish 'visual-line-mode "vl")
 (diminish 'defining-kbd-macro "dm")
 
@@ -311,7 +290,6 @@
 (use-package etags-select
   :commands etags-select-find-tag)
 
-;; Set general bindings
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-.") 'xref-find-definitions)
 (global-set-key (kbd "C-S-k") 'kill-visual-line)
@@ -319,7 +297,6 @@
 (global-set-key (kbd "s-i") 'ispell-word)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
-;; Init package
 (provide 'init-common)
 
 ;;; init-common.el ends here

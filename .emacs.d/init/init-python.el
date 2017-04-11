@@ -28,13 +28,13 @@
   :commands
   py-autopep8-enable-on-save)
 
-;; Add hooks
-(add-hook 'elpy-mode-hook
-          (lambda ()
-            (flycheck-mode)
-            (py-autopep8-enable-on-save)))
+(defun elpy-mode-tweaks ()
+  "Add all Elpy mode tweaks in the right order."
+  (flycheck-mode)
+  (py-autopep8-enable-on-save))
 
-;; Init package
+(add-hook 'elpy-mode-hook 'elpy-mode-tweaks)
+
 (provide 'init-python)
 
 ;;; init-python.el ends here

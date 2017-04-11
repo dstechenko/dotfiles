@@ -10,8 +10,6 @@
 
 ;;; Code:
 
-(require 'init-symbols)
-
 (use-package auto-compile
   :init
   (auto-compile-on-load-mode 1)
@@ -39,33 +37,29 @@
   :diminish
   aggressive-indent-mode "ai")
 
-;; Set bindings
 (defun emacs-lisp-mode-bindings ()
   "Bind all Emacs Lisp custom keys."
   (bind-key "RET" 'comment-indent-new-line emacs-lisp-mode-map))
 
-;; Set configuration
 (defun emacs-lisp-mode-configuration ()
   "Configure all Emacs Lisp properties."
-  (setq-local prettify-symbols-alist greek-symbols-alist)
   (setq show-trailing-whitespace t))
 
-;; Set hooks
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (emacs-lisp-mode-bindings)
-            (emacs-lisp-mode-configuration)
-            (aggressive-indent-mode 1)
-            (rainbow-delimiters-mode)
-            (prettify-symbols-mode)
-            (eldoc-mode)
-            (flycheck-mode)
-            (yas-minor-mode)
-            (company-mode)
-            (show-paren-mode)
-            (smartparens-strict-mode)))
+(defun emacs-lisp-mode-tweaks ()
+  "Add all Emacs Lisp mode tweaks in the right order."
+  (emacs-lisp-mode-bindings)
+  (emacs-lisp-mode-configuration)
+  (aggressive-indent-mode 1)
+  (rainbow-delimiters-mode)
+  (eldoc-mode)
+  (flycheck-mode)
+  (yas-minor-mode)
+  (company-mode)
+  (show-paren-mode)
+  (smartparens-strict-mode))
 
-;; Init package
+(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-tweak)
+
 (provide 'init-elisp)
 
 ;;; init-elisp.el ends here

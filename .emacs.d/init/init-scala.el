@@ -10,7 +10,6 @@
 
 ;;; Code:
 
-(require 'init-symbols)
 (require 'init-common)
 
 (use-package scala-mode
@@ -44,13 +43,6 @@
         comment-style 'multi-line
         comment-empty-lines t))
 
-(defun scala-mode-prettify-symbols ()
-  "Bind prettified symbols."
-  (setq-local prettify-symbols-alist (append
-                                      greek-symbols-alist
-                                      scala-prettify-symbols-alist))
-  (prettify-symbols-mode))
-
 (defun scala-mode-smartparens ()
   "Bind parenthesis padding."
   (sp-local-pair 'scala-mode "(" nil :post-handlers '(("||\n[i]" "RET")))
@@ -71,20 +63,20 @@
   (bind-key "s-<backspace>" (scala-restrict-sp 'sp-backward-kill-sexp) scala-mode-map)
   (bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map))
 
-(add-hook 'scala-mode-hook
-          (lambda ()
-            (show-paren-mode)
-            (smartparens-mode)
-            (yas-minor-mode)
-            (git-gutter-mode)
-            (company-mode)
-            (scala-mode-bindings)
-            (scala-mode-multi-line-comments)
-            (scala-mode-prettify-symbols)
-            (scala-mode-smartparens)
-            (scala-mode:goto-start-of-code)))
+(defun scala-mode-tweaks ()
+  "Add all Scala mode tweaks in the right order."
+  (show-paren-mode)
+  (smartparens-mode)
+  (yas-minor-mode)
+  (git-gutter-mode)
+  (company-mode)
+  (scala-mode-bindings)
+  (scala-mode-multi-line-comments)
+  (scala-mode-smartparens)
+  (scala-mode:goto-start-of-code))
 
-;; Init package
+(add-hook 'scala-mode-hook 'scala-mode-tweaks)
+
 (provide 'init-scala)
 
 ;;; init-scala.el ends here

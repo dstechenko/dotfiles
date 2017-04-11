@@ -20,16 +20,12 @@
 
 ;;; Code:
 
-;; Load customized configuration
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
-;; Load init configuration
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
-;; Init bootstrap
-(require 'init-symbols)
 (require 'init-common)
 (require 'init-elisp)
 (require 'init-scala)
@@ -38,7 +34,6 @@
 (require 'init-coq)
 (require 'init-octave)
 
-;; Init package
 (provide 'init)
 
 ;;; init.el ends here
