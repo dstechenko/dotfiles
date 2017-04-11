@@ -10,6 +10,8 @@
 
 ;;; Code:
 
+(require 'init-symbols)
+
 (load (expand-file-name "./lisp/proof-general/generic/proof-site" user-emacs-directory))
 
 (use-package company-coq
@@ -25,7 +27,7 @@
   "Configure all Coq mode properties."
   (defvar coq-modeline-string0)
   (setq coq-modeline-string0 " sc(")
-  (prettify-symbols-mode -1))
+  (enable-coq-pretty-symbols))
 
 (defun coq-mode-tweaks ()
   "Add all Coq mode tweaks in the right order."

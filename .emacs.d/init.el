@@ -26,6 +26,7 @@
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
+(require 'init-symbols)
 (require 'init-common)
 (require 'init-elisp)
 (require 'init-scala)

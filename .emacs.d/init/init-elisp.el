@@ -58,7 +58,7 @@
   (show-paren-mode)
   (smartparens-strict-mode))
 
-(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-tweak)
+(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-tweaks)
 
 (provide 'init-elisp)
 

@@ -10,6 +10,7 @@
 
 ;;; Code:
 
+(require 'init-symbols)
 (require 'init-common)
 
 (use-package scala-mode
@@ -73,7 +74,8 @@
   (scala-mode-bindings)
   (scala-mode-multi-line-comments)
   (scala-mode-smartparens)
-  (scala-mode:goto-start-of-code))
+  (scala-mode:goto-start-of-code)
+  (enable-scala-pretty-symbols))
 
 (add-hook 'scala-mode-hook 'scala-mode-tweaks)
 
