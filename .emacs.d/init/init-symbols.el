@@ -258,6 +258,10 @@
   (setq-local prettify-symbols-alist (append generic-pretty-symbols-alist extension))
   (prettify-symbols-mode))
 
+(defun enable-generic-pretty-symbols ()
+  "Enable all generic pretty symbols."
+  (extend-generic-and-enable-pretty-symbols nil))
+
 (defconst scala-pretty-symbols-alist
   '(("mempty" . ?∅)
     ("mappend" . ?⊕)
