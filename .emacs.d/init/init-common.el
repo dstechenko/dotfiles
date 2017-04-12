@@ -65,25 +65,29 @@
 (setq
  mac-control-modifier 'control
  mac-command-modifier 'meta
- mac-option-modifier 'nil
  mac-right-command-modifier 'super
- mac-right-option-modifier 'hyper)
+ mac-right-option-modifier 'hyper
+ mac-option-modifier 'nil)
+
+(defvar tags-revert-without-query t)
 
 (setq
+ vc-follow-symlinks t
  inhibit-startup-screen t
+ scroll-error-top-bottom t
+ tags-add-tables nil
  initial-scratch-message nil
  create-lockfiles nil
  make-backup-files nil
  tooltip-mode nil
- scroll-error-top-bottom t
  sentence-end-double-space nil
  ring-bell-function 'ignore)
 
 (setq-default
  fill-column 80
- indent-tabs-mode nil
  tab-width 4
- c-basic-offset 4)
+ c-basic-offset 4
+ indent-tabs-mode nil)
 
 (diminish 'visual-line-mode "vl")
 (diminish 'defining-kbd-macro "dm")
@@ -289,6 +293,13 @@
 
 (use-package etags-select
   :commands etags-select-find-tag)
+
+(use-package ctags-update
+  :commands
+  turn-on-ctags-auto-update-mode
+
+  :init
+  (add-hook 'prog-mode-hook  'turn-on-ctags-auto-update-mode))
 
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-.") 'xref-find-definitions)
