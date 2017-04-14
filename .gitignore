@@ -16,3 +16,4 @@
 
 # Emacs configuration
 .emacs.d/custom.el
+.emacs.d/bookmarks
