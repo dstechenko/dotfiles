@@ -268,6 +268,7 @@
     ("Boolean" . ?𝔹)
     ("Unit" . ?∅)
     ("Int" . ?ℤ)
+    ("Double" . ?ℝ)
 
     ("flatMap" . ?⤜)
     (">>=" . ?⤜)
@@ -297,6 +298,17 @@
 (defun enable-coq-pretty-symbols ()
   "Enable all pretty symbols for Coq mode."
   (extend-generic-and-enable-pretty-symbols coq-pretty-symbols-alist))
+
+(defconst idris-pretty-symbols-alist
+  '(("Bool" . ?𝔹)
+    ("Double" . ?ℝ)
+    ("Integer" . ?ℤ))
+  "Prettify rules extensions specific to Idris mode.")
+
+(defun enable-idris-pretty-symbols ()
+  "Enable all pretty symbols for Idris mode."
+  (extend-generic-and-enable-pretty-symbols idris-pretty-symbols-alist))
+
 
 (provide 'init-symbols)
 

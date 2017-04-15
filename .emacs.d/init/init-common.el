@@ -295,6 +295,9 @@
   :commands etags-select-find-tag)
 
 (use-package ctags-update
+  :diminish
+  ctags-auto-update-mode "ca"
+
   :commands
   turn-on-ctags-auto-update-mode
 

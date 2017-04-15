@@ -33,6 +33,7 @@
 (require 'init-python)
 (require 'init-markdown)
 (require 'init-coq)
+(require 'init-idris)
 (require 'init-octave)
 
 (provide 'init)
