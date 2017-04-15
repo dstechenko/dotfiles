@@ -304,6 +304,10 @@
   :init
   (add-hook 'prog-mode-hook  'turn-on-ctags-auto-update-mode))
 
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize))
+
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-.") 'xref-find-definitions)
 (global-set-key (kbd "C-S-k") 'kill-visual-line)

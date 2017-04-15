@@ -10,10 +10,11 @@
 .emacs.d/smex*
 .emacs.d/recentf
 .emacs.d/snippets
+.emacs.d/bookmarks
+.emacs.d/flycheck*
 
 # Emacs sources
 .emacs.d/lisp
 
 # Emacs configuration
 .emacs.d/custom.el
-.emacs.d/bookmarks
