@@ -8,12 +8,13 @@
 ;; Emacs tweaks an hacks for personal usage.
 ;;
 ;; Includes support of the following:
-;; - Emacs Lisp
+;; - Idris
 ;; - Scala
-;; - Python
-;; - Markdown
+;; - Emacs Lisp
 ;; - Coq
 ;; - Octave
+;; - Python
+;; - Markdown
 ;;
 ;; Configuration is broken down into sections.
 ;; Sections outline common modes, hacks or tweaks.
@@ -28,13 +29,13 @@
 
 (require 'init-symbols)
 (require 'init-common)
-(require 'init-elisp)
+(require 'init-idris)
 (require 'init-scala)
+(require 'init-elisp)
+(require 'init-coq)
+(require 'init-octave)
 (require 'init-python)
 (require 'init-markdown)
-(require 'init-coq)
-(require 'init-idris)
-(require 'init-octave)
 
 (provide 'init)
 

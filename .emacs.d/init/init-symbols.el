@@ -301,7 +301,8 @@
   (extend-generic-and-enable-pretty-symbols coq-pretty-symbols-alist))
 
 (defconst idris-pretty-symbols-alist
-  '(("Bool" . ?𝔹)
+  '(("()" . ?∅)
+    ("Bool" . ?𝔹)
     ("Double" . ?ℝ)
     ("Integer" . ?ℤ)
     ("Nat" . ?ℕ))

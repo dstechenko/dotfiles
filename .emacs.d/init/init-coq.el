@@ -16,24 +16,18 @@
 
 (use-package company-coq
   :diminish
-  company-coq-mode "cc")
+  company-coq-mode)
 
 (defun coq-mode-diminish ()
   "Abbreviate Coq minor modes."
-  (diminish 'holes-mode "hl")
-  (diminish 'outline-minor-mode "ol"))
-
-(defun coq-mode-configuration ()
-  "Configure all Coq mode properties."
-  (defvar coq-modeline-string0)
-  (setq coq-modeline-string0 " sc(")
-  (enable-coq-pretty-symbols))
+  (diminish 'holes-mode)
+  (diminish 'outline-minor-mode))
 
 (defun coq-mode-tweaks ()
   "Add all Coq mode tweaks in the right order."
   (company-coq-mode)
   (coq-mode-diminish)
-  (coq-mode-configuration))
+  (enable-coq-pretty-symbols))
 
 (add-hook 'coq-mode-hook 'coq-mode-tweaks)
 

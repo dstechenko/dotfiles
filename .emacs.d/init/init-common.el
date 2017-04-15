@@ -89,22 +89,21 @@
  c-basic-offset 4
  indent-tabs-mode nil)
 
-(diminish 'visual-line-mode "vl")
-(diminish 'defining-kbd-macro "dm")
+(diminish 'visual-line-mode)
 
 (require 'dired-x)
 
 (use-package page-break-lines
   :diminish
-  page-break-lines-mode "pb")
+  page-break-lines-mode)
 
 (use-package flyspell
   :diminish
-  flyspell-mode "fs")
+  flyspell-mode)
 
 (use-package disable-mouse
   :diminish
-  global-disable-mouse-mode "dm"
+  global-disable-mouse-mode
 
   :config
   (global-disable-mouse-mode))
@@ -149,7 +148,7 @@
 
 (use-package anzu
   :diminish
-  anzu-mode "az"
+  anzu-mode
 
   :config
   (global-anzu-mode 1))
@@ -163,7 +162,7 @@
 
 (use-package projectile
   :diminish
-  projectile-mode "pj"
+  projectile-mode
 
   :demand
   (setq projectile-use-git-grep t)
@@ -226,7 +225,7 @@
 
 (use-package git-gutter
   :diminish
-  git-gutter-mode "gg"
+  git-gutter-mode "Git"
 
   :config
   (custom-set-variables '(git-gutter:modified-sign "*")
@@ -239,7 +238,7 @@
 
 (use-package company
   :diminish
-  company-mode "cm"
+  company-mode
 
   :commands
   company-mode
@@ -249,7 +248,7 @@
 
 (use-package yasnippet
   :diminish
-  yas-minor-mode "ys"
+  yas-minor-mode
 
   :commands
   (yas-minor-mode yas-reload-all)
@@ -262,7 +261,7 @@
 
 (use-package smartparens
   :diminish
-  smartparens-mode "sp"
+  smartparens-mode
 
   :commands
   sp-pair
@@ -279,7 +278,7 @@
 
 (use-package whitespace-cleanup-mode
   :diminish
-  whitespace-cleanup-mode "wc"
+  whitespace-cleanup-mode
 
   :config
   (global-whitespace-cleanup-mode 1))
@@ -296,7 +295,7 @@
 
 (use-package ctags-update
   :diminish
-  ctags-auto-update-mode "ca"
+  ctags-auto-update-mode
 
   :commands
   turn-on-ctags-auto-update-mode
