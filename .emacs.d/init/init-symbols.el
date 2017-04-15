@@ -265,10 +265,11 @@
   '(("mempty" . ?∅)
     ("mappend" . ?⊕)
 
-    ("Boolean" . ?𝔹)
     ("Unit" . ?∅)
-    ("Int" . ?ℤ)
+    ("Boolean" . ?𝔹)
     ("Double" . ?ℝ)
+    ("Int" . ?ℤ)
+    ("Nat" . ?ℕ)
 
     ("flatMap" . ?⤜)
     (">>=" . ?⤜)
@@ -302,7 +303,8 @@
 (defconst idris-pretty-symbols-alist
   '(("Bool" . ?𝔹)
     ("Double" . ?ℝ)
-    ("Integer" . ?ℤ))
+    ("Integer" . ?ℤ)
+    ("Nat" . ?ℕ))
   "Prettify rules extensions specific to Idris mode.")
 
 (defun enable-idris-pretty-symbols ()
