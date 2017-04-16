@@ -156,9 +156,9 @@
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
-  (setq
-   dashboard-startup-banner 3
-   dashboard-items '((recents  . 5) (projects . 5) (bookmarks . 5))))
+  (setq dashboard-items '((recents  . 5)
+                          (projects . 5)
+                          (bookmarks . 5))))
 
 (use-package projectile
   :diminish
