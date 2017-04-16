@@ -64,11 +64,13 @@
 (setq
  mac-control-modifier 'control
  mac-command-modifier 'meta
+ mac-pass-command-to-system nil
  mac-right-command-modifier 'super
  mac-right-option-modifier 'hyper
  mac-option-modifier 'nil)
 
 (defvar tags-revert-without-query t)
+(defvar mac-command-key-is-meta t)
 
 (setq
  vc-follow-symlinks t
