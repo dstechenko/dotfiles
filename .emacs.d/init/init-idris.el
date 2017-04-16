@@ -12,13 +12,17 @@
 
 (require 'init-symbols)
 
-(use-package idris-mode)
+(use-package idris-mode
+  :config
+  (setq idris-repl-banner-functions '(idris-repl-text-banner)))
 
 (defun idris-mode-diminish ()
-  "Abbreviate Idris minor modes.")
+  "Abbreviate Idris minor modes."
+  (diminish 'idris-simple-indent-mode))
 
 (defun idris-mode-configuration ()
   "Configure all Idris mode properties."
+  (ctags-auto-update-mode -1)
   (enable-idris-pretty-symbols))
 
 (defun idris-mode-tweaks ()

@@ -119,7 +119,6 @@
     ("+++" . ?⧻)
 
     ("|||" . ?⫴)
-    ("::" . ?⸬)
     ("--" . ?╌))
   "Prettify rules for Set operations.")
 
@@ -305,7 +304,10 @@
     ("Bool" . ?𝔹)
     ("Double" . ?ℝ)
     ("Integer" . ?ℤ)
-    ("Nat" . ?ℕ))
+    ("Int" . ?ℤ)
+    ("Nat" . ?ℕ)
+
+    ("not" . ?¬))
   "Prettify rules extensions specific to Idris mode.")
 
 (defun enable-idris-pretty-symbols ()
