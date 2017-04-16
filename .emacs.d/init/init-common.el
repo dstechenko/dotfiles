@@ -58,7 +58,6 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(tooltip-mode -1)
 (mouse-wheel-mode -1)
 (electric-indent-mode -1)
 
@@ -80,6 +79,7 @@
  create-lockfiles nil
  make-backup-files nil
  tooltip-mode nil
+ show-help-function nil
  sentence-end-double-space nil
  ring-bell-function 'ignore)
 
