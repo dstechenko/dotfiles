@@ -99,23 +99,7 @@
   "Prettify rules for double-struck letters.")
 
 (defconst set-pretty-symbols-alist
-  '(("empty" . ?∅)
-    ("sum" . ?∑)
-    ("product" . ?∏)
-    ("contains" . ?∍)
-    ("forall" . ?∀)
-    ("any" . ?∃)
-    ("exists" . ?∃)
-    ("intersect" . ?∩)
-    ("union" . ?∪)
-    ("diff" . ?≏)
-
-    ("isSubsetOf" . ?⊆)
-    ("isProperSubsetOf" . ?⊂)
-    ("isMemberOf" . ?∈)
-    ("notMemberOf" . ?∉)
-
-    ("++" . ?⧺)
+  '(("++" . ?⧺)
     ("+++" . ?⧻)
 
     ("|||" . ?⫴)
@@ -197,18 +181,7 @@
     ("||" . ?∨)
 
     ("/\\" . ?∧)
-    ("\\/" . ?∨)
-
-    ("&&" . ?∧)
-    ("||" . ?∨)
-
-    ("~" . ?¬)
-
-    ("true" . ?⊤)
-    ("false" . ?⊥)
-
-    ("True" . ?⊤)
-    ("False" . ?⊥))
+    ("\\/" . ?∨))
   "Prettify rules for Boolean operations.")
 
 (defconst misc-pretty-symbols-alist
@@ -218,6 +191,8 @@
     (">>" . ?≫)
     ("<<<" . ?⋘)
     (">>>" . ?⋙)
+
+    (">>=" . ?⤜)
 
     ("<|" . ?⊲)
     ("|>" . ?⊳)
@@ -235,9 +210,7 @@
     ("=def" . ?≝)
     ("=?" . ?≟)
 
-    ("..." . ?…)
-
-    ("undefined" . ?⊥))
+    ("..." . ?…))
   "Prettify rules for misc operators.")
 
 (defconst generic-pretty-symbols-alist
@@ -261,23 +234,7 @@
   (extend-generic-and-enable-pretty-symbols nil))
 
 (defconst scala-pretty-symbols-alist
-  '(("mempty" . ?∅)
-    ("mappend" . ?⊕)
-
-    ("Unit" . ?∅)
-    ("Boolean" . ?𝔹)
-    ("Double" . ?ℝ)
-    ("Int" . ?ℤ)
-    ("Nat" . ?ℕ)
-
-    ("flatMap" . ?⤜)
-    (">>=" . ?⤜)
-    ("bind" . ?⤜)
-
-    (">>" . ?≫)
-    ("followedBy" . ?≫)
-
-    ("assert" . ?⊦))
+  nil
   "Prettify rules extensions specific to Scala mode.")
 
 (defun enable-scala-pretty-symbols ()
@@ -286,13 +243,7 @@
 
 (defconst coq-pretty-symbols-alist
   '(("||" . ?‖)
-
-    ("fun" . ?λ)
-
-    ("Prop" . ?ℙ)
-    ("Real" . ?ℝ)
-    ("nat" . ?ℕ)
-    ("bool" . ?𝔹))
+    ("fun" . ?λ))
   "Prettify rules extensions specific to Coq mode.")
 
 (defun enable-coq-pretty-symbols ()
@@ -300,14 +251,7 @@
   (extend-generic-and-enable-pretty-symbols coq-pretty-symbols-alist))
 
 (defconst idris-pretty-symbols-alist
-  '(("()" . ?∅)
-    ("Bool" . ?𝔹)
-    ("Double" . ?ℝ)
-    ("Integer" . ?ℤ)
-    ("Int" . ?ℤ)
-    ("Nat" . ?ℕ)
-
-    ("not" . ?¬))
+  '(("\\" . ?λ))
   "Prettify rules extensions specific to Idris mode.")
 
 (defun enable-idris-pretty-symbols ()
