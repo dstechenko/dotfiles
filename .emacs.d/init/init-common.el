@@ -47,7 +47,7 @@
 (set-frame-font "PragmataPro")
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
+(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
