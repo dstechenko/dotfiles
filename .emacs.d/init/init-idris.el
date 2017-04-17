@@ -14,7 +14,9 @@
 
 (use-package idris-mode
   :config
-  (setq idris-repl-banner-functions '(idris-repl-text-banner)))
+  (setq
+   idris-repl-banner-functions '(idris-repl-text-banner)
+   idris-repl-prompt-style 'long))
 
 (defun idris-mode-diminish ()
   "Abbreviate Idris minor modes."
