@@ -89,7 +89,8 @@
  fill-column 80
  tab-width 4
  c-basic-offset 4
- indent-tabs-mode nil)
+ indent-tabs-mode nil
+ cursor-in-non-selected-windows nil)
 
 (diminish 'visual-line-mode)
 
@@ -308,6 +309,19 @@
 (use-package exec-path-from-shell
   :init
   (exec-path-from-shell-initialize))
+
+(use-package beacon
+  :diminish
+  beacon-mode
+
+  :config
+  (beacon-mode 1)
+  (setq
+   beacon-size 15
+   beacon-blink-when-focused t
+   beacon-blink-when-point-moves-vertically 2
+   beacon-blink-when-point-moves-horizontally 2
+   beacon-color (face-attribute 'cursor :background)))
 
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-.") 'xref-find-definitions)
