@@ -12,8 +12,6 @@
 ;; - Scala
 ;; - Emacs Lisp
 ;; - Coq
-;; - Octave
-;; - Python
 ;; - Markdown
 ;;
 ;; Configuration is broken down into sections.
@@ -33,8 +31,6 @@
 (require 'init-scala)
 (require 'init-elisp)
 (require 'init-coq)
-(require 'init-octave)
-(require 'init-python)
 (require 'init-markdown)
 
 (provide 'init)
