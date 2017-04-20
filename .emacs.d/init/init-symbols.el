@@ -161,19 +161,12 @@
   "Prettify rules for Arrow symbols.")
 
 (defconst relational-pretty-symbols-alist
-  '(("===" . ?≣)
-    ("==" . ?≡)
-
-    ("!" . ?¬)
-    ("!=" . ?≢)
-    ("<>" . ?≠)
-
-    ("<=" . ?≤)
+  '(("<=" . ?≤)
     (">=" . ?≥)
-
-    ("/=" . ?≠)
     ("/<" . ?≮)
-    ("/>" . ?≯))
+    ("/>" . ?≯)
+
+    ("===" . ?≣))
   "Prettify rules for Relational symbols.")
 
 (defconst boolean-pretty-symbols-alist
@@ -234,7 +227,9 @@
   (extend-generic-and-enable-pretty-symbols nil))
 
 (defconst scala-pretty-symbols-alist
-  nil
+  '(("==" . ?≡)
+    ("!=" . ?≢)
+    ("!" . ?¬))
   "Prettify rules extensions specific to Scala mode.")
 
 (defun enable-scala-pretty-symbols ()
@@ -242,7 +237,8 @@
   (extend-generic-and-enable-pretty-symbols scala-pretty-symbols-alist))
 
 (defconst coq-pretty-symbols-alist
-  '(("||" . ?‖)
+  '(("<>" . ?≠)
+    ("||" . ?‖)
     ("fun" . ?λ))
   "Prettify rules extensions specific to Coq mode.")
 
@@ -252,7 +248,7 @@
 
 (defconst idris-pretty-symbols-alist
   '(("\\" . ?λ)
-    ("!=" . ?≠)
+    ("==" . ?≡)
     ("/=" . ?≢))
   "Prettify rules extensions specific to Idris mode.")
 
