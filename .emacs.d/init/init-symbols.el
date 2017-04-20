@@ -251,7 +251,9 @@
   (extend-generic-and-enable-pretty-symbols coq-pretty-symbols-alist))
 
 (defconst idris-pretty-symbols-alist
-  '(("\\" . ?λ))
+  '(("\\" . ?λ)
+    ("!=" . ?≠)
+    ("/=" . ?≢))
   "Prettify rules extensions specific to Idris mode.")
 
 (defun enable-idris-pretty-symbols ()
