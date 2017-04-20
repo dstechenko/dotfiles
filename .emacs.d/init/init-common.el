@@ -60,6 +60,7 @@
 (tool-bar-mode -1)
 (mouse-wheel-mode -1)
 (electric-indent-mode -1)
+(blink-cursor-mode -1)
 
 (setq
  mac-control-modifier 'control
