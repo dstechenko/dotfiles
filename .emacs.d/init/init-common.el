@@ -10,8 +10,9 @@
 
 ;;; Code:
 
-;; Init package load
 (require 'package)
+(require 'dired-x)
+(require 'init-util)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")
@@ -34,7 +35,10 @@
 
 (setq
  user-full-name "Dmytro Stechenko"
- user-emacs-directory (file-truename "~/.emacs.d/"))
+ user-emacs-directory (file-truename "~/.emacs.d/")
+ custom-file (expand-tmp "custom.el"))
+
+(load custom-file)
 
 (setq
  debug-on-error nil
@@ -95,7 +99,17 @@
 
 (diminish 'visual-line-mode)
 
-(require 'dired-x)
+(use-package ido
+  :config
+  (setq ido-save-directory-list-file (expand-tmp "ido.last")))
+
+(use-package recentf
+  :config
+  (setq recentf-save-file (expand-tmp "recentf")))
+
+(use-package bookmark
+  :config
+  (setq bookmark-default-file (expand-tmp "bookmarks")))
 
 (use-package page-break-lines
   :diminish
@@ -148,7 +162,10 @@
 (use-package smex
   :bind
   ("M-x" . smex)
-  ("M-X" . smex-major-mode-commands))
+  ("M-X" . smex-major-mode-commands)
+
+  :config
+  (setq smex-save-file (expand-tmp "smex-items")))
 
 (use-package anzu
   :diminish
@@ -177,6 +194,7 @@
   :config
   (projectile-mode 1)
   (setq
+   projectile-known-projects-file (expand-tmp "projectile-bookmarks.eld")
    projectile-tags-backend 'etags-select
    projectile-switch-project-action 'neotree-projectile-action)
 

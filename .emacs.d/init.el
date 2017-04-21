@@ -19,9 +19,6 @@
 
 ;;; Code:
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 

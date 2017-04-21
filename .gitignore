@@ -1,20 +1,9 @@
 # macOS files
 *.DS_Store
 
-# Emacs packages
+# Emacs
 .emacs.d/auto-save-list
 .emacs.d/elpa
-.emacs.d/projectile*
-.emacs.d/ido*
-.emacs.d/.mc*
-.emacs.d/smex*
-.emacs.d/recentf
-.emacs.d/snippets
-.emacs.d/bookmarks
-.emacs.d/flycheck*
-
-# Emacs sources
+.emacs.d/tmp
 .emacs.d/lisp
-
-# Emacs configuration
-.emacs.d/custom.el
+.emacs.d/snippets
