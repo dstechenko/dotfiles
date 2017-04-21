@@ -7,3 +7,4 @@
 .emacs.d/tmp
 .emacs.d/lisp
 .emacs.d/snippets
+.emacs.d/flycheck*
