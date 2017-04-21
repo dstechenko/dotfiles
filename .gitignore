@@ -8,3 +8,4 @@
 .emacs.d/lisp
 .emacs.d/snippets
 .emacs.d/flycheck*
+.emacs.d/init/flycheck*
