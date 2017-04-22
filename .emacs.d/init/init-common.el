@@ -70,6 +70,7 @@
  mac-control-modifier 'control
  mac-command-modifier 'meta
  mac-pass-command-to-system nil
+ mac-pass-control-to-system nil
  mac-right-command-modifier 'super
  mac-right-option-modifier 'hyper
  mac-option-modifier nil)
