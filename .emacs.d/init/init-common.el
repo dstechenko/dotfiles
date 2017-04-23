@@ -131,12 +131,9 @@
   :config
   (load-theme 'base16-monokai t))
 
-(use-package smart-mode-line
+(use-package powerline
   :config
-  (setq
-   sml/no-confirm-load-theme t
-   sml/theme 'respectful)
-  (sml/setup))
+  (powerline-default-theme))
 
 (use-package neotree
   :commands
