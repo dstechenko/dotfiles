@@ -10,8 +10,6 @@
 
 ;;; Code:
 
-;; Init package load
-
 (defun expand-emacs (path)
   "Expands `PATH' with Emacs directory."
   (expand-file-name path user-emacs-directory))
