@@ -13,6 +13,7 @@
 ;; - Emacs Lisp
 ;; - Coq
 ;; - Markdown
+;; - Org
 ;;
 ;; Configuration is broken down into sections.
 ;; Sections outline common modes, hacks or tweaks.
@@ -29,6 +30,7 @@
 (require 'init-elisp)
 (require 'init-coq)
 (require 'init-markdown)
+(require 'init-org)
 
 (provide 'init)
 
