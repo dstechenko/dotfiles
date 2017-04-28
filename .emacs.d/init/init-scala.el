@@ -11,7 +11,7 @@
 ;;; Code:
 
 (require 'init-symbols)
-(require 'init-common)
+(require 'init-default)
 
 (use-package scala-mode
   :pin

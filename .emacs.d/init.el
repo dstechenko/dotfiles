@@ -24,7 +24,7 @@
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 (require 'init-symbols)
-(require 'init-common)
+(require 'init-default)
 (require 'init-idris)
 (require 'init-scala)
 (require 'init-elisp)

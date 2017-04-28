@@ -1,11 +1,11 @@
-;;; init-common.el --- Emacs configuration
+;;; init-default.el --- Emacs configuration
 
 ;; Copyright (C) 2017 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
 ;;
-;; Common packages configuration and tweaks.
+;; Default packages configuration and tweaks.
 ;;
 
 ;;; Code:
@@ -347,6 +347,6 @@
 (global-set-key (kbd "s-i") 'ispell-word)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
-(provide 'init-common)
+(provide 'init-default)
 
-;;; init-common.el ends here
+;;; init-default.el ends here
