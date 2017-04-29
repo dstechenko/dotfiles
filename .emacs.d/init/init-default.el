@@ -291,7 +291,6 @@
   turn-on-ctags-auto-update-mode
 
   :init
-  (add-hook 'emacs-lisp-mode-hook  'turn-on-ctags-auto-update-mode)
   (add-hook 'prog-mode-hook  'turn-on-ctags-auto-update-mode))
 
 (use-package exec-path-from-shell
