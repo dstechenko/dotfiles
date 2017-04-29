@@ -48,6 +48,7 @@
  shell-file-name "/bin/bash"
  shell-command-switch "-ic")
 
+(set-face-italic-p 'italic nil)
 (set-frame-font "PragmataPro")
 (fset 'yes-or-no-p 'y-or-n-p)
 

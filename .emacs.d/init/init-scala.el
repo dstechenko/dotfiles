@@ -13,20 +13,16 @@
 (require 'init-symbols)
 (require 'init-default)
 
-(use-package ensime
-  :pin melpa-stable
-  :ensure t)
-
 (use-package scala-mode
   :pin
-  melpa
+  melpa-stable
 
   :interpreter
   ("scala" . scala-mode))
 
 (use-package sbt-mode
   :pin
-  melpa
+  melpa-stable
 
   :commands
   sbt-start
