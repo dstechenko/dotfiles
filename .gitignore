@@ -4,8 +4,8 @@
 # Emacs
 .emacs.d/auto-save-list
 .emacs.d/elpa
-.emacs.d/tmp
+.emacs.d/ensime
+.emacs.d/**/flycheck*
 .emacs.d/lisp
 .emacs.d/snippets
-.emacs.d/flycheck*
-.emacs.d/init/flycheck*
+.emacs.d/tmp

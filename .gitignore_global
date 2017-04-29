@@ -48,3 +48,4 @@ target
 # Index files #
 ###############
 TAGS
+.ensime
