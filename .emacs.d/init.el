@@ -8,6 +8,7 @@
 ;; Emacs tweaks an hacks for personal usage.
 ;;
 ;; Includes support of the following:
+;; - Haskell
 ;; - Idris
 ;; - Scala
 ;; - Emacs Lisp
@@ -23,8 +24,15 @@
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
+(require 'init-util)
+
+(require-mac 'init-mac)
+(require-win 'init-win)
+
 (require 'init-symbols)
 (require 'init-default)
+
+(require 'init-haskell)
 (require 'init-idris)
 (require 'init-scala)
 (require 'init-elisp)

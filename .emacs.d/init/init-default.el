@@ -31,11 +31,8 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(add-to-list 'exec-path "/usr/local/bin")
-
 (setq
  user-full-name "Dmytro Stechenko"
- user-emacs-directory (file-truename "~/.emacs.d/")
  custom-file (expand-tmp "custom.el"))
 
 (load custom-file)
@@ -44,11 +41,6 @@
  debug-on-error nil
  debug-on-quit nil)
 
-(setq
- shell-file-name "/bin/bash"
- shell-command-switch "-ic")
-
-(set-face-italic-p 'italic nil)
 (set-frame-font "PragmataPro")
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -67,17 +59,7 @@
 (electric-indent-mode -1)
 (blink-cursor-mode -1)
 
-(setq
- mac-control-modifier 'control
- mac-command-modifier 'meta
- mac-pass-command-to-system nil
- mac-pass-control-to-system nil
- mac-right-command-modifier 'super
- mac-right-option-modifier 'hyper
- mac-option-modifier nil)
-
 (defvar tags-revert-without-query t)
-(defvar mac-command-key-is-meta t)
 
 (setq
  vc-follow-symlinks t
