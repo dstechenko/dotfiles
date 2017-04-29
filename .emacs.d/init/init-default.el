@@ -119,26 +119,13 @@
   (powerline-default-theme))
 
 (use-package neotree
-  :commands
-  (neo-buffer--lock-width
-   neo-buffer--unlock-width
-   neo-global--window-exists-p)
-
   :config
   (setq
    neo-window-width 40
    neo-theme "ascii")
 
-  (defun toggle-neotree-projectile-mode ()
-    (interactive)
-    (if (and
-         (not (neo-global--window-exists-p))
-         (projectile-project-p))
-        (neotree-projectile-action)
-      (neotree-toggle)))
-
   :bind
-  ("H-o" . toggle-neotree-projectile-mode))
+  ("H-o" . neotree-toggle))
 
 (use-package smex
   :bind
@@ -304,6 +291,7 @@
   turn-on-ctags-auto-update-mode
 
   :init
+  (add-hook 'emacs-lisp-mode-hook  'turn-on-ctags-auto-update-mode)
   (add-hook 'prog-mode-hook  'turn-on-ctags-auto-update-mode))
 
 (use-package exec-path-from-shell
