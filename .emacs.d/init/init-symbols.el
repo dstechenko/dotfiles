@@ -229,6 +229,7 @@
 (defconst scala-pretty-symbols-alist
   '(("==" . ?≡)
     ("!=" . ?≢)
+    ("=/=" . ?≢)
     ("!" . ?¬))
   "Prettify rules extensions specific to Scala mode.")
 
