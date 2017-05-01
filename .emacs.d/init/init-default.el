@@ -44,10 +44,6 @@
 (set-frame-font "PragmataPro")
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
 (line-number-mode 1)
 (column-number-mode 1)
 (show-paren-mode 1)
@@ -288,10 +284,7 @@
   ctags-auto-update-mode
 
   :commands
-  turn-on-ctags-auto-update-mode
-
-  :init
-  (add-hook 'prog-mode-hook  'turn-on-ctags-auto-update-mode))
+  turn-on-ctags-auto-update-mode)
 
 (use-package exec-path-from-shell
   :init
@@ -310,12 +303,17 @@
    beacon-blink-when-point-moves-horizontally 2
    beacon-color (face-attribute 'cursor :background)))
 
-(global-set-key (kbd "C-k") 'kill-whole-line)
-(global-set-key (kbd "C-.") 'xref-find-definitions)
-(global-set-key (kbd "C-S-k") 'kill-visual-line)
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "s-i") 'ispell-word)
+(global-set-key (kbd "C-k")            'kill-whole-line)
+(global-set-key (kbd "C-.")            'xref-find-definitions)
+(global-set-key (kbd "C-S-k")          'kill-visual-line)
+(global-set-key (kbd "M-o")            'other-window)
+(global-set-key (kbd "s-i")            'ispell-word)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
+
+(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
+(add-hook 'text-mode-hook    'flyspell-mode)
+(add-hook 'prog-mode-hook    'flyspell-prog-mode)
+(add-hook 'prog-mode-hook    'turn-on-ctags-auto-update-mode)
 
 (provide 'init-default)
 

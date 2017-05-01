@@ -10,6 +10,18 @@
 
 ;;; Code:
 
+(use-package haskell-mode)
+
+(use-package hindent
+  :diminish
+  hindent-mode)
+
+(defun haskell-mode-tweaks ()
+  "Add all Haskell mode tweaks in the right order."
+  (hindent-mode))
+
+(add-hook 'haskell-mode-hook 'haskell-mode-tweaks)
+
 (provide 'init-haskell)
 
 ;;; init-haskell.el ends here
