@@ -303,18 +303,18 @@
    beacon-blink-when-point-moves-horizontally 2
    beacon-color (face-attribute 'cursor :background)))
 
+(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
+(add-hook 'text-mode-hook    'flyspell-mode)
+(add-hook 'prog-mode-hook    'flyspell-prog-mode)
+(add-hook 'prog-mode-hook    'which-function-mode)
+(add-hook 'prog-mode-hook    'turn-on-ctags-auto-update-mode)
+
 (global-set-key (kbd "C-k")            'kill-whole-line)
 (global-set-key (kbd "C-.")            'xref-find-definitions)
 (global-set-key (kbd "C-S-k")          'kill-visual-line)
 (global-set-key (kbd "M-o")            'other-window)
 (global-set-key (kbd "s-i")            'ispell-word)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
-
-(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
-(add-hook 'text-mode-hook    'flyspell-mode)
-(add-hook 'prog-mode-hook    'flyspell-prog-mode)
-(add-hook 'prog-mode-hook    'which-function-mode)
-(add-hook 'prog-mode-hook    'turn-on-ctags-auto-update-mode)
 
 (provide 'init-default)
 

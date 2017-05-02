@@ -14,21 +14,25 @@
   :config
   (setq
    haskell-tags-on-save                        t
-   haskell-process-type                        'cabal-repl
    haskell-process-log                         t
    haskell-process-suggest-remove-import-lines t
    haskell-process-auto-import-loaded-modules  t)
 
+  (setq haskell-process-type 'cabal-repl)
+
   :bind
-  ("C-c C-c"     . haskell-compile)
-  ("C-S-q"       . haskell-mode-stylish-buffer)
-  ("<f8>"        . haskell-navigate-imports)
-  ("C-c C-z"     . haskell-interactive-switch)
-  ("C-c C-l"     . haskell-process-load-or-reload)
-  ("C-c C-n C-t" . haskell-process-do-type)
-  ("C-c C-n C-i" . haskell-process-do-info)
-  ("C-c C-n C-c" . haskell-process-cabal-build)
-  ("C-c C-n c"   . haskell-process-cabal))
+  ("<f8>"    . haskell-navigate-imports)
+  ("M-."     . haskell-mode-jump-to-def-or-tag)
+  ("C-c C-o" . haskell-compile)
+  ("C-S-q"   . haskell-mode-stylish-buffer)
+  ("C-c C-d" . haskell-debug)
+  ("C-c c"   . haskell-process-cabal))
+
+(use-package ghc
+  :bind
+  ("C-c l" . ghc-toggle-check-command))
+
+(use-package company-ghc)
 
 (use-package hindent
   :diminish
@@ -48,12 +52,15 @@
   (define-key haskell-cabal-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
   (define-key haskell-cabal-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
   (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
-  (define-key haskell-cabal-mode-map (kbd "C-c c")   'haskell-process-cabal))
+  (define-key haskell-cabal-mode-map (kbd "C-c C-o") 'haskell-compile))
 
 (defun haskell-mode-tweaks ()
   "Add all Haskell mode tweaks in the right order."
+  (ghc-init)
   (interactive-haskell-mode)
+  (company-mode)
   (interactive-haskell-mode-bindings)
+  (cabal-mode-bindings)
   (haskell-decl-scan-mode)
   (hindent-mode))
 

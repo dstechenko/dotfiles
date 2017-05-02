@@ -1,4 +1,4 @@
-export  PS1="> "
+export  PS1="$> "
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 
