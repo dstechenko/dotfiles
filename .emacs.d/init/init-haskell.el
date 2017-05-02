@@ -10,14 +10,25 @@
 
 ;;; Code:
 
-(use-package haskell-mode)
+(use-package haskell-mode
+  :config
+  (setq haskell-tags-on-save t)
+
+  :bind
+  ("C-c C-c" . haskell-compile)
+  ("C-S-q"   . haskell-mode-stylish-buffer)
+  ("<f8>"    . haskell-navigate-imports))
 
 (use-package hindent
   :diminish
-  hindent-mode)
+  hindent-mode
+
+  :bind
+  ("C-q" . hindent-reformat-region))
 
 (defun haskell-mode-tweaks ()
   "Add all Haskell mode tweaks in the right order."
+  (haskell-decl-scan-mode)
   (hindent-mode))
 
 (add-hook 'haskell-mode-hook 'haskell-mode-tweaks)

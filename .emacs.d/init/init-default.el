@@ -313,6 +313,7 @@
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 (add-hook 'text-mode-hook    'flyspell-mode)
 (add-hook 'prog-mode-hook    'flyspell-prog-mode)
+(add-hook 'prog-mode-hook    'which-function-mode)
 (add-hook 'prog-mode-hook    'turn-on-ctags-auto-update-mode)
 
 (provide 'init-default)
