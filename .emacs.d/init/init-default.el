@@ -230,7 +230,10 @@
   company-mode
 
   :config
-  (define-key company-active-map [tab] nil))
+  (setq company-tooltip-align-annotations t)
+
+  :bind
+  ("C-<return>" . company-complete-common))
 
 (use-package yasnippet
   :diminish
@@ -303,11 +306,21 @@
    beacon-blink-when-point-moves-horizontally 2
    beacon-color (face-attribute 'cursor :background)))
 
+(use-package subword
+  :diminish
+  subword-mode)
+
+(use-package rainbow-delimiters
+  :diminish
+  rainbow-delimiters-mode)
+
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 (add-hook 'text-mode-hook    'flyspell-mode)
 (add-hook 'prog-mode-hook    'flyspell-prog-mode)
 (add-hook 'prog-mode-hook    'which-function-mode)
+(add-hook 'prog-mode-hook    'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook    'turn-on-ctags-auto-update-mode)
+(add-hook 'prog-mode-hook    'subword-mode)
 
 (global-set-key (kbd "C-k")            'kill-whole-line)
 (global-set-key (kbd "C-.")            'xref-find-definitions)

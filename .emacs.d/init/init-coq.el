@@ -10,9 +10,10 @@
 
 ;;; Code:
 
+(require 'init-util)
 (require 'init-symbols)
 
-(load (expand-file-name "./lisp/proof-general/generic/proof-site" user-emacs-directory))
+(load (expand-lisp "proof-general/generic/proof-site"))
 
 (use-package company-coq
   :diminish

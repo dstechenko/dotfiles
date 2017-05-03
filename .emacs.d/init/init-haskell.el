@@ -10,6 +10,12 @@
 
 ;;; Code:
 
+(require 'init-util)
+
+(expand-load (expand-lisp "ghc-hare"))
+(require 'hare)
+(autoload 'hare-init "hare" nil t)
+
 (use-package haskell-mode
   :config
   (setq
@@ -32,7 +38,10 @@
   :bind
   ("C-c l" . ghc-toggle-check-command))
 
-(use-package company-ghc)
+(use-package company-ghc
+  :config
+  (add-to-list 'company-backends 'company-ghc)
+  (setq company-ghc-show-info t))
 
 (use-package hindent
   :diminish
@@ -57,12 +66,14 @@
 (defun haskell-mode-tweaks ()
   "Add all Haskell mode tweaks in the right order."
   (ghc-init)
+  (hare-init)
   (interactive-haskell-mode)
   (company-mode)
   (interactive-haskell-mode-bindings)
   (cabal-mode-bindings)
   (haskell-decl-scan-mode)
-  (hindent-mode))
+  (hindent-mode)
+  (structured-haskell-mode))
 
 (add-hook 'haskell-mode-hook 'haskell-mode-tweaks)
 

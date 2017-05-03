@@ -29,10 +29,6 @@
   :config
   (setq-default flycheck-emacs-lisp-load-path 'inherit))
 
-(use-package rainbow-delimiters
-  :diminish
-  rainbow-delimiters-mode)
-
 (use-package aggressive-indent
   :diminish
   aggressive-indent-mode)
@@ -50,7 +46,6 @@
   (emacs-lisp-mode-bindings)
   (emacs-lisp-mode-configuration)
   (aggressive-indent-mode 1)
-  (rainbow-delimiters-mode)
   (eldoc-mode)
   (flycheck-mode)
   (yas-minor-mode)

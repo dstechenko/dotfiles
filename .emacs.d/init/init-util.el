@@ -11,12 +11,20 @@
 ;;; Code:
 
 (defun expand-emacs (path)
-  "Expands `PATH' with Emacs directory."
+  "Expands `PATH' with Emacs home directory."
   (expand-file-name path user-emacs-directory))
 
 (defun expand-tmp (path)
-  "Expand `PATH' with Emacs tmp directory."
+  "Expand `PATH' with Emacs temporary directory."
   (expand-emacs (format "tmp/%s" path)))
+
+(defun expand-lisp (path)
+  "Expand `PATH' with Emacs LISP directory."
+  (expand-emacs (format "lisp/%s" path)))
+
+(defun expand-load (path)
+  "Expand load-path list with `PATH'."
+  (add-to-list 'load-path path))
 
 (defmacro in-system (type &rest body)
   "If `system-type' is  `TYPE' then evaluate `BODY'."
