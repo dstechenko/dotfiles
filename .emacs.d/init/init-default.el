@@ -314,13 +314,13 @@
   :diminish
   rainbow-delimiters-mode)
 
-(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
-(add-hook 'text-mode-hook    'flyspell-mode)
-(add-hook 'prog-mode-hook    'flyspell-prog-mode)
-(add-hook 'prog-mode-hook    'which-function-mode)
-(add-hook 'prog-mode-hook    'rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook    'turn-on-ctags-auto-update-mode)
-(add-hook 'prog-mode-hook    'subword-mode)
+(add-window-hook 'toggle-frame-fullscreen)
+(add-text-hook   'flyspell-mode)
+(add-prog-hook   'flyspell-prog-mode)
+(add-prog-hook   'which-function-mode)
+(add-prog-hook   'rainbow-delimiters-mode)
+(add-prog-hook   'turn-on-ctags-auto-update-mode)
+(add-prog-hook   'subword-mode)
 
 (global-set-key (kbd "C-k")            'kill-whole-line)
 (global-set-key (kbd "C-.")            'xref-find-definitions)

@@ -23,7 +23,7 @@
   (expand-emacs (format "lisp/%s" path)))
 
 (defun expand-load (path)
-  "Expand load-path list with `PATH'."
+  "Expand `load-path' list with `PATH'."
   (add-to-list 'load-path path))
 
 (defmacro in-system (type &rest body)
@@ -41,6 +41,19 @@
 (defmacro require-win (file)
   "If `system-type' is Windows then require `FILE'."
   `(require-in-system windows-nt ,file))
+
+(defmacro add-prog-hook (mode)
+  "Add `prog-mode-hook' with `MODE'."
+  `(add-hook 'prog-mode-hook ,mode))
+
+(defmacro add-text-hook (mode)
+  "Add `text-mode-hook' with `MODE'."
+  `(add-hook 'text-mode-hook ,mode))
+
+(defmacro add-window-hook (mode)
+  "Add `window-setup-hook' with `MODE'."
+  `(add-hook 'window-setup-hook ,mode))
+
 
 (provide 'init-util)
 

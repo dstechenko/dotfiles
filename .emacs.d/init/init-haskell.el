@@ -38,6 +38,8 @@
   :bind
   ("C-c l" . ghc-toggle-check-command))
 
+(use-package shm)
+
 (use-package company-ghc
   :config
   (add-to-list 'company-backends 'company-ghc)
