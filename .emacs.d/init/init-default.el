@@ -14,11 +14,11 @@
 (require 'dired-x)
 (require 'init-util)
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
-                         ("melpa" . "http://melpa.org/packages/")
+(setq package-archives '(("gnu"          . "http://elpa.gnu.org/packages/")
+                         ("org"          . "http://orgmode.org/elpa/")
+                         ("melpa"        . "http://melpa.org/packages/")
                          ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("elpy" . "http://jorgenschaefer.github.io/packages/")))
+                         ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
 
 (package-initialize)
 
@@ -39,42 +39,42 @@
 
 (setq
  debug-on-error nil
- debug-on-quit nil)
+ debug-on-quit  nil)
 
 (set-frame-font "PragmataPro")
-(fset 'yes-or-no-p 'y-or-n-p)
+(fset  'yes-or-no-p 'y-or-n-p)
 
-(line-number-mode 1)
-(column-number-mode 1)
-(show-paren-mode 1)
+(line-number-mode        1)
+(column-number-mode      1)
+(show-paren-mode         1)
 (global-visual-line-mode 1)
-(scroll-bar-mode -1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(mouse-wheel-mode -1)
-(electric-indent-mode -1)
-(blink-cursor-mode -1)
+(scroll-bar-mode        -1)
+(menu-bar-mode          -1)
+(tool-bar-mode          -1)
+(mouse-wheel-mode       -1)
+(electric-indent-mode   -1)
+(blink-cursor-mode      -1)
 
 (defvar tags-revert-without-query t)
 
 (setq
- vc-follow-symlinks t
- inhibit-startup-screen t
- scroll-error-top-bottom t
- tags-add-tables nil
- initial-scratch-message nil
- create-lockfiles nil
- make-backup-files nil
- tooltip-mode nil
- show-help-function nil
+ vc-follow-symlinks        t
+ inhibit-startup-screen    t
+ scroll-error-top-bottom   t
+ tags-add-tables           nil
+ initial-scratch-message   nil
+ create-lockfiles          nil
+ make-backup-files         nil
+ tooltip-mode              nil
+ show-help-function        nil
  sentence-end-double-space nil
- ring-bell-function 'ignore)
+ ring-bell-function        'ignore)
 
 (setq-default
- fill-column 80
- tab-width 4
- c-basic-offset 4
- indent-tabs-mode nil
+ fill-column                    80
+ tab-width                      4
+ c-basic-offset                 4
+ indent-tabs-mode               nil
  cursor-in-non-selected-windows nil)
 
 (diminish 'visual-line-mode)
@@ -215,8 +215,8 @@
 
   :config
   (custom-set-variables '(git-gutter:modified-sign "*")
-                        '(git-gutter:added-sign "+")
-                        '(git-gutter:deleted-sign "-"))
+                        '(git-gutter:added-sign    "+")
+                        '(git-gutter:deleted-sign  "-"))
 
   :bind
   ("s-t" . git-gutter-mode)
