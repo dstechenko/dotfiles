@@ -41,8 +41,8 @@
 
 (use-package company-ghc
   :config
-  (add-to-list 'company-backends 'company-ghc)
-  (setq company-ghc-show-info t))
+  (setq company-ghc-show-info t)
+  (add-to-list 'company-backends 'company-ghc))
 
 (use-package hindent
   :diminish
