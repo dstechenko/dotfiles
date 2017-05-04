@@ -55,7 +55,7 @@
   (add-hook 'window-setup-hook mode))
 
 (defun load-fun (file fun)
-  ""
+  "Load `FILE' and a `FUN' from it."
   (progn
     (require  file)
     (autoload fun (symbol-name file) nil t)))
