@@ -314,6 +314,10 @@
   :diminish
   rainbow-delimiters-mode)
 
+(use-package auto-package-update
+  :config
+  (auto-package-update-maybe))
+
 (add-window-hook 'toggle-frame-fullscreen)
 (add-text-hook   'flyspell-mode)
 (add-prog-hook   'flyspell-prog-mode)

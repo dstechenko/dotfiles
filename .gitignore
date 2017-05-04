@@ -6,6 +6,7 @@
 .emacs.d/elpa
 .emacs.d/ensime
 .emacs.d/**/flycheck*
+.emacs.d/.last-package-update-day
 .emacs.d/lisp
 .emacs.d/snippets
 .emacs.d/tmp

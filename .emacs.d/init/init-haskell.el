@@ -13,8 +13,7 @@
 (require 'init-util)
 
 (expand-load (expand-lisp "ghc-hare"))
-(require 'hare)
-(autoload 'hare-init "hare" nil t)
+(load-fun 'hare 'hare-init)
 
 (use-package haskell-mode
   :config
