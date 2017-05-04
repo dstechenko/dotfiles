@@ -26,18 +26,20 @@
   (setq haskell-process-type 'cabal-repl)
 
   :bind
-  ("<f8>"    . haskell-navigate-imports)
   ("M-."     . haskell-mode-jump-to-def-or-tag)
+  ("C-c M-q" . haskell-navigate-imports)
   ("C-c C-o" . haskell-compile)
-  ("C-S-q"   . haskell-mode-stylish-buffer)
   ("C-c C-d" . haskell-debug)
-  ("C-c c"   . haskell-process-cabal))
+  ("C-c c"   . haskell-process-cabal)
+  ("C-S-q"   . haskell-mode-stylish-buffer))
 
 (use-package ghc
   :bind
   ("C-c l" . ghc-toggle-check-command))
 
-(use-package shm)
+(use-package shm
+  :diminish
+  structured-haskell-mode)
 
 (use-package company-ghc
   :config
@@ -51,11 +53,15 @@
   :bind
   ("C-q" . hindent-reformat-region))
 
+(defun haskell-mode-bindings ()
+  "Bind all Haskell custom keys."
+  (define-key haskell-mode-map (kbd "C-c C-r") nil))
+
 (defun interactive-haskell-mode-bindings ()
   "Bind all Interactive Haskell custom keys."
   (defvar interactive-haskell-mode-map)
-  (define-key interactive-haskell-mode-map (kbd "M-.")     'haskell-mode-goto-loc)
-  (define-key interactive-haskell-mode-map (kbd "C-c C-t") 'haskell-mode-show-type-at))
+  (define-key interactive-haskell-mode-map (kbd "C-c C-r")                     nil)
+  (define-key interactive-haskell-mode-map (kbd "M-.")     'haskell-mode-goto-loc))
 
 (defun cabal-mode-bindings ()
   "Bind all Cabal custom keys."
@@ -66,13 +72,14 @@
 
 (defun haskell-mode-tweaks ()
   "Add all Haskell mode tweaks in the right order."
-  (ghc-init)
-  (hare-init)
+  (haskell-mode-bindings)
   (interactive-haskell-mode)
-  (company-mode)
   (interactive-haskell-mode-bindings)
   (cabal-mode-bindings)
+  (company-mode)
   (haskell-decl-scan-mode)
+  (ghc-init)
+  (hare-init)
   (hindent-mode)
   (structured-haskell-mode))
 
