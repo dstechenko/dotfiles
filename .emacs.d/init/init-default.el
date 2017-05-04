@@ -214,9 +214,9 @@
   git-gutter-mode "Git"
 
   :config
-  (custom-set-variables '(git-gutter:modified-sign "*")
-                        '(git-gutter:added-sign    "+")
-                        '(git-gutter:deleted-sign  "-"))
+  (custom-set-variables '(git-gutter:modified-sign " * ")
+                        '(git-gutter:added-sign    " + ")
+                        '(git-gutter:deleted-sign  " - "))
 
   :bind
   ("s-t" . git-gutter-mode)

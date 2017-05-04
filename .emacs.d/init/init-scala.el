@@ -72,7 +72,6 @@
   (show-paren-mode)
   (smartparens-mode)
   (yas-minor-mode)
-  (git-gutter-mode)
   (company-mode)
   (scala-mode-bindings)
   (scala-mode-multi-line-comments)
