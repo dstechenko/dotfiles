@@ -8,6 +8,7 @@
 ;; Emacs tweaks an hacks for personal usage.
 ;;
 ;; Includes support of the following:
+;; - Python
 ;; - Haskell
 ;; - Idris
 ;; - Scala
@@ -32,6 +33,7 @@
 (require 'init-symbols)
 (require 'init-default)
 
+(require 'init-python)
 (require 'init-haskell)
 (require 'init-idris)
 (require 'init-scala)
