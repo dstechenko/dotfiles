@@ -124,8 +124,16 @@
    neo-window-width 40
    neo-theme "ascii")
 
+  (defun neotree-toggle-in-project ()
+    (interactive)
+    (if (and
+         (not (neo-global--window-exists-p))
+         (projectile-project-p))
+        (neotree-projectile-action)
+      (neotree-toggle)))
+
   :bind
-  ("H-o" . neotree-toggle))
+  ("H-o" . neotree-toggle-in-project))
 
 (use-package smex
   :bind
