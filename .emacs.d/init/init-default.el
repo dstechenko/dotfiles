@@ -95,6 +95,10 @@
   :diminish
   page-break-lines-mode)
 
+(use-package flycheck
+  :diminish
+  flycheck-mode)
+
 (use-package flyspell
   :diminish
   flyspell-mode)
