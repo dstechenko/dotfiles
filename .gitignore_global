@@ -20,6 +20,7 @@
 *.rar
 *.tar
 *.zip
+*.egg
 
 ######################
 # Logs and databases #
@@ -43,6 +44,7 @@ Thumbs.db
 # Build files #
 ###############
 target
+__pychache__
 
 ###############
 # Index files #
