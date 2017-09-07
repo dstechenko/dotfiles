@@ -22,6 +22,7 @@
   (elpy-use-cpython "python3")
   (setq
    elpy-modules (delete 'elpy-module-flymake elpy-modules)
+   elpy-rpc-backend "jedi"
    elpy-rpc-python-command "python3"))
 
 (use-package py-autopep8
