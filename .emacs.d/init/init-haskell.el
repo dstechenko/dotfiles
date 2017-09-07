@@ -26,16 +26,15 @@
   (setq haskell-process-type 'cabal-repl)
 
   :bind
-  ("M-."     . haskell-mode-jump-to-def-or-tag)
-  ("C-c M-q" . haskell-navigate-imports)
-  ("C-c C-o" . haskell-compile)
-  ("C-c C-d" . haskell-debug)
-  ("C-c c"   . haskell-process-cabal)
-  ("C-S-q"   . haskell-mode-stylish-buffer))
+  (:map haskell-mode-map
+        ("M-."     . haskell-mode-jump-to-def-or-tag)
+        ("C-c M-q" . haskell-navigate-imports)
+        ("C-c C-o" . haskell-compile)
+        ("C-c C-d" . haskell-debug)
+        ("C-c c"   . haskell-process-cabal)
+        ("C-S-q"   . haskell-mode-stylish-buffer)))
 
-(use-package ghc
-  :bind
-  ("C-c l" . ghc-toggle-check-command))
+(use-package ghc)
 
 (use-package shm
   :diminish
@@ -51,24 +50,26 @@
   hindent-mode
 
   :bind
-  ("C-q" . hindent-reformat-region))
+  (:map hindent-mode-map
+        ("C-q" . hindent-reformat-region)))
 
 (defun haskell-mode-bindings ()
   "Bind all Haskell custom keys."
-  (define-key haskell-mode-map (kbd "C-c C-r") nil))
+  (define-key haskell-mode-map (kbd "C-c C-r")                     nil)
+  (define-key haskell-mode-map (kbd "C-c l") 'ghc-toggle-check-command))
 
 (defun interactive-haskell-mode-bindings ()
   "Bind all Interactive Haskell custom keys."
   (defvar interactive-haskell-mode-map)
-  (define-key interactive-haskell-mode-map (kbd "C-c C-r")                     nil)
+  (define-key interactive-haskell-mode-map (kbd "C-c C-r")                    nil)
   (define-key interactive-haskell-mode-map (kbd "M-.")     'haskell-mode-goto-loc))
 
 (defun cabal-mode-bindings ()
   "Bind all Cabal custom keys."
-  (define-key haskell-cabal-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
+  (define-key haskell-cabal-mode-map (kbd "C-c C-z")     'haskell-interactive-switch)
   (define-key haskell-cabal-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
-  (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
-  (define-key haskell-cabal-mode-map (kbd "C-c C-o") 'haskell-compile))
+  (define-key haskell-cabal-mode-map (kbd "C-c C-c")    'haskell-process-cabal-build)
+  (define-key haskell-cabal-mode-map (kbd "C-c C-o")                'haskell-compile))
 
 (defun haskell-mode-tweaks ()
   "Add all Haskell mode tweaks in the right order."
