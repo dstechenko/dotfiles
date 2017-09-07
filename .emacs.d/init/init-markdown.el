@@ -16,8 +16,8 @@
   gfm-mode
 
   :mode
-  (("README\\.md\\'" . gfm-mode)
-   ("\\.md\\'" . markdown-mode)
+  (("README\\.md\\'" .      gfm-mode)
+   ("\\.md\\'"       . markdown-mode)
    ("\\.markdown\\'" . markdown-mode)))
 
 (provide 'init-markdown)

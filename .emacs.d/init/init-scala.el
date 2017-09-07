@@ -60,12 +60,12 @@
 
 (defun scala-mode-bindings ()
   "Bind all Scala custom keys."
-  (bind-key "RET" 'scala-mode-newline-comments scala-mode-map)
-  (bind-key "H-l" 'run-cli-scalafmt scala-mode-map)
-  (bind-key "M-<return>" 'dabbrev-expand scala-mode-map)
-  (bind-key "s-<delete>" (scala-restrict-sp 'sp-kill-sexp) scala-mode-map)
-  (bind-key "s-<backspace>" (scala-restrict-sp 'sp-backward-kill-sexp) scala-mode-map)
-  (bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map))
+  (bind-key "RET"           'scala-mode-newline-comments                     scala-mode-map)
+  (bind-key "H-l"           'run-cli-scalafmt                                scala-mode-map)
+  (bind-key "M-<return>"    'dabbrev-expand                                  scala-mode-map)
+  (bind-key "s-<delete>"    (scala-restrict-sp 'sp-kill-sexp)                scala-mode-map)
+  (bind-key "s-<backspace>" (scala-restrict-sp 'sp-backward-kill-sexp)       scala-mode-map)
+  (bind-key "s-{"           'sp-rewrap-sexp                            smartparens-mode-map))
 
 (defun scala-mode-tweaks ()
   "Add all Scala mode tweaks in the right order."
