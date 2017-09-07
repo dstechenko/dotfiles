@@ -110,13 +110,15 @@
   :config
   (global-disable-mouse-mode))
 
-(use-package base16-theme
+(use-package solarized-theme
   :config
-  (load-theme 'base16-tomorrow-night t))
+  (load-theme 'solarized-dark t))
 
-(use-package powerline
+(use-package smart-mode-line
   :config
-  (powerline-default-theme))
+  (setq sml/no-confirm-load-theme t)
+  (setq sml/theme 'respectful)
+  (sml/setup))
 
 (use-package neotree
   :config
@@ -333,7 +335,6 @@
 (add-window-hook 'toggle-frame-fullscreen)
 (add-text-hook   'flyspell-mode)
 (add-prog-hook   'flyspell-prog-mode)
-(add-prog-hook   'which-function-mode)
 (add-prog-hook   'rainbow-delimiters-mode)
 (add-prog-hook   'turn-on-ctags-auto-update-mode)
 (add-prog-hook   'subword-mode)
