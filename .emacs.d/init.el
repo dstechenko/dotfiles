@@ -6,24 +6,14 @@
 ;;; Commentary:
 ;;
 ;; Emacs tweaks an hacks for personal usage.
+;; Loads an internal/external profile and default configuration.
 ;;
-;; Includes support of the following:
-;; - Python
-;; - Haskell
-;; - Idris
-;; - Scala
-;; - Emacs Lisp
-;; - Coq
-;; - Markdown
-;; - Org
-;;
-;; Configuration is broken down into sections.
-;; Sections outline common modes, hacks or tweaks.
 
 ;;; Code:
 
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "profile" user-emacs-directory))
 
 (require 'init-util)
 
@@ -32,15 +22,7 @@
 
 (require 'init-symbols)
 (require 'init-default)
-
-(require 'init-python)
-(require 'init-haskell)
-(require 'init-idris)
-(require 'init-scala)
-(require 'init-elisp)
-(require 'init-coq)
-(require 'init-markdown)
-(require 'init-org)
+(require 'init-internal)
 
 (provide 'init)
 

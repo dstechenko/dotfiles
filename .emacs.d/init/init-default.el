@@ -41,7 +41,6 @@
  debug-on-error nil
  debug-on-quit  nil)
 
-(set-frame-font "PragmataPro")
 (fset  'yes-or-no-p 'y-or-n-p)
 
 (line-number-mode        1)
