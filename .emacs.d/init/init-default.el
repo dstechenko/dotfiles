@@ -302,10 +302,6 @@
   :commands
   turn-on-ctags-auto-update-mode)
 
-(use-package exec-path-from-shell
-  :init
-  (exec-path-from-shell-initialize))
-
 (use-package beacon
   :diminish
   beacon-mode

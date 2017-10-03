@@ -30,6 +30,10 @@
 
 (defvar mac-command-key-is-meta t)
 
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize))
+
 (provide 'init-mac)
 
 ;;; init-mac.el ends here
