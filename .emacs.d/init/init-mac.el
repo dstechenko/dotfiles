@@ -12,9 +12,6 @@
 
 (add-to-list 'exec-path "/usr/local/bin")
 
-(setq user-emacs-directory
-      (file-truename "~/.emacs.d/"))
-
 (setq
  shell-file-name "/bin/bash"
  shell-command-switch "-ic")

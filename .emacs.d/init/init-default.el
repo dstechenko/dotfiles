@@ -32,8 +32,9 @@
 (setq use-package-always-ensure t)
 
 (setq
- user-full-name "Dmytro Stechenko"
- custom-file (expand-tmp "custom.el"))
+ user-full-name       "Dmytro Stechenko"
+ user-emacs-directory (file-truename "~/.emacs.d/")
+ custom-file          (expand-tmp "custom.el"))
 
 (load custom-file)
 
@@ -293,7 +294,8 @@
   ("s-w" . er/expand-region))
 
 (use-package etags-select
-  :commands etags-select-find-tag)
+  :commands
+  etags-select-find-tag)
 
 (use-package ctags-update
   :diminish
