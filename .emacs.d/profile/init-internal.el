@@ -25,6 +25,13 @@
 
 (set-frame-font "PragmataPro")
 
+(use-package flyspell
+  :diminish
+  flyspell-mode)
+
+(add-text-hook   'flyspell-mode)
+(add-prog-hook   'flyspell-prog-mode)
+
 (require 'init-python)
 (require 'init-haskell)
 (require 'init-idris)

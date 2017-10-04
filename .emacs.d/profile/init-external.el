@@ -19,6 +19,10 @@
 
 ;;; Code:
 
+(defvar url-proxy-services '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+                             ("http"     . ""                       )
+                             ("https"    . ""                       )))
+
 (require 'init-python)
 (require 'init-elisp)
 (require 'init-markdown)

@@ -99,10 +99,6 @@
   :diminish
   flycheck-mode)
 
-(use-package flyspell
-  :diminish
-  flyspell-mode)
-
 (use-package disable-mouse
   :diminish
   global-disable-mouse-mode
@@ -330,8 +326,6 @@
   (auto-package-update-maybe))
 
 (add-window-hook 'toggle-frame-fullscreen)
-(add-text-hook   'flyspell-mode)
-(add-prog-hook   'flyspell-prog-mode)
 (add-prog-hook   'rainbow-delimiters-mode)
 (add-prog-hook   'turn-on-ctags-auto-update-mode)
 (add-prog-hook   'subword-mode)
