@@ -28,11 +28,11 @@
 
 (defun in-system (type body)
   "If `system-type' is  `TYPE' then evaluate `BODY'."
-  (when (eq system-type type) body))
+  (when (eq system-type type) (eval body)))
 
 (defun require-in-system (type file)
   "If `system-type' is `TYPE' then require `FILE'."
-  (in-system type (require file)))
+  (in-system type '(require file)))
 
 (defun require-mac (file)
   "If `system-type' is Mac OS X then require `FILE'."
