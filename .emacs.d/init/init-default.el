@@ -106,9 +106,9 @@
   :config
   (global-disable-mouse-mode))
 
-(use-package solarized-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'solarized-dark t))
+  (load-theme 'zenburn t))
 
 (use-package smart-mode-line
   :config
