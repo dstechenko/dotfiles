@@ -23,6 +23,7 @@
                              ("http"     . ""                       )
                              ("https"    . ""                       )))
 
+(require 'init-default)
 (require 'init-python)
 (require 'init-elisp)
 (require 'init-markdown)

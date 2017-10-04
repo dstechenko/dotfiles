@@ -12,17 +12,15 @@
 ;;; Code:
 
 (package-initialize)
-(add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "init"    user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "profile" user-emacs-directory))
 
 (require 'init-util)
+(require 'init-symbols)
+(require 'init-internal)
 
 (require-mac 'init-mac)
 (require-win 'init-win)
-
-(require 'init-symbols)
-(require 'init-default)
-(require 'init-internal)
 
 (provide 'init)
 

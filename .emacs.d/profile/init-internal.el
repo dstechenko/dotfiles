@@ -25,15 +25,7 @@
 
 (set-frame-font "PragmataPro")
 
-(use-package flyspell
-  :diminish
-  flyspell-mode)
-
-(add-text-hook 'flyspell-mode)
-(add-prog-hook 'flyspell-prog-mode)
-
-(global-set-key (kbd "s-i") 'ispell-word)
-
+(require 'init-default)
 (require 'init-python)
 (require 'init-haskell)
 (require 'init-idris)
@@ -42,6 +34,15 @@
 (require 'init-coq)
 (require 'init-markdown)
 (require 'init-org)
+
+(use-package flyspell
+  :diminish
+  flyspell-mode)
+
+(add-text-hook 'flyspell-mode)
+(add-prog-hook 'flyspell-prog-mode)
+
+(global-set-key (kbd "s-i") 'ispell-word)
 
 (provide 'init-internal)
 
