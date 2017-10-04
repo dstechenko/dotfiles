@@ -19,9 +19,12 @@
 
 ;;; Code:
 
+(defvar external-proxy-url   "")
+(defvar external-ctags-file  "")
+
 (defvar url-proxy-services '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-                             ("http"     . ""                       )
-                             ("https"    . ""                       )))
+                             ("http"     .        external-proxy-url)
+                             ("https"    .        external-proxy-url)))
 
 (require 'init-default)
 (require 'init-python)
@@ -29,9 +32,8 @@
 (require 'init-markdown)
 (require 'init-org)
 
-(add-hook
- 'ctags-auto-update-mode-hook
- (lambda () (setq ctags-update-command "ctags")))
+(add-hook 'ctags-auto-update-mode-hook
+          (lambda () (setq ctags-update-command external-ctags-file)))
 
 (provide 'init-external)
 

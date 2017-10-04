@@ -19,11 +19,11 @@
   (elpy-enable)
 
   :config
-  (elpy-use-cpython "python3")
+  (elpy-use-cpython        "python3")
   (setq
-   elpy-modules (delete 'elpy-module-flymake elpy-modules)
    elpy-rpc-backend        "jedi"
-   elpy-rpc-python-command "python3"))
+   elpy-rpc-python-command "python3"
+   elpy-modules            (delete 'elpy-module-flymake elpy-modules)))
 
 (use-package py-autopep8
   :commands
