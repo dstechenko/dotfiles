@@ -26,6 +26,8 @@
                              ("http"     .       ,external-proxy-url)
                              ("https"    .       ,external-proxy-url)))
 
+(set-frame-font "Consolas")
+
 (require 'init-default)
 (require 'init-python)
 (require 'init-elisp)
