@@ -29,6 +29,10 @@
 (require 'init-markdown)
 (require 'init-org)
 
+(add-hook
+ 'ctags-auto-update-mode-hook
+ (lambda () (setq ctags-update-command "ctags")))
+
 (provide 'init-external)
 
 ;;; init-external.el ends here
