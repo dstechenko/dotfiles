@@ -334,7 +334,6 @@
 (global-set-key (kbd "C-.")            'xref-find-definitions)
 (global-set-key (kbd "C-S-k")          'kill-visual-line)
 (global-set-key (kbd "M-o")            'other-window)
-(global-set-key (kbd "s-i")            'ispell-word)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (provide 'init-default)

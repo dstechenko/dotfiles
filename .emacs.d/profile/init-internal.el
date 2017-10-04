@@ -29,8 +29,10 @@
   :diminish
   flyspell-mode)
 
-(add-text-hook   'flyspell-mode)
-(add-prog-hook   'flyspell-prog-mode)
+(add-text-hook 'flyspell-mode)
+(add-prog-hook 'flyspell-prog-mode)
+
+(global-set-key (kbd "s-i") 'ispell-word)
 
 (require 'init-python)
 (require 'init-haskell)
