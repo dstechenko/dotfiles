@@ -23,8 +23,8 @@
 (defvar external-ctags-file  "")
 
 (defvar url-proxy-services '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-                             ("http"     .        external-proxy-url)
-                             ("https"    .        external-proxy-url)))
+                             ("http"     .       ,external-proxy-url)
+                             ("https"    .       ,external-proxy-url)))
 
 (require 'init-default)
 (require 'init-python)
