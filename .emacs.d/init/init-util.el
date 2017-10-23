@@ -26,22 +26,6 @@
   "Expand `load-path' list with `PATH'."
   (add-to-list 'load-path path))
 
-(defun in-system (type body)
-  "If `system-type' is  `TYPE' then evaluate `BODY'."
-  (when (eq system-type type) (eval body)))
-
-(defun require-in-system (type file)
-  "If `system-type' is `TYPE' then require `FILE'."
-  (in-system type '(require file)))
-
-(defun require-mac (file)
-  "If `system-type' is Mac OS X then require `FILE'."
-  (require-in-system 'darwin file))
-
-(defun require-win (file)
-  "If `system-type' is Windows then require `FILE'."
-  (require-in-system 'windows-nt file))
-
 (defun add-prog-hook (mode)
   "Add `prog-mode-hook' with `MODE'."
   (add-hook 'prog-mode-hook mode))

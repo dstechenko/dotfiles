@@ -21,6 +21,7 @@
   :config
   (elpy-use-cpython        "python3")
   (setq
+   elpy-rpc-timeout        nil
    elpy-rpc-backend        "jedi"
    elpy-rpc-python-command "python3"
    elpy-modules            (delete 'elpy-module-flymake elpy-modules)))

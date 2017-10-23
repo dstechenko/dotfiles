@@ -6,6 +6,7 @@
 ;;; Commentary:
 ;;
 ;; Emacs external profile configuration.
+;; Windows packages configuration and tweaks.
 ;;
 ;; Includes support of the following:
 ;; - Python
@@ -19,6 +20,7 @@
 
 ;;; Code:
 
+(defvar win-bash-home        "")
 (defvar external-proxy-url   "")
 (defvar external-ctags-file  "")
 
@@ -26,7 +28,22 @@
                              ("http"     .       ,external-proxy-url)
                              ("https"    .       ,external-proxy-url)))
 
+(defvar explicit-shell-file-name (expand-file-name "bash.exe" win-bash-home))
+(setq   find-program             (expand-file-name "find.exe" win-bash-home))
+(setq   grep-program             (expand-file-name "grep.exe" win-bash-home))
+
+(defvar explicit-bash-args       '("--login" "-i"))
+(defvar shell-file-name          explicit-shell-file-name)
+
 (set-frame-font "Consolas")
+
+(add-to-list 'exec-path win-bash-home)
+
+(defadvice grep-compute-defautls (around grep-compute-defaults-advice-null-device)
+  "Use /dev/null as the `null-device' for grep."
+  (let ((null-device "/dev/null")) ad-do-it))
+
+(ad-activate 'grep-compute-defaults)
 
 (require 'init-default)
 (require 'init-python)

@@ -19,9 +19,6 @@
 (require 'init-symbols)
 (require 'init-internal)
 
-(require-mac 'init-mac)
-(require-win 'init-win)
-
 (provide 'init)
 
 ;;; init.el ends here

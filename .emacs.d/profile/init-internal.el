@@ -6,6 +6,7 @@
 ;;; Commentary:
 ;;
 ;; Emacs internal profile configuration.
+;; Mac OS X packages configuration and tweaks.
 ;;
 ;; Includes support of the following:
 ;; - Python
@@ -24,6 +25,27 @@
 ;;; Code:
 
 (set-frame-font "PragmataPro")
+
+(add-to-list 'exec-path "/usr/local/bin")
+
+(setq
+ shell-file-name "/bin/bash"
+ shell-command-switch "-ic")
+
+(setq
+ mac-control-modifier 'control
+ mac-command-modifier 'meta
+ mac-pass-command-to-system nil
+ mac-pass-control-to-system nil
+ mac-right-command-modifier 'super
+ mac-right-option-modifier 'hyper
+ mac-option-modifier nil)
+
+(defvar mac-command-key-is-meta t)
+
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize))
 
 (require 'init-default)
 (require 'init-python)
