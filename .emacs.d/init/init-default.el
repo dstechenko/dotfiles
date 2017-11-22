@@ -31,12 +31,31 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(set-frame-font "PragmataPro")
+
 (setq
  user-full-name       "Dmytro Stechenko"
  user-emacs-directory (file-truename "~/.emacs.d/")
  custom-file          (expand-tmp "custom.el"))
 
 (load custom-file)
+
+(add-to-list 'exec-path "/usr/local/bin")
+
+(setq
+ shell-file-name "/bin/bash"
+ shell-command-switch "-ic")
+
+(setq
+ mac-control-modifier 'control
+ mac-command-modifier 'meta
+ mac-pass-command-to-system nil
+ mac-pass-control-to-system nil
+ mac-right-command-modifier 'super
+ mac-right-option-modifier 'hyper
+ mac-option-modifier nil)
+
+(defvar mac-command-key-is-meta t)
 
 (setq
  debug-on-error nil
@@ -78,6 +97,14 @@
  cursor-in-non-selected-windows nil)
 
 (diminish 'visual-line-mode)
+
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize))
+
+(use-package flyspell
+  :diminish
+  flyspell-mode)
 
 (use-package ido
   :config
@@ -329,11 +356,17 @@
 (add-prog-hook   'rainbow-delimiters-mode)
 (add-prog-hook   'turn-on-ctags-auto-update-mode)
 (add-prog-hook   'subword-mode)
+(add-text-hook   'flyspell-mode)
+(add-prog-hook   'flyspell-prog-mode)
+
+(global-set-key (kbd "s-i")            'ispell-word)
 
 (global-set-key (kbd "C-k")            'kill-whole-line)
 (global-set-key (kbd "C-.")            'xref-find-definitions)
 (global-set-key (kbd "C-S-k")          'kill-visual-line)
+
 (global-set-key (kbd "M-o")            'other-window)
+
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (provide 'init-default)
