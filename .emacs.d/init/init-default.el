@@ -14,17 +14,6 @@
 (require 'dired-x)
 (require 'init-util)
 
-(setq package-archives '(("gnu"          . "http://elpa.gnu.org/packages/")
-                         ("org"          . "http://orgmode.org/elpa/")
-                         ("melpa"        . "http://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
-
-(package-initialize)
-
-(unless package-archive-contents
-  (package-refresh-contents))
-
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
@@ -47,13 +36,11 @@
  shell-command-switch "-ic")
 
 (setq
- mac-control-modifier 'control
- mac-command-modifier 'meta
- mac-pass-command-to-system nil
- mac-pass-control-to-system nil
+ mac-control-modifier       'control
+ mac-command-modifier       'meta
  mac-right-command-modifier 'super
- mac-right-option-modifier 'hyper
- mac-option-modifier nil)
+ mac-right-option-modifier  'hyper
+ mac-option-modifier         nil)
 
 (defvar mac-command-key-is-meta t)
 
@@ -77,16 +64,16 @@
 (defvar tags-revert-without-query t)
 
 (setq
- vc-follow-symlinks        t
- inhibit-startup-screen    t
- scroll-error-top-bottom   t
- tags-add-tables           nil
- initial-scratch-message   nil
- create-lockfiles          nil
- make-backup-files         nil
- tooltip-mode              nil
- show-help-function        nil
- sentence-end-double-space nil
+ vc-follow-symlinks         t
+ inhibit-startup-screen     t
+ scroll-error-top-bottom    t
+ tags-add-tables            nil
+ initial-scratch-message    nil
+ create-lockfiles           nil
+ make-backup-files          nil
+ tooltip-mode               nil
+ show-help-function         nil
+ sentence-end-double-space  nil
  ring-bell-function        'ignore)
 
 (setq-default
@@ -96,7 +83,7 @@
  indent-tabs-mode               nil
  cursor-in-non-selected-windows nil)
 
-(diminish 'visual-line-mode)
+; (diminish 'visual-line-mode)
 
 (use-package exec-path-from-shell
   :init
