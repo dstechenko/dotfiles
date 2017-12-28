@@ -18,13 +18,6 @@
  shell-file-name "/bin/bash"
  shell-command-switch "-ic")
 
-(setq
- mac-control-modifier       'control
- mac-command-modifier       'meta
- mac-right-command-modifier 'super
- mac-right-option-modifier  'hyper
- mac-option-modifier         nil)
-
 (provide 'init-mac)
 
 ;;; init-mac.el ends here
