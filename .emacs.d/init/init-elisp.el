@@ -16,22 +16,14 @@
   (auto-compile-on-save-mode 1))
 
 (use-package eldoc
-  :diminish
-  eldoc-mode
-
   :commands
   eldoc-mode)
 
 (use-package flycheck
-  :diminish
-  flycheck-mode
-
   :config
   (setq-default flycheck-emacs-lisp-load-path 'inherit))
 
-(use-package aggressive-indent
-  :diminish
-  aggressive-indent-mode)
+(use-package aggressive-indent)
 
 (defun emacs-lisp-mode-bindings ()
   "Bind all Emacs Lisp custom keys."

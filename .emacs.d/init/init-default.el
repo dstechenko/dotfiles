@@ -24,9 +24,7 @@
   :init
   (exec-path-from-shell-initialize))
 
-(use-package flyspell
-  :diminish
-  flyspell-mode)
+(use-package flyspell)
 
 (use-package ido
   :config
@@ -40,13 +38,9 @@
   :config
   (setq bookmark-default-file (expand-tmp "bookmarks")))
 
-(use-package page-break-lines
-  :diminish
-  page-break-lines-mode)
+(use-package page-break-lines)
 
-(use-package flycheck
-  :diminish
-  flycheck-mode)
+(use-package flycheck)
 
 (use-package zenburn-theme
   :config
@@ -56,6 +50,7 @@
   :config
   (setq sml/no-confirm-load-theme t)
   (setq sml/theme 'respectful)
+  (setq rm-blacklist "")
   (sml/setup))
 
 (use-package neotree
@@ -84,9 +79,6 @@
   (setq smex-save-file (expand-tmp "smex-items")))
 
 (use-package anzu
-  :diminish
-  anzu-mode
-
   :config
   (global-anzu-mode 1))
 
@@ -98,9 +90,6 @@
                           (bookmarks . 5))))
 
 (use-package projectile
-  :diminish
-  projectile-mode
-
   :demand
   (setq projectile-use-git-grep t)
 
@@ -162,22 +151,12 @@
   ("s-G" . git-timemachine-toggle))
 
 (use-package git-gutter
-  :diminish
-  git-gutter-mode "Git"
-
   :config
   (custom-set-variables '(git-gutter:modified-sign " * ")
                         '(git-gutter:added-sign    " + ")
-                        '(git-gutter:deleted-sign  " - "))
-
-  :bind
-  ("s-t" . git-gutter-mode)
-  ("s-T" . git-gutter:revert-hunk))
+                        '(git-gutter:deleted-sign  " - ")))
 
 (use-package company
-  :diminish
-  company-mode
-
   :commands
   company-mode
 
@@ -188,9 +167,6 @@
   ("C-<return>" . company-complete-common))
 
 (use-package yasnippet
-  :diminish
-  yas-minor-mode
-
   :commands
   (yas-minor-mode yas-reload-all)
 
@@ -201,9 +177,6 @@
   ("C-<tab>" . yas-describe-tables))
 
 (use-package smartparens
-  :diminish
-  smartparens-mode
-
   :commands
   sp-pair
 
@@ -218,9 +191,6 @@
   ("C-M-y" . sp-down-sexp))
 
 (use-package whitespace-cleanup-mode
-  :diminish
-  whitespace-cleanup-mode
-
   :config
   (global-whitespace-cleanup-mode 1))
 
@@ -236,19 +206,12 @@
   etags-select-find-tag)
 
 (use-package ctags-update
-  :diminish
-  ctags-auto-update-mode
-
   :commands
   turn-on-ctags-auto-update-mode)
 
-(use-package subword
-  :diminish
-  subword-mode)
+(use-package subword)
 
-(use-package rainbow-delimiters
-  :diminish
-  rainbow-delimiters-mode)
+(use-package rainbow-delimiters)
 
 (use-package auto-package-update
   :config

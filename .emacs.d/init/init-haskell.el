@@ -27,18 +27,14 @@
 
 (use-package ghc)
 
-(use-package shm
-  :diminish
-  structured-haskell-mode)
+(use-package shm)
 
 (use-package company-ghc
   :config
   (setq company-ghc-show-info t)
   (add-to-list 'company-backends 'company-ghc))
 
-(use-package hindent
-  :diminish
-  hindent-mode)
+(use-package hindent)
 
 (defun haskell-mode-bindings ()
   "Bind all Haskell custom keys."

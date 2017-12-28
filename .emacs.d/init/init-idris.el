@@ -18,10 +18,6 @@
    idris-repl-banner-functions '(idris-repl-text-banner)
    idris-repl-prompt-style 'short))
 
-(defun idris-mode-diminish ()
-  "Abbreviate Idris minor modes."
-  (diminish 'idris-simple-indent-mode))
-
 (defun idris-mode-configuration ()
   "Configure all Idris mode properties."
   (ctags-auto-update-mode -1)
@@ -29,7 +25,6 @@
 
 (defun idris-mode-tweaks ()
   "Add all Idris mode tweaks in the right order."
-  (idris-mode-diminish)
   (idris-mode-configuration))
 
 (add-hook 'idris-mode-hook 'idris-mode-tweaks)
