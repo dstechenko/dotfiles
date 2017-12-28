@@ -42,9 +42,10 @@
 
 (use-package flycheck)
 
-(use-package zenburn-theme
+(use-package solarized-theme
+  :ensure t
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'solarized-dark t))
 
 (use-package smart-mode-line
   :config
@@ -84,6 +85,7 @@
 
 (use-package dashboard
   :config
+  (setq dashboard-startup-banner 3)
   (dashboard-setup-startup-hook)
   (setq dashboard-items '((recents  . 5)
                           (projects . 5)
