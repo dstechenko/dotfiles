@@ -22,11 +22,19 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(add-to-list 'load-path
-             (expand-file-name "init" user-emacs-directory))
+(add-to-list
+ 'load-path
+ (expand-file-name "init" user-emacs-directory))
 
 (require 'init-util)
+
+(require-lin 'init-lin)
+(require-mac 'init-mac)
+(require-win 'init-win)
+
+(require 'init-constant)
 (require 'init-symbols)
+
 (require 'init-default)
 (require 'init-python)
 (require 'init-haskell)

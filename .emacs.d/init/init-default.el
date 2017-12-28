@@ -20,71 +20,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(set-frame-font "PragmataPro")
-
-(setq
- user-full-name       "Dmytro Stechenko"
- user-emacs-directory (file-truename "~/.emacs.d/")
- custom-file          (expand-tmp "custom.el"))
-
-(load custom-file)
-
-(add-to-list 'exec-path "/usr/local/bin")
-
-(setq
- shell-file-name "/bin/bash"
- shell-command-switch "-ic")
-
-(setq
- mac-control-modifier       'control
- mac-command-modifier       'meta
- mac-right-command-modifier 'super
- mac-right-option-modifier  'hyper
- mac-option-modifier         nil)
-
-(defvar mac-command-key-is-meta t)
-
-(setq
- debug-on-error nil
- debug-on-quit  nil)
-
-(fset  'yes-or-no-p 'y-or-n-p)
-
-(line-number-mode        1)
-(column-number-mode      1)
-(show-paren-mode         1)
-(global-visual-line-mode 1)
-(scroll-bar-mode        -1)
-(menu-bar-mode          -1)
-(tool-bar-mode          -1)
-(mouse-wheel-mode       -1)
-(electric-indent-mode   -1)
-(blink-cursor-mode      -1)
-
-(defvar tags-revert-without-query t)
-
-(setq
- vc-follow-symlinks         t
- inhibit-startup-screen     t
- scroll-error-top-bottom    t
- tags-add-tables            nil
- initial-scratch-message    nil
- create-lockfiles           nil
- make-backup-files          nil
- tooltip-mode               nil
- show-help-function         nil
- sentence-end-double-space  nil
- ring-bell-function        'ignore)
-
-(setq-default
- fill-column                    80
- tab-width                      4
- c-basic-offset                 4
- indent-tabs-mode               nil
- cursor-in-non-selected-windows nil)
-
-; (diminish 'visual-line-mode)
-
 (use-package exec-path-from-shell
   :init
   (exec-path-from-shell-initialize))
@@ -112,13 +47,6 @@
 (use-package flycheck
   :diminish
   flycheck-mode)
-
-(use-package disable-mouse
-  :diminish
-  global-disable-mouse-mode
-
-  :config
-  (global-disable-mouse-mode))
 
 (use-package zenburn-theme
   :config
@@ -313,19 +241,6 @@
 
   :commands
   turn-on-ctags-auto-update-mode)
-
-(use-package beacon
-  :diminish
-  beacon-mode
-
-  :config
-  (beacon-mode 1)
-  (setq
-   beacon-size 15
-   beacon-blink-when-focused t
-   beacon-blink-when-point-moves-vertically 2
-   beacon-blink-when-point-moves-horizontally 2
-   beacon-color (face-attribute 'cursor :background)))
 
 (use-package subword
   :diminish
