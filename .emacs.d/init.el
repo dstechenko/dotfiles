@@ -36,6 +36,7 @@
 (require 'init-symbols)
 
 (require 'init-default)
+(require 'init-c)
 (require 'init-python)
 (require 'init-haskell)
 (require 'init-idris)
