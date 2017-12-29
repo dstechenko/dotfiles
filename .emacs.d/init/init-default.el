@@ -50,7 +50,7 @@
 (use-package smart-mode-line
   :config
   (setq sml/no-confirm-load-theme t)
-  (setq sml/theme       'respectful)
+  (setq sml/theme               nil)
   (setq rm-blacklist             "")
   (sml/setup))
 
@@ -205,7 +205,6 @@
 (global-set-key (kbd "s-i")              'ispell-word)
 (global-set-key (kbd "C-k")          'kill-whole-line)
 (global-set-key (kbd "C-S-k")       'kill-visual-line) ;; FIX ME
-(global-set-key (kbd "C-.")    'xref-find-definitions) ;; FIX ME
 
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
