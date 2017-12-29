@@ -185,7 +185,10 @@
 
 (use-package ctags-update
   :commands
-  turn-on-ctags-auto-update-mode)
+  turn-on-ctags-auto-update-mode
+
+  :config
+  (setq ctags-update-prompt-create-tags nil))
 
 (use-package subword)
 

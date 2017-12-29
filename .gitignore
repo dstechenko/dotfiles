@@ -2,6 +2,7 @@
 .emacs.d/auto-save-list
 .emacs.d/elpa
 .emacs.d/ensime
+.emacs.d/eshell
 .emacs.d/**/flycheck*
 .emacs.d/.last-package-update-day
 .emacs.d/lisp
