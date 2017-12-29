@@ -50,15 +50,15 @@
 (use-package smart-mode-line
   :config
   (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'respectful)
-  (setq rm-blacklist "")
+  (setq sml/theme       'respectful)
+  (setq rm-blacklist             "")
   (sml/setup))
 
 (use-package neotree
   :config
-  (setq
-   neo-window-width 40
-   neo-theme "ascii")
+  (setq neo-show-hidden-files  t)
+  (setq neo-window-width      40)
+  (setq neo-theme        "ascii")
 
   (defun neotree-toggle-in-project ()
     (interactive)
@@ -69,7 +69,7 @@
       (neotree-toggle)))
 
   :bind
-  ("H-o" . neotree-toggle-in-project))
+  ("M-j" . neotree-toggle-in-project))
 
 (use-package smex
   :bind
@@ -83,14 +83,6 @@
   :config
   (global-anzu-mode 1))
 
-(use-package dashboard
-  :config
-  (setq dashboard-startup-banner 3)
-  (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 5)
-                          (projects . 5)
-                          (bookmarks . 5))))
-
 (use-package projectile
   :demand
   (setq projectile-use-git-grep t)
@@ -103,13 +95,7 @@
   (setq
    projectile-known-projects-file (expand-tmp "projectile-bookmarks.eld")
    projectile-tags-backend 'etags-select
-   projectile-switch-project-action 'neotree-projectile-action)
-
-  :bind
-  ("s-o" . projectile-find-file)
-  ("s-p" . projectile-grep)
-  ("M-." . projectile-find-tag)
-  ("s-'" . projectile-regenerate-tags))
+   projectile-switch-project-action 'neotree-projectile-action))
 
 (use-package flx-ido
   :demand
@@ -139,24 +125,17 @@
   ("M-i" . popup-imenu))
 
 (use-package magit
-  :commands
-  magit-status
-
   :config
-  (magit-auto-revert-mode -1)
+  (magit-auto-revert-mode -1))
 
-  :bind
-  ("s-g" . magit-status))
-
-(use-package git-timemachine
-  :bind
-  ("s-G" . git-timemachine-toggle))
+(use-package git-timemachine)
 
 (use-package git-gutter
   :config
-  (custom-set-variables '(git-gutter:modified-sign " * ")
-                        '(git-gutter:added-sign    " + ")
-                        '(git-gutter:deleted-sign  " - ")))
+  (custom-set-variables
+   '(git-gutter:modified-sign " * ")
+   '(git-gutter:added-sign    " + ")
+   '(git-gutter:deleted-sign  " - ")))
 
 (use-package company
   :commands
@@ -166,17 +145,14 @@
   (setq company-tooltip-align-annotations t)
 
   :bind
-  ("C-<return>" . company-complete-common))
+  ("M-RET" . company-complete))
 
 (use-package yasnippet
   :commands
   (yas-minor-mode yas-reload-all)
 
   :config
-  (yas-reload-all)
-
-  :bind
-  ("C-<tab>" . yas-describe-tables))
+  (yas-reload-all))
 
 (use-package smartparens
   :commands
@@ -201,7 +177,7 @@
   er/expand-region
 
   :bind
-  ("s-w" . er/expand-region))
+  ("M-o" . er/expand-region))
 
 (use-package etags-select
   :commands
@@ -219,20 +195,18 @@
   :config
   (auto-package-update-maybe))
 
-(add-window-hook 'toggle-frame-fullscreen)
-(add-prog-hook   'rainbow-delimiters-mode)
-(add-prog-hook   'turn-on-ctags-auto-update-mode)
-(add-prog-hook   'subword-mode)
-(add-text-hook   'flyspell-mode)
-(add-prog-hook   'flyspell-prog-mode)
+(add-window-hook             'toggle-frame-fullscreen)
+(add-prog-hook               'rainbow-delimiters-mode)
+(add-prog-hook        'turn-on-ctags-auto-update-mode)
+(add-prog-hook                          'subword-mode)
+(add-text-hook                         'flyspell-mode)
+(add-prog-hook                    'flyspell-prog-mode)
 
-(global-set-key (kbd "s-i")            'ispell-word)
+(global-set-key (kbd "s-i")              'ispell-word)
+(global-set-key (kbd "C-k")          'kill-whole-line)
+(global-set-key (kbd "C-S-k")       'kill-visual-line) ;; FIX ME
+(global-set-key (kbd "C-.")    'xref-find-definitions) ;; FIX ME
 
-(global-set-key (kbd "C-k")            'kill-whole-line)
-(global-set-key (kbd "C-.")            'xref-find-definitions)
-(global-set-key (kbd "C-S-k")          'kill-visual-line)
-
-(global-set-key (kbd "M-o")            'other-window)
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
