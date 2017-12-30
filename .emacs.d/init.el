@@ -5,8 +5,8 @@
 
 ;;; Commentary:
 ;;
-;; Emacs tweaks an hacks for personal usage.
-;; Loads an internal/external profile and default configuration.
+;; Emacs tweaks and hacks for personal usage.
+;; Loads OS specific and default configuration.
 ;;
 
 ;;; Code:
