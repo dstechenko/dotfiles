@@ -18,7 +18,6 @@
   (package-install 'use-package))
 
 (require 'use-package)
-(setq use-package-always-defer t)
 (setq use-package-always-ensure t)
 
 (use-package exec-path-from-shell
@@ -46,7 +45,6 @@
   (global-flycheck-mode))
 
 (use-package base16-theme
-  :ensure t
   :config
   (load-theme 'base16-tomorrow-night t))
 

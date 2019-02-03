@@ -8,4 +8,4 @@
 .emacs.d/snippets
 .emacs.d/tmp
 .emacs.d/*.eld
-.emacs.d/session.*
+.emacs.d/*session*

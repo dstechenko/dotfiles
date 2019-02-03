@@ -10,7 +10,7 @@
 
 ;;; Code:
 
-(message "init linux")
+(defvar lsp-scala-load-path "~/Projects/lsp-scala")
 
 (provide 'init-lin)
 

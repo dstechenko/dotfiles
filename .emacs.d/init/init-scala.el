@@ -28,11 +28,12 @@
   melpa-stable
 
   :commands
-  sbt-start sbt-command
+  sbt-command sbt-start
 
   ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
   ;; Allows using SPACE when in the minibuffer
 
+  :config
   (substitute-key-definition
    'minibuffer-complete-word
    'self-insert-command
@@ -48,7 +49,7 @@
   :demand t
 
   :load-path
-  "~/path/to/lsp-scala"
+  lsp-scala-load-path
 
   :after
   scala-mode

@@ -19,10 +19,6 @@
   :commands
   eldoc-mode)
 
-(use-package flycheck
-  :config
-  (setq-default flycheck-emacs-lisp-load-path 'inherit))
-
 (use-package aggressive-indent)
 
 (defun emacs-lisp-mode-bindings ()
@@ -31,6 +27,7 @@
 
 (defun emacs-lisp-mode-configuration ()
   "Configure all Emacs Lisp properties."
+  (setq-default flycheck-emacs-lisp-load-path 'inherit)
   (setq show-trailing-whitespace t))
 
 (defun emacs-lisp-mode-tweaks ()
