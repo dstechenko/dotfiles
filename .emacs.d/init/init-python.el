@@ -1,6 +1,6 @@
 ;;; init-python.el --- Emacs configuration
 
-;; Copyright (C) 2017 Dmytro Stechenko
+;; Copyright (C) 2019 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -13,13 +13,11 @@
 (use-package elpy
   :commands
   elpy-enable
-  elpy-use-cpython
 
   :init
   (elpy-enable)
 
   :config
-  (elpy-use-cpython        "python3")
   (setq
    elpy-rpc-timeout        nil
    elpy-rpc-backend        "jedi"

@@ -1,6 +1,6 @@
 ;;; init-default.el --- Emacs configuration
 
-;; Copyright (C) 2017 Dmytro Stechenko
+;; Copyright (C) 2019 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -18,6 +18,7 @@
   (package-install 'use-package))
 
 (require 'use-package)
+(setq use-package-always-defer t)
 (setq use-package-always-ensure t)
 
 (use-package exec-path-from-shell
@@ -40,12 +41,14 @@
 
 (use-package page-break-lines)
 
-(use-package flycheck)
+(use-package flycheck
+  :init
+  (global-flycheck-mode))
 
-(use-package solarized-theme
+(use-package base16-theme
   :ensure t
   :config
-  (load-theme 'solarized-dark t))
+  (load-theme 'base16-tomorrow-night t))
 
 (use-package smart-mode-line
   :config
@@ -94,7 +97,6 @@
   (projectile-mode 1)
   (setq
    projectile-known-projects-file (expand-tmp "projectile-bookmarks.eld")
-   projectile-tags-backend 'etags-select
    projectile-switch-project-action 'neotree-projectile-action))
 
 (use-package flx-ido
@@ -178,10 +180,6 @@
 
   :bind
   ("M-o" . er/expand-region))
-
-(use-package etags-select
-  :commands
-  etags-select-find-tag)
 
 (use-package ctags-update
   :commands

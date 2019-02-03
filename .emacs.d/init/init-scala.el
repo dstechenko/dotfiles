@@ -1,6 +1,6 @@
 ;;; init-scala.el --- Emacs configuration
 
-;; Copyright (C) 2017 Dmytro Stechenko
+;; Copyright (C) 2019 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -17,6 +17,9 @@
   :pin
   melpa-stable
 
+  :mode
+  "\\.s\\(cala\\|bt\\)$"
+
   :interpreter
   ("scala" . scala-mode))
 
@@ -25,8 +28,33 @@
   melpa-stable
 
   :commands
-  sbt-start
-  sbt-command)
+  sbt-start sbt-command
+
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; Allows using SPACE when in the minibuffer
+
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
+
+(use-package lsp-mode)
+
+(use-package lsp-ui
+  :hook
+  (lsp-mode . lsp-ui-mode))
+
+(use-package lsp-scala
+  :demand t
+
+  :load-path
+  "~/path/to/lsp-scala"
+
+  :after
+  scala-mode
+
+  :hook
+  (scala-mode . lsp))
 
 (defun scala-restrict-sp (sym)
   "Parenthesis restriction on `SYM' for Scala."

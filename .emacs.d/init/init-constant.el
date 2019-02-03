@@ -1,6 +1,6 @@
 ;;; init-constant.el --- Emacs configuration
 
-;; Copyright (C) 2017 Dmytro Stechenko
+;; Copyright (C) 2019 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -23,6 +23,7 @@
  debug-on-error nil
  debug-on-quit  nil)
 
+(set-frame-font "PragmataPro")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (line-number-mode        1)

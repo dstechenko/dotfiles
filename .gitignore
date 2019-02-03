@@ -1,10 +1,11 @@
 # Emacs
 .emacs.d/auto-save-list
 .emacs.d/elpa
-.emacs.d/ensime
 .emacs.d/eshell
 .emacs.d/**/flycheck*
 .emacs.d/.last-package-update-day
 .emacs.d/lisp
 .emacs.d/snippets
 .emacs.d/tmp
+.emacs.d/*.eld
+.emacs.d/session.*
