@@ -57,6 +57,8 @@
   :hook
   (scala-mode . lsp))
 
+(use-package company-lsp)
+
 (defun scala-restrict-sp (sym)
   "Parenthesis restriction on `SYM' for Scala."
   (sp-restrict-to-pairs-interactive "{([" sym))

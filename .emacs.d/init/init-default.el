@@ -46,7 +46,7 @@
 
 (use-package base16-theme
   :config
-  (load-theme 'base16-tomorrow-night t))
+  (load-theme 'base16-grayscale-dark t))
 
 (use-package smart-mode-line
   :config
