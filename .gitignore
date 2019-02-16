@@ -7,5 +7,5 @@
 .emacs.d/lisp
 .emacs.d/snippets
 .emacs.d/tmp
-.emacs.d/*.eld
+.emacs.d/projectile*
 .emacs.d/*session*

@@ -46,7 +46,7 @@
 
 (use-package base16-theme
   :config
-  (load-theme 'base16-grayscale-dark t))
+  (load-theme 'base16-monokai t))
 
 (use-package smart-mode-line
   :config
@@ -85,15 +85,13 @@
   (global-anzu-mode 1))
 
 (use-package projectile
-  :demand
-  (setq projectile-use-git-grep t)
-
   :commands
   projectile-project-p
 
   :config
   (projectile-mode 1)
   (setq
+   projectile-use-git-grep t
    projectile-known-projects-file (expand-tmp "projectile-bookmarks.eld")
    projectile-switch-project-action 'neotree-projectile-action))
 
