@@ -44,9 +44,9 @@
   :init
   (global-flycheck-mode))
 
-(use-package base16-theme
+(use-package leuven-theme
   :config
-  (load-theme 'base16-monokai t))
+  (load-theme 'leuven t))
 
 (use-package smart-mode-line
   :config

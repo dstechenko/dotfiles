@@ -34,17 +34,15 @@
 (require-win 'init-win)
 
 (require 'init-constant)
-(require 'init-symbols)
-
 (require 'init-default)
-(require 'init-c)
-(require 'init-python)
-(require 'init-idris)
-(require 'init-scala)
-(require 'init-elisp)
-(require 'init-coq)
+
 (require 'init-markdown)
 (require 'init-org)
+
+(require 'init-c)
+(require 'init-python)
+(require 'init-scala)
+(require 'init-elisp)
 
 (provide 'init)
 
