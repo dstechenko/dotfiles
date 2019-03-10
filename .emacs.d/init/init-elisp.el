@@ -40,8 +40,7 @@
   (yas-minor-mode)
   (company-mode)
   (show-paren-mode)
-  (smartparens-strict-mode)
-  (enable-generic-pretty-symbols))
+  (smartparens-strict-mode))
 
 (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-tweaks)
 

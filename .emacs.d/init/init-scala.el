@@ -10,9 +10,6 @@
 
 ;;; Code:
 
-(require 'init-symbols)
-(require 'init-default)
-
 (use-package scala-mode
   :pin
   melpa-stable
@@ -107,8 +104,7 @@
   (scala-mode-bindings)
   (scala-mode-multi-line-comments)
   (scala-mode-smartparens)
-  (scala-mode:goto-start-of-code)
-  (enable-scala-pretty-symbols))
+  (scala-mode:goto-start-of-code))
 
 (add-hook 'scala-mode-hook 'scala-mode-tweaks)
 

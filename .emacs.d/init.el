@@ -39,10 +39,10 @@
 (require 'init-markdown)
 (require 'init-org)
 
-(require 'init-c)
-(require 'init-python)
-(require 'init-scala)
 (require 'init-elisp)
+(require 'init-scala)
+(require 'init-python)
+(require 'init-c)
 
 (provide 'init)
 
