@@ -18,6 +18,10 @@
  shell-file-name "/bin/bash"
  shell-command-switch "-ic")
 
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize))
+
 (provide 'init-mac)
 
 ;;; init-mac.el ends here

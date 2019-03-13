@@ -40,9 +40,7 @@
 (require 'init-org)
 
 (require 'init-elisp)
-(require 'init-scala)
 (require 'init-python)
-(require 'init-c)
 
 (provide 'init)
 

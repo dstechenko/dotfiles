@@ -10,8 +10,6 @@
 
 ;;; Code:
 
-(message "init win")
-
 (provide 'init-win)
 
 ;;; init-win.el ends here

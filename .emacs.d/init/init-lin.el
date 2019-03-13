@@ -10,8 +10,6 @@
 
 ;;; Code:
 
-(defvar lsp-scala-load-path "~/Projects/lsp-scala")
-
 (provide 'init-lin)
 
 ;;; init-lin.el ends here

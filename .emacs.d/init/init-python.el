@@ -17,23 +17,21 @@
   :init
   (elpy-enable)
 
+  :hook
+  (elpy-mode
+   . (lambda ()
+       (flycheck-mode)
+       (py-autopep8-enable-on-save)))
+
   :config
   (setq
    elpy-rpc-timeout        nil
-   elpy-rpc-backend        "jedi"
    elpy-rpc-python-command "python3"
    elpy-modules            (delete 'elpy-module-flymake elpy-modules)))
 
 (use-package py-autopep8
   :commands
   py-autopep8-enable-on-save)
-
-(defun elpy-mode-tweaks ()
-  "Add all Elpy mode tweaks in the right order."
-  (flycheck-mode)
-  (py-autopep8-enable-on-save))
-
-(add-hook 'elpy-mode-hook 'elpy-mode-tweaks)
 
 (provide 'init-python)
 
