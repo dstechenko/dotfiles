@@ -10,7 +10,13 @@
 
 ;;; Code:
 
-(use-package org)
+(use-package org
+  :commands
+  org-mode
+
+  :mode
+  (("\\.org\\'"     . org-mode)
+   ("\\.org.txt\\'" . org-mode)))
 
 (provide 'init-org)
 

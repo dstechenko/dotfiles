@@ -1,11 +1,16 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    source /etc/bashrc
+fi
+
+# Exports
 export    PS1="$> "
-export   PATH=/usr/local/bin:$PATH
-export   PATH="$HOME/Library/Haskell/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 export   LANG=en_US.UTF-8
 
-alias   ctags=/usr/local/bin/ctags
-alias      la="ls -la"
-alias     lah="ls -lah"
+# Aliases
 alias    pip3="python3 -m pip"
-alias     emc="/usr/local/bin/emacs -nw"
+alias     emc="emacs -nw"
+alias  rcstat="rclone sync --dry-run ~/Documents gdrive:/"
+alias  rcpush="rclone sync ~/Documents gdrive:/"
+alias  rcpull="rclone copy gdrive:/ ~/Documents"
