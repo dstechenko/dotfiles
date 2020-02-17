@@ -1,4 +1,0 @@
-#!/bin/bash
-
-rm -rf $(find ~/.ghc -maxdepth 1 -type d)
-rm -rf ~/.cabal/lib ~/.cabal/packages ~/.cabal/share
