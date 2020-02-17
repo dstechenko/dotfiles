@@ -37,7 +37,7 @@
 
 (require 'init-elisp)
 (require 'init-python)
-;; (require 'init-cpp)
+(require 'init-cpp)
 
 (provide 'init)
 

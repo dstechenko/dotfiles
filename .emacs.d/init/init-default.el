@@ -75,11 +75,10 @@
   :init
   (global-flycheck-mode))
 
-(use-package leuven-theme
+(use-package monokai-theme
   :config
-  (load-theme 'leuven t))
+  (load-theme 'monokai t))
 
-;; FIX Git-master vs Git:master
 (use-package telephone-line
   :config
   (setq telephone-line-lhs
@@ -219,9 +218,8 @@
 (add-window-hook             'toggle-frame-fullscreen)
 
 (global-set-key (kbd "C-k")          'kill-whole-line)
-(global-set-key (kbd "C-S-k")       'kill-visual-line) ;; FIX ME
-
-;; (global-set-key (kbd "")       'linum-mode) FIX ME
+(global-set-key (kbd "C-S-k")       'kill-visual-line)
+(global-set-key (kbd "M-l")               'linum-mode)
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
