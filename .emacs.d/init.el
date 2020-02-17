@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs configuration
 
-;; Copyright (C) 2019 Dmytro Stechenko
+;; Copyright (C) 2020 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -29,10 +29,6 @@
 
 (require 'init-util)
 
-(require-lin 'init-lin)
-(require-mac 'init-mac)
-(require-win 'init-win)
-
 (require 'init-constant)
 (require 'init-default)
 
@@ -41,6 +37,7 @@
 
 (require 'init-elisp)
 (require 'init-python)
+;; (require 'init-cpp)
 
 (provide 'init)
 

@@ -1,6 +1,6 @@
 ;;; init-default.el --- Emacs configuration
 
-;; Copyright (C) 2019 Dmytro Stechenko
+;; Copyright (C) 2020 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
@@ -222,7 +222,6 @@
 (global-set-key (kbd "C-S-k")       'kill-visual-line) ;; FIX ME
 
 ;; (global-set-key (kbd "")       'linum-mode) FIX ME
-
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 

@@ -1,6 +1,6 @@
 ;;; init-markdown.el --- Emacs configuration
 
-;; Copyright (C) 2019 Dmytro Stechenko
+;; Copyright (C) 2020 Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
 ;;; Commentary:
