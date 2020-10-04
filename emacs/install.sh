@@ -12,4 +12,6 @@ rm -rf "$EMACS_HOME"
 
 # shellcheck source=/dev/null
 source "$DOTFILES_EMACS_SRCS/install_shared.sh"
-cp "$DOTFILES_EMACS_SRCS/init.el" "$EMACS_HOME/init.el"
+
+cp "$DOTFILES_EMACS_SRCS/init.el" \
+   "$EMACS_HOME/init.el"
