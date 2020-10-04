@@ -1,4 +1,5 @@
 ;;; init-shared.el --- Shared Emacs configuration
+
 ;; Copyright (C) Dmytro Stechenko
 ;; License: http://www.gnu.org/licenses/gpl.html
 
