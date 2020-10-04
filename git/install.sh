@@ -6,5 +6,5 @@
 set -euxo pipefail
 
 rm -rf "${HOME:?}/.gitignore_global"
-cp     "$DOTFILES_INSTALL_GIT/.gitignore_global" \
+cp     "$DOTFILES_GIT_SRCS/.gitignore_global" \
        "${HOME:?}/.gitignore_global"
