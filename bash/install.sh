@@ -5,10 +5,10 @@
 
 set -euxo pipefail
 
-rm -rf "$HOME/.bashrc"
+rm -rf "${HOME:?}/.bashrc"
 cp     "$DOTFILES_BASH_SRCS/.bashrc" \
-       "$HOME/.bashrc"
+       "${HOME:?}/.bashrc"
 
-rm -rf "$HOME/.bash_profile"
+rm -rf "${HOME:?}/.bash_profile"
 cp     "$DOTFILES_BASH_SRCS/.bash_profile" \
-       "$HOME/.bash_profile"
+       "${HOME:?}/.bash_profile"
