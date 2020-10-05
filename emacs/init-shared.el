@@ -216,8 +216,8 @@
 (use-package telephone-line
   :config
   (telephone-line-defsegment
-    telephone-line-buffer-fb-project-mode-segment
-    () fb-project-mode)
+    telephone-line-buffer-config-project-mode-segment
+    () config-project-mode)
 
   (set-face-attribute
    'mode-line-inactive nil
@@ -248,7 +248,7 @@
   (setq
    telephone-line-lhs
    '((accent . (telephone-line-buffer-modified-segment))
-     (accent . (telephone-line-buffer-fb-project-mode-segment))
+     (accent . (telephone-line-buffer-config-project-mode-segment))
      (accent . (telephone-line-buffer-name-segment)))
    telephone-line-rhs
    '((accent . (telephone-line-flycheck-segment))
