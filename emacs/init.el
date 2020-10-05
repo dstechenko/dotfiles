@@ -9,6 +9,8 @@
  'load-path
  (expand-file-name "init" user-emacs-directory))
 
+(defvar config-project-mode "home")
+
 (require 'init-shared)
 
 ;;; init.el ends here
