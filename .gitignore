@@ -1,4 +1,8 @@
-# Emacs
+# .gitignore
+
+# Copyright (C) Dmytro Stechenko
+# License: http://www.gnu.org/licenses/gpl.html
+
 .emacs.d/auto-save-list
 .emacs.d/elpa
 .emacs.d/eshell
