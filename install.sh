@@ -16,12 +16,12 @@ DOTFILES_EMACS_SRCS="$DOTFILES_INSTALL_SRCS/emacs"
   DOTFILES_GIT_SRCS="$DOTFILES_INSTALL_SRCS/git"
 
 # shellcheck source=/dev/null
-source "DOTFILES_EMACS_SRCS/install.sh"
+source "$DOTFILES_EMACS_SRCS/install.sh"
 
 # shellcheck source=/dev/null
-source "DOTFILES_BASH_SRCS/install.sh"
+source "$DOTFILES_BASH_SRCS/install.sh"
 
 # shellcheck source=/dev/null
-source "DOTFILES_GIT_SRCS/install.sh"
+source "$DOTFILES_GIT_SRCS/install.sh"
 
 cd "$CALL_DIR"
