@@ -468,6 +468,6 @@
 (global-unset-key (kbd "C-x 4 ."))
 (global-unset-key (kbd "C-x 5 ."))
 
-(provide 'init-default)
+(provide 'init-shared)
 
 ;;; init-shared.el ends here
