@@ -127,22 +127,6 @@
  (lambda ()
    (setq show-trailing-whitespace t)))
 
-(add-hook
- 'smerge-mode-hook
- (lambda ()
-   (set-face-attribute
-    'smerge-markers nil
-    :background "brightred" :foreground "brightwhite")))
-
-;; Set faces
-
-(set-face-background 'trailing-whitespace "brightred")
-
-(set-face-attribute
- 'fringe nil
- :foreground (face-foreground 'default)
- :background (face-background 'default))
-
 ;;;
 ;; PACKAGES
 ;;;
@@ -166,7 +150,9 @@
 
 (require 'dired-x)
 
-(load-theme 'tango-dark t)
+(use-package monokai-theme
+  :config
+  (load-theme 'monokai t))
 
 (use-package auto-package-update
   :config
@@ -217,26 +203,6 @@
   (telephone-line-defsegment
     telephone-line-buffer-config-project-mode-segment
     () config-project-mode)
-
-  (set-face-attribute
-   'mode-line-inactive nil
-   :background (face-background 'default)
-   :foreground (face-background 'default))
-
-  (set-face-attribute
-   'mode-line nil
-   :background (face-background 'default)
-   :foreground (face-background 'default))
-
-  (set-face-attribute
-   'telephone-line-accent-active nil
-   :background "black"
-   :foreground "brightwhite")
-
-  (set-face-attribute
-   'telephone-line-accent-inactive nil
-   :background (face-background 'default)
-   :foreground "brightwhite")
 
   (setq
    telephone-line-primary-right-separator   'telephone-line-nil
@@ -305,11 +271,11 @@
    'company-minimum-prefix-length 1)
   (customize-set-variable
    'company-backends
-   '(company-bbdb
-     company-nxml
-     company-css
-     company-capf
-     company-dabbrev
+   '(company-capf
+     company-cmake
+     company-clang
+     company-files
+     company-semantic
      (company-dabbrev-code company-keywords)))
   (setq
    company-tooltip-align-annotations t
@@ -467,7 +433,5 @@
 (global-unset-key   (kbd "C-M-."))
 (global-unset-key (kbd "C-x 4 ."))
 (global-unset-key (kbd "C-x 5 ."))
-
-(provide 'init-shared)
 
 ;;; init-shared.el ends here
