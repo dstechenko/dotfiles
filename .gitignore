@@ -1,15 +1,3 @@
 # .gitignore
 # Copyright (C) Dmytro Stechenko
 # License: http://www.gnu.org/licenses/gpl.html
-
-.emacs.d/auto-save-list
-.emacs.d/elpa
-.emacs.d/eshell
-.emacs.d/**/flycheck*
-.emacs.d/.last-package-update-day
-.emacs.d/lisp
-.emacs.d/snippets
-.emacs.d/tmp
-.emacs.d/transient
-.emacs.d/projectile*
-.emacs.d/*session*
