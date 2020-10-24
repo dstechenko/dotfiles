@@ -127,6 +127,12 @@
  (lambda ()
    (setq show-trailing-whitespace t)))
 
+;; Set face
+
+(set-face-attribute
+ 'region nil
+ :background "white" :foreground "black")
+
 ;;;
 ;; PACKAGES
 ;;;
