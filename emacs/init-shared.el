@@ -127,12 +127,6 @@
  (lambda ()
    (setq show-trailing-whitespace t)))
 
-;; Set face
-
-(set-face-attribute
- 'region nil
- :background "white" :foreground "black")
-
 ;;;
 ;; PACKAGES
 ;;;
@@ -156,9 +150,9 @@
 
 (require 'dired-x)
 
-(use-package monokai-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'monokai t))
+  (load-theme 'zenburn t))
 
 (use-package auto-package-update
   :config
