@@ -150,9 +150,9 @@
 
 (require 'dired-x)
 
-(use-package zenburn-theme
+(use-package gruvbox-theme
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'gruvbox t))
 
 (use-package auto-package-update
   :config
