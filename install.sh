@@ -9,6 +9,7 @@ DOTFILES_INSTALL_SRCS=$(dirname  "$0")
 DOTFILES_INSTALL_SRCS=$(realpath "$DOTFILES_INSTALL_SRCS")
 
 DOTFILES_EMACS_SRCS="$DOTFILES_INSTALL_SRCS/emacs"
+DOTFILES_KITTY_SRCS="$DOTFILES_INSTALL_SRCS/kitty"
  DOTFILES_BASH_SRCS="$DOTFILES_INSTALL_SRCS/bash"
   DOTFILES_GIT_SRCS="$DOTFILES_INSTALL_SRCS/git"
 
@@ -17,6 +18,9 @@ git pull origin master
 
 # shellcheck source=/dev/null
 source "$DOTFILES_EMACS_SRCS/install.sh"
+
+# shellcheck source=/dev/null
+source "$DOTFILES_KITTY_SRCS/install.sh"
 
 # shellcheck source=/dev/null
 source "$DOTFILES_BASH_SRCS/install.sh"
