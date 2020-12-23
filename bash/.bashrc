@@ -23,6 +23,7 @@ export    PS1="[$HOSTNAME]\$ "
 export LC_ALL="en_US.UTF-8"
 export   LANG="en_US.UTF-8"
 
+alias  rdrate="xset r rate 250 50"
 alias  editor="emacs -nw"
 alias  pifind="
     sudo watch -c -t -n 2 '
