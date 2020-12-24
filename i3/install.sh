@@ -6,5 +6,5 @@ set -euxo pipefail
 
 rm    -rf "${HOME:?}/.config/i3"
 mkdir -p  "${HOME:?}/.config/i3"
-cp        "$DOTFILES_I3_SRCS"/config/* \
+cp        "$DOTFILES_I3_SRCS"/* \
           "${HOME:?}/.config/i3"
