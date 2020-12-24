@@ -13,6 +13,7 @@ DOTFILES_KITTY_SRCS="$DOTFILES_INSTALL_SRCS/kitty"
  DOTFILES_BASH_SRCS="$DOTFILES_INSTALL_SRCS/bash"
   DOTFILES_GIT_SRCS="$DOTFILES_INSTALL_SRCS/git"
  DOTFILES_TMUX_SRCS="$DOTFILES_INSTALL_SRCS/tmux"
+   DOTFILES_I3_SRCS="$DOTFILES_INSTALL_SRCS/i3"
 
 cd "$DOTFILES_INSTALL_SRCS"
 git pull origin master
@@ -31,5 +32,8 @@ source "$DOTFILES_GIT_SRCS/install.sh"
 
 # shellcheck source=/dev/null
 source "$DOTFILES_TMUX_SRCS/install.sh"
+
+# shellcheck source=/dev/null
+source "$DOTFILES_I3_SRCS/install.sh"
 
 cd "$CALL_DIR"
