@@ -1,0 +1,51 @@
+#define BACKGROUND #282828
+#define FOREGROUND #ebdbb2
+#define COLOR0     #282828
+#define COLOR8     #928374
+#define COLOR1     #cc241d
+#define COLOR9     #fb4934
+#define COLOR2     #98971a
+#define COLOR10    #b8bb26
+#define COLOR3     #d79921
+#define COLOR11    #fabd2f
+#define COLOR4     #458588
+#define COLOR12    #83a598
+#define COLOR5     #b16286
+#define COLOR13    #d3869b
+#define COLOR6     #689d6a
+#define COLOR14    #8ec07c
+#define COLOR7     #a89984
+#define COLOR15    #ebdbb2
+
+*background: BACKGROUND
+*foreground: FOREGROUND
+*color0:     COLOR0
+*color8:     COLOR8
+*color1:     COLOR1
+*color9:     COLOR9
+*color2:     COLOR2
+*color10:    COLOR10
+*color3:     COLOR3
+*color11:    COLOR11
+*color4:     COLOR4
+*color12:    COLOR12
+*color5:     COLOR5
+*color13:    COLOR13
+*color6:     COLOR6
+*color14:    COLOR14
+*color7:     COLOR7
+*color15:    COLOR15
+
+rofi.color-window: BACKGROUND,     COLOR3, BACKGROUND
+rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, COLOR3, BACKGROUND
+rofi.color-active: BACKGROUND, FOREGROUND, BACKGROUND, COLOR3, BACKGROUND
+rofi.color-urgent: BACKGROUND, FOREGROUND, BACKGROUND, COLOR3, BACKGROUND
+
+rofi.lines:          10
+rofi.width:          20
+rofi.matching:       fuzzy
+rofi.padding:        0
+rofi.font:           PragmataPro Mono 11
+rofi.separator-syle: none
+rofi.hide-scrollbar: true
+rofi.bw:             3
