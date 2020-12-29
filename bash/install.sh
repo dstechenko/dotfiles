@@ -12,5 +12,6 @@ rm -rf "${HOME:?}/.bash_profile"
 cp     "$INSTALL_SRCS/bash/.bash_profile" \
        "${HOME:?}/.bash_profile"
 
+echo ""                                            >> "${HOME:?}/.bashrc"
 echo "# Auto-generated section"                    >> "${HOME:?}/.bashrc"
 echo "alias dotfiles=\"$INSTALL_SRCS/install.sh\"" >> "${HOME:?}/.bashrc"
