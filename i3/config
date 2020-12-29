@@ -23,7 +23,7 @@ gaps outer 20
 set $up    "l"
 set $down  "k"
 set $left  "j"
-set $right ";"
+set $right "semicolon"
 
 set $set_monitor_display --no-startup-id xrandr \
      --output eDP-1 \
@@ -61,14 +61,14 @@ bindsym $mod+u      exec i3lock --color "$bg" -e -f -u
 
 bindsym $mod+shift+q kill
 
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
-bindsym $mod+shift+$left move left
-bindsym $mod+shift+$down move down
-bindsym $mod+shift+$up move up
+bindsym $mod+shift+$left  move left
+bindsym $mod+shift+$down  move down
+bindsym $mod+shift+$up    move up
 bindsym $mod+shift+$right move right
 
 bindsym $mod+h split h
