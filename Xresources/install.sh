@@ -4,6 +4,6 @@
 
 set -euxo pipefail
 
-rm -rf "${HOME:?}/.tmux.conf"
-cp     "$INSTALL_SRCS/tmux/.tmux.conf" \
-       "${HOME:?}/.tmux.conf"
+rm -rf "${HOME:?}/.Xresources"
+cp     "$INSTALL_SRCS/Xresources/.Xresources" \
+       "${HOME:?}/.Xresources"

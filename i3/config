@@ -3,7 +3,7 @@
 set $mod Mod4
 
 exec_always --no-startup-id xset r rate 250 50
-exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id xrdb ~/.Xresources
 
 exec --no-startup-id xrandr \
      --output eDP-1 \
@@ -14,8 +14,8 @@ exec --no-startup-id xrandr \
      --mode 3840x1600 \
      --same-as eDP-1
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
+exec_always --no-startup-id sleep 5 && xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id sleep 5 && nm-applet
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
@@ -23,8 +23,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume   @DEFAU
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume   @DEFAULT_SINK@     -10% && $refresh_i3status
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute     @DEFAULT_SINK@   toggle && $refresh_i3status
 bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute   @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-for_window [class="^.*$"] border pixel 3
 
 gaps inner 20
 gaps outer 20
@@ -34,14 +32,18 @@ set $down  "k"
 set $left  "j"
 set $right ";"
 
+set               $fbg    #000000
 set_from_resource $bg     i3wm.background
 set_from_resource $fg     i3wm.foreground
 set_from_resource $red    i3wm.color1
 set_from_resource $yellow i3wm.color3
+set_from_resource $border i3wm.border
 
 font pango:PragmataPro Mono 11
 
-bindsym $mod+space  exec rofi -show run
+for_window [class="^.*$"] border pixel $border
+
+bindsym $mod+space  exec rofi -show run -display-run "."
 bindsym $mod+Return exec kitty
 bindsym $mod+u      exec i3lock --color "$bg" -e -f -u
 
@@ -153,6 +155,27 @@ client.focused_inactive $bg     $bg     $fg $bg     $bg
 client.unfocused        $bg     $bg     $fg $bg     $bg
 client.urgent           $red    $red    $fg $red    $red
 
-exec_always --no-startup-id xsetroot -solid "#000000"
+exec_always --no-startup-id killall dunst \
+            && dunst                      \
+            -lb "$bg" -nb "$bg" -cb "$bg" \
+            -lf "$fg" -bf "$fg" -cf "$fg" \
+            -nf "$fg"                     \
+            -frame_color "$yellow"        \
+            -frame_width "$border"        \
+            -fn "PragmataPro Mono 11"     \
+            -s                            \
+            -geometry "400x60-10+40"      \
+            -format "<b>%s</b>\n%b"       \
+            -shrink                       \
+            -lto 3 -nto 5 -cto 0          \
+            -align "left"                 \
+            -transparency 0               \
+            -padding 8                    \
+            -horizontal_padding 8
 
-exec --no-startup-id i3-msg workspace 1
+exec_always --no-startup-id xsetroot -solid "$fbg"
+
+exec --no-startup-id i3-msg \
+     workspace 1 ; \
+     exec kitty ; \
+     exec google-chrome

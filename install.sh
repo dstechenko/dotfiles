@@ -4,36 +4,39 @@
 
 set -euxo pipefail
 
-             CALL_DIR=$(pwd)
-DOTFILES_INSTALL_SRCS=$(dirname  "$0")
-DOTFILES_INSTALL_SRCS=$(realpath "$DOTFILES_INSTALL_SRCS")
+    CALL_DIR=$(pwd)
+INSTALL_SRCS=$(dirname  "$0")
+INSTALL_SRCS=$(realpath "$INSTALL_SRCS")
 
-DOTFILES_EMACS_SRCS="$DOTFILES_INSTALL_SRCS/emacs"
-DOTFILES_KITTY_SRCS="$DOTFILES_INSTALL_SRCS/kitty"
- DOTFILES_BASH_SRCS="$DOTFILES_INSTALL_SRCS/bash"
-  DOTFILES_GIT_SRCS="$DOTFILES_INSTALL_SRCS/git"
- DOTFILES_TMUX_SRCS="$DOTFILES_INSTALL_SRCS/tmux"
-   DOTFILES_I3_SRCS="$DOTFILES_INSTALL_SRCS/i3"
+cd "$INSTALL_SRCS"
 
-cd "$DOTFILES_INSTALL_SRCS"
 git pull origin master
 
 # shellcheck source=/dev/null
-source "$DOTFILES_EMACS_SRCS/install.sh"
+source "$INSTALL_SRCS/emacs/install.sh"
 
 # shellcheck source=/dev/null
-source "$DOTFILES_KITTY_SRCS/install.sh"
+source "$INSTALL_SRCS/kitty/install.sh"
 
 # shellcheck source=/dev/null
-source "$DOTFILES_BASH_SRCS/install.sh"
+source "$INSTALL_SRCS/bash/install.sh"
 
 # shellcheck source=/dev/null
-source "$DOTFILES_GIT_SRCS/install.sh"
+source "$INSTALL_SRCS/git/install.sh"
 
 # shellcheck source=/dev/null
-source "$DOTFILES_TMUX_SRCS/install.sh"
+source "$INSTALL_SRCS/tmux/install.sh"
 
 # shellcheck source=/dev/null
-source "$DOTFILES_I3_SRCS/install.sh"
+source "$INSTALL_SRCS/i3/install.sh"
+
+# shellcheck source=/dev/null
+source "$INSTALL_SRCS/xinitrc/install.sh"
+
+# shellcheck source=/dev/null
+source "$INSTALL_SRCS/Xresources/install.sh"
+
+# shellcheck source=/dev/null
+source "$INSTALL_SRCS/gtk/install.sh"
 
 cd "$CALL_DIR"

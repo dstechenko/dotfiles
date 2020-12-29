@@ -4,13 +4,9 @@
 
 set -euxo pipefail
 
-         EMACS_HOME="$HOME/.emacs.d"
-DOTFILES_EMACS_SRCS="$DOTFILES_INSTALL_SRCS/emacs"
-
-rm -rf "$EMACS_HOME"
-
-# shellcheck source=/dev/null
-source "$DOTFILES_EMACS_SRCS/install_shared.sh"
-
-cp "$DOTFILES_EMACS_SRCS/init.el" \
-   "$EMACS_HOME/init.el"
+rm    -rf "${HOME:?}/.emacs.d"
+mkdir -p  "${HOME:?}/.emacs.d/init"
+cp        "$INSTALL_SRCS/emacs/init-shared.el" \
+          "${HOME:?}/.emacs.d/init/init-shared.el"
+cp        "$INSTALL_SRCS/emacs/init.el" \
+          "${HOME:?}/.emacs.d/init.el"

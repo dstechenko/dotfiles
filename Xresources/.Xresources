@@ -16,6 +16,7 @@
 #define COLOR14    #8ec07c
 #define COLOR7     #a89984
 #define COLOR15    #ebdbb2
+#define BORDER     3
 
 *background: BACKGROUND
 *foreground: FOREGROUND
@@ -35,6 +36,7 @@
 *color14:    COLOR14
 *color7:     COLOR7
 *color15:    COLOR15
+*border:     BORDER
 
 rofi.color-window: BACKGROUND,     COLOR3, BACKGROUND
 rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, COLOR3, BACKGROUND
@@ -48,4 +50,7 @@ rofi.padding:        0
 rofi.font:           PragmataPro Mono 11
 rofi.separator-syle: none
 rofi.hide-scrollbar: true
-rofi.bw:             3
+rofi.bw:             BORDER
+
+Xcursor.theme: Adwaita
+Xcursor.size:  8

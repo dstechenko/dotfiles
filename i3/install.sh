@@ -6,7 +6,7 @@ set -euxo pipefail
 
 rm    -rf "${HOME:?}/.config/i3"
 mkdir -p  "${HOME:?}/.config/i3"
-cp        "$DOTFILES_I3_SRCS/config" \
+cp        "$INSTALL_SRCS/i3/config" \
           "${HOME:?}/.config/i3"
-cp        "$DOTFILES_I3_SRCS/i3status.conf" \
+cp        "$INSTALL_SRCS/i3/i3status.conf" \
           "${HOME:?}/.config/i3"

@@ -5,9 +5,12 @@
 set -euxo pipefail
 
 rm -rf "${HOME:?}/.bashrc"
-cp     "$DOTFILES_BASH_SRCS/.bashrc" \
+cp     "$INSTALL_SRCS/bash/.bashrc" \
        "${HOME:?}/.bashrc"
 
 rm -rf "${HOME:?}/.bash_profile"
-cp     "$DOTFILES_BASH_SRCS/.bash_profile" \
+cp     "$INSTALL_SRCS/bash/.bash_profile" \
        "${HOME:?}/.bash_profile"
+
+echo "# Auto-generated section"                    >> "${HOME:?}/.bashrc"
+echo "alias dotfiles=\"$INSTALL_SRCS/install.sh\"" >> "${HOME:?}/.bashrc"
