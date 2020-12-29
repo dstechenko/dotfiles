@@ -3,16 +3,9 @@
 set $mod Mod4
 
 exec_always --no-startup-id xset r rate 250 50
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
 exec_always --no-startup-id xrdb ~/.Xresources
-
-exec --no-startup-id xrandr \
-     --output eDP-1 \
-     --mode 1920x1080 \
-     --fb 3840x1600 \
-     --panning 3840x1600 \
-     --output DP-2 \
-     --mode 3840x1600 \
-     --same-as eDP-1
 
 exec_always --no-startup-id sleep 5 && xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id sleep 5 && nm-applet
@@ -31,6 +24,25 @@ set $up    "l"
 set $down  "k"
 set $left  "j"
 set $right ";"
+
+set $set_monitor_display --no-startup-id xrandr \
+     --output eDP-1 \
+     --mode 1920x1080 \
+     --fb 3840x1600 \
+     --panning 3840x1600 \
+     --output HDMI-2 \
+     --mode 3840x1600 \
+     --same-as eDP-1
+
+set $set_laptop_display --no-startup-id xrandr \
+     --output eDP-1 \
+     --mode 1920x1080 \
+     --fb 1920x1080
+
+bindsym $mod+o       exec $set_monitor_display
+bindsym $mod+shift+o exec $set_laptop_display
+
+exec $set_monitor_display
 
 set               $fbg    #000000
 set_from_resource $bg     i3wm.background
@@ -69,10 +81,9 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 floating_modifier $mod
+bindsym           $mod+shift+s floating toggle
 
-# bindsym           $mod+ focus mode_toggle
-# bindsym           $mod+ floating toggle
-
+bindsym $mod+shift+d focus mode_toggle
 bindsym $mod+a       focus parent
 bindsym $mod+shift+a focus child
 
@@ -175,7 +186,4 @@ exec_always --no-startup-id killall dunst \
 
 exec_always --no-startup-id xsetroot -solid "$fbg"
 
-exec --no-startup-id i3-msg \
-     workspace 1 ; \
-     exec kitty ; \
-     exec google-chrome
+exec --no-startup-id i3-msg "workspace 1"
