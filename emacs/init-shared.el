@@ -6,7 +6,6 @@
 
 ;;;
 ;;  TODO:
-;;    add tabnine
 ;;    add flymake/flycheck
 ;;    add clang format to default
 ;;;
@@ -163,26 +162,33 @@
   (prog-mode . highlight-symbol-mode)
   (prog-mode . highlight-symbol-nav-mode))
 
-(use-package ido
+(use-package helm
   :config
-  (setq ido-save-directory-list-file (expand-tmp "ido.last")))
-
-(use-package flx-ido
-  :demand
-
-  :commands
-  ido-everywhere
-
-  :init
+  (require 'helm-config)
   (setq
-   ido-enable-dot-prefix    t
-   ido-enable-flex-matching t
-   ido-show-dot-for-dired   nil)
+   helm-completion-style                  'emacs
+   completion-styles                      '(helm-flex)
+   helm-candidate-number-limit            100
+   helm-idle-delay                        0.0
+   helm-input-idle-delay                  0.01
+   helm-mode-fuzzy-match                  t
+   helm-completion-in-region-fuzzy-match  t
+   helm-yas-display-key-on-candidate      t
+   helm-quick-update                      t
+   helm-ff-skip-boring-files              t
+   helm-M-x-requires-pattern              nil)
 
-  :config
-  (ido-mode       1)
-  (ido-everywhere 1)
-  (flx-ido-mode   1))
+  :bind
+  (("C-c h"   . helm-mini)
+   ("C-h a"   . helm-apropos)
+   ("C-x b"   . helm-buffers-list)
+   ("C-x C-b" . helm-buffers-list)
+   ("C-x C-f" . helm-find-files)
+   ("C-x c t" . helm-top)
+   ("M-y"     . helm-show-kill-ring)
+   ("M-x"     . helm-M-x)
+   ("M-i"     . helm-imenu)
+   ("M-s o"   . helm-occur)))
 
 (use-package recentf
   :config
@@ -234,27 +240,9 @@
    '(git-gutter:added-sign    " + ")
    '(git-gutter:deleted-sign  " - ")))
 
-(use-package smex
-  :config
-  (setq smex-save-file (expand-tmp "smex-items"))
-
-  :bind
-  ("M-x" . smex)
-  ("M-X" . smex-major-mode-commands))
-
 (use-package anzu
   :config
   (global-anzu-mode 1))
-
-(use-package popup-imenu
-  :commands
-  popup-imenu
-
-  :bind
-  ("M-i" . popup-imenu)
-
-  :config
-  (setq popup-imenu-style 'indent))
 
 (use-package company
   :commands
@@ -424,8 +412,6 @@
 (global-set-key (kbd     "C-x l")  'revert-buffer)
 (global-set-key (kbd "C-x C-k a")  'close-all-buffers)
 (global-set-key (kbd "C-x C-k o")  'close-other-buffers)
-
-(global-set-key [C-M-tab]        'clang-format-region)
 
 ;; Unset xref-find functionality
 (global-unset-key     (kbd "M-."))
