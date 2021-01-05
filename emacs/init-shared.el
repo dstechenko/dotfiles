@@ -167,7 +167,7 @@
   (require 'helm-config)
   (setq
    helm-completion-style                  'emacs
-   completion-styles                      '(helm-flex)
+   completion-styles                      '(flex)
    helm-candidate-number-limit            100
    helm-idle-delay                        0.0
    helm-input-idle-delay                  0.01
