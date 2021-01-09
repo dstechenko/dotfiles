@@ -185,6 +185,7 @@
    ("C-x b"   . helm-buffers-list)
    ("C-x C-b" . helm-buffers-list)
    ("C-x C-f" . helm-find-files)
+   ("C-x C-g" . helm-for-files)
    ("C-x c t" . helm-top)
    ("M-y"     . helm-show-kill-ring)
    ("M-x"     . helm-M-x)
