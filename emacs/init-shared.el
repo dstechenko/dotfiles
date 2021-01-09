@@ -401,6 +401,20 @@
    'c-common-mode
    (lambda () (modern-c++-font-lock-mode 1))))
 
+;; Load asm packages
+
+(use-package asm-mode
+  :commands
+  asm-mode
+
+  :hook
+  (asm-mode
+   . (lambda ()
+       (setq asm-comment-char ?\#)))
+
+  :mode
+  (("\\.s\\'"   . asm-mode)))
+
 ;;;
 ;; GLOBAL BINDINGS
 ;;;
