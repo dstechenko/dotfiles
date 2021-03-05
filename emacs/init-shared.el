@@ -158,6 +158,10 @@
   :config
   (auto-package-update-maybe))
 
+(use-package highlight-symbol
+  :hook
+  (prog-mode . highlight-symbol-nav-mode))
+
 (use-package helm
   :config
   (require 'helm-config)
