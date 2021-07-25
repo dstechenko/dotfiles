@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2021-07-25 11:40:41" build="210718">
+		<key name=".Vanilla" modified="2021-07-25 11:51:47" build="210718">
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
 			<value name="StartTasksFile" type="string" data=""/>
@@ -41,7 +41,7 @@
 			<value name="FontSize" type="ulong" data="16"/>
 			<value name="StatusFontHeight" type="long" data="12"/>
 			<value name="TabFontHeight" type="long" data="16"/>
-			<key name="HotKeys" modified="2021-07-25 11:40:41" build="210718">
+			<key name="HotKeys" modified="2021-07-25 11:50:47" build="210718">
 				<value name="MinimizeRestore" type="dword" data="000011c0"/>
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="000000a2"/>
@@ -81,7 +81,7 @@
 				<value name="Multi.SplitSwapL" type="dword" data="00125d25"/>
 				<value name="Multi.SplitSwapR" type="dword" data="00125d27"/>
 				<value name="Multi.Next" type="dword" data="00105b51"/>
-				<value name="Multi.NextShift" type="dword" data="00005b51"/>
+				<value name="Multi.NextShift" type="dword" data="80808051"/>
 				<value name="Multi.Recreate" type="dword" data="00005bc0"/>
 				<value name="Multi.AltCon" type="dword" data="00005b41"/>
 				<value name="Multi.Pause" type="dword" data="80808013"/>
@@ -91,7 +91,7 @@
 				<value name="Multi.GroupInputKey" type="dword" data="00125d47"/>
 				<value name="Multi.Detach" type="dword" data="00000000"/>
 				<value name="Multi.Unfasten" type="dword" data="00000000"/>
-				<value name="Multi.Close" type="dword" data="00005b2e"/>
+				<value name="Multi.Close" type="dword" data="00005b51"/>
 				<value name="CloseTabKey" type="dword" data="00125b2e"/>
 				<value name="CloseGroupKey" type="dword" data="00115b2e"/>
 				<value name="CloseGroupPrcKey" type="dword" data="00000000"/>
@@ -535,7 +535,7 @@
 			<value name="SkipFocusEvents" type="hex" data="00"/>
 			<value name="MonitorConsoleLang" type="hex" data="03"/>
 			<value name="SnapToDesktopEdges" type="hex" data="01"/>
-			<value name="AlwaysOnTop" type="hex" data="01"/>
+			<value name="AlwaysOnTop" type="hex" data="00"/>
 			<value name="SleepInBackground" type="hex" data="01"/>
 			<value name="RetardInactivePanes" type="hex" data="00"/>
 			<value name="MinimizeOnLoseFocus" type="hex" data="00"/>
@@ -695,6 +695,10 @@
 			<key name="Colors" modified="2021-07-25 11:13:53" build="210718">
 				<value name="Count" type="long" data="0"/>
 			</key>
+			<value name="CmdLineHistory" type="multi">
+				<line data="{Shells::cmd}"/>
+				<line data="{Shells::cmd 64/32}"/>
+			</value>
 		</key>
 	</key>
 </key>
