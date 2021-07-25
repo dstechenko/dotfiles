@@ -150,9 +150,9 @@
 
 (require 'dired-x)
 
-(use-package gruvbox-theme
+(use-package seti-theme
   :config
-  (load-theme 'gruvbox t))
+  (load-theme 'seti t))
 
 (use-package auto-package-update
   :config
@@ -262,7 +262,6 @@
    'company-backends
    '(company-capf
      company-cmake
-     company-clang
      company-files
      company-semantic
      (company-dabbrev-code company-keywords)))
