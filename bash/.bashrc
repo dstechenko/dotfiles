@@ -16,7 +16,7 @@ HISTSIZE=1000000
 shopt -s histappend
 
 # Export environment variables, aliases
-export   TERM="xterm-256color"
+export   TERM="xterm-16color"
 export EDITOR="emacs"
 export VISUAL="$EDITOR"
 export    PS1="[$HOSTNAME]\$ "
