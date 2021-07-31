@@ -160,7 +160,7 @@
 
 (use-package gruvbox-theme
   :config
-  (load-theme 'gruvbox-dark-hard t))
+  (load-theme 'gruvbox-dark-medium t))
 
 (use-package auto-package-update
   :config
