@@ -426,7 +426,7 @@
 ;;;
 
 ;; Set common keybindings
-(global-set-key (kbd       "<F12>")  'reset-frames)
+(global-set-key (kbd     "<F12>")  'reset-frames)
 (global-set-key (kbd       "C-k")  'kill-whole-line)
 (global-set-key (kbd   "M-g M-l")  'linum-mode)
 (global-set-key (kbd      "M-\\")  'comment-or-uncomment-region)
