@@ -44,7 +44,7 @@
   "Resize frames to the default."
   (interactive)
   (when window-system
-    (set-frame-size (selected-frame) 120 60)))
+    (set-frame-size (selected-frame) 120 70)))
 
 ;;;
 ;; CONFIGS
@@ -117,7 +117,8 @@
       '(("gnu"          . "http://elpa.gnu.org/packages/")
         ("org"          . "http://orgmode.org/elpa/")
         ("melpa"        . "http://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")))
+        ("melpa-stable" . "http://stable.melpa.org/packages/")
+        ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
 
 ;; Set custom file handling
 
@@ -157,9 +158,9 @@
 
 (require 'dired-x)
 
-(use-package color-theme-sanityinc-tomorrow
+(use-package gruvbox-theme
   :config
-  (color-theme-sanityinc-tomorrow-night))
+  (load-theme 'gruvbox-dark-hard t))
 
 (use-package auto-package-update
   :config
@@ -355,6 +356,28 @@
        (yas-minor-mode)
        (show-paren-mode)
        (smartparens-strict-mode))))
+
+;; Load python packages
+
+(use-package elpy
+  :commands
+  elpy-enable
+
+  :init
+  (elpy-enable)
+  (unbind-key "C-c C-f" elpy-mode-map)
+
+  :config
+  (setq
+   elpy-rpc-virtualenv-path 'current
+   elpy-rpc-timeout         nil
+   elpy-rpc-python-command  "/usr/bin/python3"
+   elpy-modules             (delete 'elpy-module-flymake elpy-modules))
+
+  :hook
+  (elpy-mode
+   . (lambda ()
+       (highlight-indentation-mode -1))))
 
 ;; Load org packages
 
