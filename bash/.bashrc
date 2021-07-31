@@ -16,14 +16,14 @@ HISTSIZE=1000000
 shopt -s histappend
 
 # Export environment variables, aliases
-export   TERM="xterm-16color"
-export EDITOR="emacs"
+export   TERM="xterm-256color"
+export EDITOR="emacsclient -c -n --alternate-editor="
 export VISUAL="$EDITOR"
 export    PS1="[$HOSTNAME]\$ "
 export LC_ALL="en_US.UTF-8"
 export   LANG="en_US.UTF-8"
 
-alias  editor="emacs -nw"
+alias  editor="$EDITOR"
 alias  pifind="
     sudo watch -c -t -n 2 '
          arp -a | cut -f1 -d \" \" | grep -v ? ;

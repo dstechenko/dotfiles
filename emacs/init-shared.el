@@ -5,12 +5,6 @@
 ;;; Code:
 
 ;;;
-;;  TODO:
-;;    add flymake/flycheck
-;;    add clang format to default
-;;;
-
-;;;
 ;; FUNCTIONS
 ;;;
 
@@ -46,6 +40,12 @@
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
+(defun reset-frames ()
+  "Resize frames to the default."
+  (interactive)
+  (when window-system
+    (set-frame-size (selected-frame) 120 60)))
+
 ;;;
 ;; CONFIGS
 ;;;
@@ -62,6 +62,8 @@
 (column-number-mode      1)
 (show-paren-mode         1)
 (menu-bar-mode          -1)
+(tool-bar-mode          -1)
+(scroll-bar-mode        -1)
 (electric-indent-mode   -1)
 (blink-cursor-mode      -1)
 
@@ -94,6 +96,7 @@
 ;; Set config default variables
 
 (setq-default
+ window-size-fixed              t
  find-file-visit-truename       t
  fill-column                    80
  tab-width                      2
@@ -103,14 +106,18 @@
  indent-tabs-mode               nil
  cursor-in-non-selected-windows nil)
 
+
+(set-default-font "PragmataPro Mono 12")
+
+(setq frame-title-format "Emacs")
+
 ;; Set repositories
 
 (setq package-archives
       '(("gnu"          . "http://elpa.gnu.org/packages/")
         ("org"          . "http://orgmode.org/elpa/")
         ("melpa"        . "http://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")
-        ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
+        ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 ;; Set custom file handling
 
@@ -150,9 +157,9 @@
 
 (require 'dired-x)
 
-(use-package seti-theme
+(use-package color-theme-sanityinc-tomorrow
   :config
-  (load-theme 'seti t))
+  (color-theme-sanityinc-tomorrow-night))
 
 (use-package auto-package-update
   :config
@@ -260,8 +267,7 @@
    'company-minimum-prefix-length 1)
   (customize-set-variable
    'company-backends
-   '(company-capf
-     company-cmake
+   '(company-cmake
      company-files
      company-semantic
      (company-dabbrev-code company-keywords)))
@@ -350,28 +356,6 @@
        (show-paren-mode)
        (smartparens-strict-mode))))
 
-;; Load python packages
-
-(use-package elpy
-  :commands
-  elpy-enable
-
-  :init
-  (elpy-enable)
-  (unbind-key "C-c C-f" elpy-mode-map)
-
-  :config
-  (setq
-   elpy-rpc-virtualenv-path 'current
-   elpy-rpc-timeout         nil
-   elpy-rpc-python-command  "/usr/bin/python3"
-   elpy-modules             (delete 'elpy-module-flymake elpy-modules))
-
-  :hook
-  (elpy-mode
-   . (lambda ()
-       (highlight-indentation-mode -1))))
-
 ;; Load org packages
 
 (use-package org
@@ -419,6 +403,7 @@
 ;;;
 
 ;; Set common keybindings
+(global-set-key (kbd       "<F12>")  'reset-frames)
 (global-set-key (kbd       "C-k")  'kill-whole-line)
 (global-set-key (kbd   "M-g M-l")  'linum-mode)
 (global-set-key (kbd      "M-\\")  'comment-or-uncomment-region)
