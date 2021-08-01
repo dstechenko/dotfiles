@@ -105,7 +105,7 @@
 
 (setq frame-title-format "Emacs")
 
-(when (display-graphics-p)
+(when window-system
   (set-default-font "PragmataPro Mono 12")
   (menu-bar-mode   -1)
   (tool-bar-mode   -1)
