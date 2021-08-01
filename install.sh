@@ -5,8 +5,7 @@
 set -euxo pipefail
 
     CALL_DIR=$(pwd)
-INSTALL_SRCS=$(dirname  "$0")
-INSTALL_SRCS=$(realpath "$INSTALL_SRCS")
+INSTALL_SRCS=$(realpath $(dirname  "$0"))
 
 cd "$INSTALL_SRCS"
 
