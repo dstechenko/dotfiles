@@ -61,9 +61,6 @@
 (line-number-mode        1)
 (column-number-mode      1)
 (show-paren-mode         1)
-(menu-bar-mode          -1)
-(tool-bar-mode          -1)
-(scroll-bar-mode        -1)
 (electric-indent-mode   -1)
 (blink-cursor-mode      -1)
 
@@ -106,10 +103,13 @@
  indent-tabs-mode               nil
  cursor-in-non-selected-windows nil)
 
-
-(set-default-font "PragmataPro Mono 12")
-
 (setq frame-title-format "Emacs")
+
+(when (display-graphics-p)
+  (set-default-font "PragmataPro Mono 12")
+  (menu-bar-mode   -1)
+  (tool-bar-mode   -1)
+  (scroll-bar-mode -1))
 
 ;; Set repositories
 
