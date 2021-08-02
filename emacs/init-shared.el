@@ -50,9 +50,10 @@
 ;; CONFIGS
 ;;;
 
-;; Set current user
+;; Set names
 
-(setq user-full-name "Dmytro Stechenko")
+(setq user-full-name     "Dmytro Stechenko")
+(setq frame-title-format "Emacs")
 
 ;; Set minor modes
 
@@ -63,7 +64,6 @@
 (show-paren-mode         1)
 (electric-indent-mode   -1)
 (blink-cursor-mode      -1)
-(menu-bar-mode          -1)
 
 ;; Set global minor modes
 
@@ -102,12 +102,14 @@
  python-indent-offset           4
  show-trailing-whitespace       nil
  indent-tabs-mode               nil
+ cursor-type                   'box
  cursor-in-non-selected-windows nil)
 
-(setq frame-title-format "Emacs")
+;; Set window system options
 
 (when window-system
   (set-default-font "PragmataPro Mono 12")
+  (menu-bar-mode   -1)
   (tool-bar-mode   -1)
   (scroll-bar-mode -1))
 
@@ -419,7 +421,7 @@
        (setq asm-comment-char ?\#)))
 
   :mode
-  (("\\.s\\'" . asm-mode)))
+  (("\\.s\\'"   . asm-mode)))
 
 ;;;
 ;; GLOBAL BINDINGS
