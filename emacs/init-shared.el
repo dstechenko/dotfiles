@@ -52,8 +52,9 @@
 
 ;; Set names
 
-(setq user-full-name     "Dmytro Stechenko")
-(setq frame-title-format "Emacs")
+(setq
+ user-full-name     "Dmytro Stechenko"
+ frame-title-format "Emacs")
 
 ;; Set minor modes
 
@@ -64,6 +65,8 @@
 (show-paren-mode         1)
 (electric-indent-mode   -1)
 (blink-cursor-mode      -1)
+(menu-bar-mode          -1)
+(tool-bar-mode          -1)
 
 ;; Set global minor modes
 
@@ -101,17 +104,7 @@
  c-basic-offset                 2
  python-indent-offset           4
  show-trailing-whitespace       nil
- indent-tabs-mode               nil
- cursor-type                   'box
- cursor-in-non-selected-windows nil)
-
-;; Set window system options
-
-(when window-system
-  (set-default-font "PragmataPro Mono 12")
-  (menu-bar-mode   -1)
-  (tool-bar-mode   -1)
-  (scroll-bar-mode -1))
+ indent-tabs-mode               nil)
 
 ;; Set repositories
 
@@ -130,6 +123,16 @@
 (load custom-file t)
 
 ;; Set default hooks
+
+(add-hook
+ 'focus-in-hook
+ (lambda ()
+   (when window-system
+       (setq-default
+        cursor-type                   'box
+        cursor-in-non-selected-windows nil)
+       (set-default-font"PragmataPro Mono 12")
+       (scroll-bar-mode -1))))
 
 (add-hook
  'prog-mode-hook
