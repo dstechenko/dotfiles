@@ -111,8 +111,7 @@
       '(("gnu"          . "http://elpa.gnu.org/packages/")
         ("org"          . "http://orgmode.org/elpa/")
         ("melpa"        . "http://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")
-        ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
+        ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 ;; Set custom file handling
 
@@ -360,28 +359,6 @@
        (yas-minor-mode)
        (show-paren-mode)
        (smartparens-strict-mode))))
-
-;; Load python packages
-
-(use-package elpy
-  :commands
-  elpy-enable
-
-  :init
-  (elpy-enable)
-  (unbind-key "C-c C-f" elpy-mode-map)
-
-  :config
-  (setq
-   elpy-rpc-virtualenv-path 'current
-   elpy-rpc-timeout         nil
-   elpy-rpc-python-command  "/usr/bin/python3"
-   elpy-modules             (delete 'elpy-module-flymake elpy-modules))
-
-  :hook
-  (elpy-mode
-   . (lambda ()
-       (highlight-indentation-mode -1))))
 
 ;; Load org packages
 
