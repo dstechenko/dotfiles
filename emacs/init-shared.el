@@ -97,7 +97,6 @@
 ;; Set config default variables
 
 (setq-default
- window-size-fixed              t
  find-file-visit-truename       t
  fill-column                    80
  tab-width                      2
