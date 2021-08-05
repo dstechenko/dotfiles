@@ -126,11 +126,12 @@
  'focus-in-hook
  (lambda ()
    (when window-system
-       (setq-default
-        cursor-type                   'box
-        cursor-in-non-selected-windows nil)
-       (set-default-font"PragmataPro Mono 12")
-       (scroll-bar-mode -1))))
+     (reset-frames)
+     (setq-default
+      cursor-type                   'box
+      cursor-in-non-selected-windows nil)
+     (set-default-font"PragmataPro Mono 12")
+     (scroll-bar-mode -1))))
 
 (add-hook
  'prog-mode-hook
