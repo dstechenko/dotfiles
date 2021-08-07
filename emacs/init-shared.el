@@ -217,6 +217,17 @@
 
 (use-package flycheck)
 
+(use-package flyspell
+  :hook
+  ((text-mode . flyspell-mode)
+   (prog-mode . flyspell-prog-mode))
+
+  :config
+  (setq
+   ispell-program-name "aspell"
+   ispell-extra-args   '("--sug-mode=ultra")
+   ispell-list-command "--list"))
+
 (use-package telephone-line
   :config
   (telephone-line-defsegment
@@ -384,10 +395,10 @@
 ;; Load cpp packages
 
 (use-package modern-cpp-font-lock
-  :config
-  (add-hook
-   'c-common-mode
-   (lambda () (modern-c++-font-lock-mode 1))))
+  :hook
+  (c-common-mode
+   . (lambda ()
+       (modern-c++-font-lock-mode 1))))
 
 ;; Load asm packages
 
