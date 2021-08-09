@@ -162,9 +162,9 @@
 
 (require 'dired-x)
 
-(use-package gruvbox-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'gruvbox-dark-medium t))
+  (load-theme 'zenburn t))
 
 (use-package auto-package-update
   :config
