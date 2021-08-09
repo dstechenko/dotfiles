@@ -407,7 +407,7 @@
   asm-mode
 
   :config
-  (setq asm-comment-char ?\#))
+  (setq asm-comment-char ?\#)
 
   :mode
   (("\\.s\\'"   . asm-mode)))
