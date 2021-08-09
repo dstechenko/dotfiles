@@ -406,10 +406,8 @@
   :commands
   asm-mode
 
-  :hook
-  (asm-mode
-   . (lambda ()
-       (setq asm-comment-char ?\#)))
+  :config
+  (setq asm-comment-char ?\#))
 
   :mode
   (("\\.s\\'"   . asm-mode)))
