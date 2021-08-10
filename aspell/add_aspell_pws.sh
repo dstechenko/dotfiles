@@ -2,8 +2,6 @@
 # Copyright (C) Dmytro Stechenko
 # License: http://www.gnu.org/licenses/gpl.html
 
-set -euxo pipefail
-
 FILE=$1
 WORD=$2
 
