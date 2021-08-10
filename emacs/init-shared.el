@@ -141,9 +141,9 @@
 
 (require 'dired-x)
 
-(use-package zenburn-theme
+(use-package monokai-theme
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'monokai t))
 
 (use-package auto-package-update
   :config
