@@ -20,3 +20,7 @@ sudo rm -rf "/etc/resolv.conf"
 
 sudo cp "${INSTALL_SRCS}/wsl.conf"    "/etc/wsl.conf"
 sudo cp "${INSTALL_SRCS}/resolv.conf" "/etc/resolv.conf"
+
+# install terminal settings
+cp ${INSTALL_SRCS}/settings.json \
+   ${USER_PROFILE}/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/settings.json
