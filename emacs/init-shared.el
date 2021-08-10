@@ -16,10 +16,6 @@
   "Expand `PATH' with Emacs temporary directory."
   (expand-emacs (concat "tmp" "/" path)))
 
-(defun expand-bin (path)
-  "Expand `PATH' with Emacs binaries directory."
-  (expand-emacs (concat "bin" "/" path)))
-
 (defun ensure-dir-exists (directory)
   "Create `DIRECTORY' if does not exist."
   (when (not (file-exists-p directory))
@@ -39,12 +35,6 @@
   "Kill all other buffers."
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
-
-(defun reset-frames ()
-  "Resize frames to the default."
-  (interactive)
-  (when window-system
-    (set-frame-size (selected-frame) 120 70)))
 
 ;;;
 ;; CONFIGS
@@ -121,17 +111,6 @@
 (load custom-file t)
 
 ;; Set default hooks
-
-(add-hook
- 'focus-in-hook
- (lambda ()
-   (when window-system
-     (reset-frames)
-     (setq-default
-      cursor-type                   'box
-      cursor-in-non-selected-windows nil)
-     (set-default-font"PragmataPro Mono 12")
-     (scroll-bar-mode -1))))
 
 (add-hook
  'prog-mode-hook

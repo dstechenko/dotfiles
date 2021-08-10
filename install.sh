@@ -26,16 +26,4 @@ source "$INSTALL_SRCS/git/install.sh"
 # shellcheck source=/dev/null
 source "$INSTALL_SRCS/tmux/install.sh"
 
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/i3/install.sh"
-
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/xinitrc/install.sh"
-
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/Xresources/install.sh"
-
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/gtk/install.sh"
-
 cd "$CALL_DIR"
