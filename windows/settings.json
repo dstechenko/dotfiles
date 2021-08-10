@@ -1,9 +1,9 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "nextTab",
                 "tabSwitcherMode": "disabled"
@@ -11,7 +11,7 @@
             "keys": "win+shift+]"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab",
                 "tabSwitcherMode": "disabled"
@@ -19,7 +19,7 @@
             "keys": "win+shift+["
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy"
             },
@@ -34,15 +34,15 @@
     "copyOnSelect": false,
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "initialRows": 70,
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "colorScheme": "Tango Dark",
             "cursorShape": "filledBox",
             "fontFace": "PragmataPro Mono"
         },
-        "list": 
+        "list":
         [
             {
                 "bellStyle": "none",
@@ -85,7 +85,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
@@ -133,29 +133,29 @@
             "white": "#CCCCCC",
             "yellow": "#C19C00"
         },
-{
-  "name": "Monokai",
-  "black": "#1a1a1a",
-  "red": "#f4005f",
-  "green": "#98e024",
-  "yellow": "#fd971f",
-  "blue": "#9d65ff",
-  "purple": "#f4005f",
-  "cyan": "#58d1eb",
-  "white": "#c4c5b5",
-  "brightBlack": "#625e4c",
-  "brightRed": "#f4005f",
-  "brightGreen": "#98e024",
-  "brightYellow": "#e0d561",
-  "brightBlue": "#9d65ff",
-  "brightPurple": "#f4005f",
-  "brightCyan": "#58d1eb",
-  "brightWhite": "#f6f6ef",
-  "background": "#1c1c1c",
-  "foreground": "#d9d9d9",
-  "selectionBackground": "#343434",
-  "cursorColor": "#fc971f"
-},
+        {
+            "name": "Monokai",
+            "black": "#1a1a1a",
+            "red": "#f4005f",
+            "green": "#98e024",
+            "yellow": "#fd971f",
+            "blue": "#9d65ff",
+            "purple": "#f4005f",
+            "cyan": "#58d1eb",
+            "white": "#c4c5b5",
+            "brightBlack": "#625e4c",
+            "brightRed": "#f4005f",
+            "brightGreen": "#98e024",
+            "brightYellow": "#e0d561",
+            "brightBlue": "#9d65ff",
+            "brightPurple": "#f4005f",
+            "brightCyan": "#58d1eb",
+            "brightWhite": "#f6f6ef",
+            "background": "#1c1c1c",
+            "foreground": "#d9d9d9",
+            "selectionBackground": "#343434",
+            "cursorColor": "#fc971f"
+        },
         {
             "background": "#282C34",
             "black": "#282C34",
