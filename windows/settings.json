@@ -1,9 +1,9 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "nextTab",
                 "tabSwitcherMode": "disabled"
@@ -11,7 +11,7 @@
             "keys": "win+shift+]"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "prevTab",
                 "tabSwitcherMode": "disabled"
@@ -19,7 +19,7 @@
             "keys": "win+shift+["
         },
         {
-            "command":
+            "command": 
             {
                 "action": "copy"
             },
@@ -32,37 +32,31 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "defaultProfile": "{f06a50d9-dab6-565a-8e6b-2fd7c1bfb874}",
+    "initialCols": 120,
     "initialRows": 70,
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Tango Dark",
             "cursorShape": "filledBox",
             "fontFace": "PragmataPro Mono"
         },
-        "list":
+        "list": 
         [
             {
                 "bellStyle": "none",
                 "colorScheme": "Monokai",
-                "commandline": "powershell.exe",
+                "commandline": "wsl.exe -d Ubuntu bash -ic editor",
                 "cursorShape": "filledBox",
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell",
-                "suppressApplicationTitle": true
-            },
-            {
-                "bellStyle": "none",
-                "colorScheme": "Monokai",
-                "commandline": "cmd.exe",
-                "cursorShape": "filledBox",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt",
-                "suppressApplicationTitle": true
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Editor",
+                "scrollbarState": "hidden",
+                "startingDirectory": "//wsl$/Ubuntu/home/dmytro",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Editor"
             },
             {
                 "bellStyle": "none",
@@ -70,12 +64,33 @@
                 "cursorShape": "filledBox",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
-                "name": "Ubuntu",
+                "name": "Shell",
                 "scrollbarState": "hidden",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "//wsl$/Ubuntu/home/dmytro",
                 "suppressApplicationTitle": true,
-                "tabTitle": "Ubuntu"
+                "tabTitle": "Shell"
+            },
+            {
+                "bellStyle": "none",
+                "colorScheme": "Monokai",
+                "commandline": "powershell.exe",
+                "cursorShape": "filledBox",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Local",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Local"
+            },
+            {
+                "bellStyle": "none",
+                "colorScheme": "Monokai",
+                "commandline": "cmd.exe",
+                "cursorShape": "filledBox",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": true,
+                "name": "Command Prompt",
+                "suppressApplicationTitle": true
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -85,7 +100,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",
@@ -134,27 +149,27 @@
             "yellow": "#C19C00"
         },
         {
+            "background": "#1C1C1C",
+            "black": "#1A1A1A",
+            "blue": "#9D65FF",
+            "brightBlack": "#625E4C",
+            "brightBlue": "#9D65FF",
+            "brightCyan": "#58D1EB",
+            "brightGreen": "#98E024",
+            "brightPurple": "#F4005F",
+            "brightRed": "#F4005F",
+            "brightWhite": "#F6F6EF",
+            "brightYellow": "#E0D561",
+            "cursorColor": "#FC971F",
+            "cyan": "#58D1EB",
+            "foreground": "#D9D9D9",
+            "green": "#98E024",
             "name": "Monokai",
-            "black": "#1a1a1a",
-            "red": "#f4005f",
-            "green": "#98e024",
-            "yellow": "#fd971f",
-            "blue": "#9d65ff",
-            "purple": "#f4005f",
-            "cyan": "#58d1eb",
-            "white": "#c4c5b5",
-            "brightBlack": "#625e4c",
-            "brightRed": "#f4005f",
-            "brightGreen": "#98e024",
-            "brightYellow": "#e0d561",
-            "brightBlue": "#9d65ff",
-            "brightPurple": "#f4005f",
-            "brightCyan": "#58d1eb",
-            "brightWhite": "#f6f6ef",
-            "background": "#1c1c1c",
-            "foreground": "#d9d9d9",
+            "purple": "#F4005F",
+            "red": "#F4005F",
             "selectionBackground": "#343434",
-            "cursorColor": "#fc971f"
+            "white": "#C4C5B5",
+            "yellow": "#FD971F"
         },
         {
             "background": "#282C34",
@@ -341,5 +356,6 @@
             "yellow": "#DFAF8F"
         }
     ],
+    "startOnUserLogin": false,
     "tabWidthMode": "equal"
 }
