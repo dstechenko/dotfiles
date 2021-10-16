@@ -153,9 +153,9 @@
 
 (require 'dired-x)
 
-(use-package cyberpunk-theme
+(use-package gruvbox-theme
   :config
-  (load-theme 'cyberpunk t))
+  (load-theme 'gruvbox-dark-medium t))
 
 (use-package auto-package-update
   :config
@@ -166,12 +166,6 @@
   (prog-mode . highlight-symbol-nav-mode))
 
 (use-package helm
-  :custom-face
-  (helm-candidate-number
-   ((t (:background "black" :foreground "white"))))
-  (helm-candidate-number-suspended
-   ((t (:background "black" :foreground "white"))))
-
   :config
   (require 'helm-config)
   (setq
@@ -229,16 +223,6 @@
    ispell-list-command "--list"))
 
 (use-package telephone-line
-  :custom-face
-  (mode-line
-   ((t (:background "light gray" :foreground "dim gray"))))
-  (mode-line-inactive
-   ((t (:background "black"      :foreground "dim gray"))))
-  (telephone-line-accent-active
-   ((t (:background "dim gray"   :foreground "bright white"))))
-  (telephone-line-accent-inactive
-   ((t (:background "black"      :foreground "white"))))
-
   :config
   (telephone-line-defsegment
     telephone-line-config-project-mode-segment

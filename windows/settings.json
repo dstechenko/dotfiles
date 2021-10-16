@@ -1,9 +1,9 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "nextTab",
                 "tabSwitcherMode": "disabled"
@@ -11,7 +11,7 @@
             "keys": "win+shift+]"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab",
                 "tabSwitcherMode": "disabled"
@@ -19,7 +19,7 @@
             "keys": "win+shift+["
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy"
             },
@@ -35,19 +35,22 @@
     "defaultProfile": "{f06a50d9-dab6-565a-8e6b-2fd7c1bfb874}",
     "initialCols": 120,
     "initialRows": 70,
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "colorScheme": "Tango Dark",
+            "colorScheme": "Gruvbox Dark",
             "cursorShape": "filledBox",
-            "fontFace": "PragmataPro Mono"
+            "font":
+            {
+                "face": "PragmataPro Mono"
+            }
         },
-        "list": 
+        "list":
         [
             {
                 "bellStyle": "none",
-                "colorScheme": "Monokai",
+                "colorScheme": "Gruvbox Dark",
                 "commandline": "wsl.exe -d Ubuntu bash -ic editor",
                 "cursorShape": "filledBox",
                 "hidden": false,
@@ -60,7 +63,7 @@
             },
             {
                 "bellStyle": "none",
-                "colorScheme": "Monokai",
+                "colorScheme": "Gruvbox Dark",
                 "cursorShape": "filledBox",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
@@ -73,7 +76,7 @@
             },
             {
                 "bellStyle": "none",
-                "colorScheme": "Monokai",
+                "colorScheme": "Gruvbox Dark",
                 "commandline": "powershell.exe",
                 "cursorShape": "filledBox",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -84,7 +87,7 @@
             },
             {
                 "bellStyle": "none",
-                "colorScheme": "Monokai",
+                "colorScheme": "Gruvbox Dark",
                 "commandline": "cmd.exe",
                 "cursorShape": "filledBox",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -100,7 +103,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
@@ -147,6 +150,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#262626",
+            "black": "#282828",
+            "blue": "#458588",
+            "brightBlack": "#928374",
+            "brightBlue": "#83A598",
+            "brightCyan": "#8EC07C",
+            "brightGreen": "#B8BB26",
+            "brightPurple": "#D3869B",
+            "brightRed": "#FB4934",
+            "brightWhite": "#EBDBB2",
+            "brightYellow": "#FABD2F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#689D6A",
+            "foreground": "#EBDBB2",
+            "green": "#98971A",
+            "name": "Gruvbox Dark",
+            "purple": "#B16286",
+            "red": "#CC241D",
+            "selectionBackground": "#FFFFFF",
+            "white": "#A89984",
+            "yellow": "#D79921"
         },
         {
             "background": "#1C1C1C",
