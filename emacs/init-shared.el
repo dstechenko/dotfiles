@@ -153,9 +153,9 @@
 
 (require 'dired-x)
 
-(use-package monokai-theme
+(use-package cyberpunk-theme
   :config
-  (load-theme 'monokai t))
+  (load-theme 'cyberpunk t))
 
 (use-package auto-package-update
   :config
@@ -166,6 +166,12 @@
   (prog-mode . highlight-symbol-nav-mode))
 
 (use-package helm
+  :custom-face
+  (helm-candidate-number
+   ((t (:background "black" :foreground "white"))))
+  (helm-candidate-number-suspended
+   ((t (:background "black" :foreground "white"))))
+
   :config
   (require 'helm-config)
   (setq
@@ -223,26 +229,36 @@
    ispell-list-command "--list"))
 
 (use-package telephone-line
+  :custom-face
+  (mode-line
+   ((t (:background "light gray" :foreground "dim gray"))))
+  (mode-line-inactive
+   ((t (:background "black"      :foreground "dim gray"))))
+  (telephone-line-accent-active
+   ((t (:background "dim gray"   :foreground "bright white"))))
+  (telephone-line-accent-inactive
+   ((t (:background "black"      :foreground "white"))))
+
   :config
   (telephone-line-defsegment
-    telephone-line-buffer-config-project-mode-segment
+    telephone-line-config-project-mode-segment
     () config-project-mode)
 
   (setq
-   telephone-line-primary-right-separator   'telephone-line-nil
-   telephone-line-secondary-right-separator 'telephone-line-nil
-   telephone-line-primary-left-separator    'telephone-line-nil
-   telephone-line-secondary-left-separator  'telephone-line-nil)
+   telephone-line-primary-right-separator   'telephone-line-abs-right
+   telephone-line-secondary-right-separator 'telephone-line-abs-hollow-right
+   telephone-line-primary-left-separator    'telephone-line-abs-left
+   telephone-line-secondary-left-separator  'telephone-line-abs-hollow-left)
 
   (setq
    telephone-line-lhs
-   '((accent . (telephone-line-buffer-modified-segment))
-     (accent . (telephone-line-buffer-config-project-mode-segment))
+   '((nil    . (telephone-line-buffer-modified-segment))
+     (nil    . (telephone-line-config-project-mode-segment))
      (accent . (telephone-line-buffer-name-segment)))
    telephone-line-rhs
-   '((accent . (telephone-line-flycheck-segment))
-     (accent . (telephone-line-major-mode-segment))
-     (accent . (telephone-line-position-segment))))
+   '((accent . (telephone-line-major-mode-segment))
+     (nil    . (telephone-line-filesize-segment))
+     (nil    . (telephone-line-airline-position-segment))))
   (telephone-line-mode 1))
 
 (use-package git-gutter

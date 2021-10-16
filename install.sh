@@ -15,9 +15,6 @@ git pull origin master
 source "$INSTALL_SRCS/emacs/install.sh"
 
 # shellcheck source=/dev/null
-source "$INSTALL_SRCS/kitty/install.sh"
-
-# shellcheck source=/dev/null
 source "$INSTALL_SRCS/bash/install.sh"
 
 # shellcheck source=/dev/null
