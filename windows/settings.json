@@ -1,9 +1,9 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "nextTab",
                 "tabSwitcherMode": "disabled"
@@ -11,7 +11,7 @@
             "keys": "win+shift+]"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "prevTab",
                 "tabSwitcherMode": "disabled"
@@ -19,7 +19,7 @@
             "keys": "win+shift+["
         },
         {
-            "command":
+            "command": 
             {
                 "action": "copy"
             },
@@ -35,18 +35,19 @@
     "defaultProfile": "{f06a50d9-dab6-565a-8e6b-2fd7c1bfb874}",
     "initialCols": 120,
     "initialRows": 70,
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Gruvbox Dark",
             "cursorShape": "filledBox",
-            "font":
+            "font": 
             {
-                "face": "PragmataPro Mono"
+                "face": "PragmataPro Mono",
+                "size": 10
             }
         },
-        "list":
+        "list": 
         [
             {
                 "bellStyle": "none",
@@ -57,7 +58,7 @@
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
                 "name": "Editor",
                 "scrollbarState": "hidden",
-                "startingDirectory": "//wsl$/Ubuntu/home/dmytro",
+                "startingDirectory": "/home/dmytro",
                 "suppressApplicationTitle": true,
                 "tabTitle": "Editor"
             },
@@ -70,7 +71,7 @@
                 "name": "Shell",
                 "scrollbarState": "hidden",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu/home/dmytro",
+                "startingDirectory": "/home/dmytro",
                 "suppressApplicationTitle": true,
                 "tabTitle": "Shell"
             },
@@ -103,7 +104,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",
