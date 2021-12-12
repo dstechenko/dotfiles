@@ -92,6 +92,7 @@
  tooltip-mode                          nil
  show-help-function                    nil
  sentence-end-double-space             nil
+ vc-handled-backends                   nil
  ring-bell-function                   'ignore)
 
 (fset 'yes-or-no-p 'y-or-n-p)
