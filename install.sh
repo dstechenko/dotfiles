@@ -23,4 +23,7 @@ source "$INSTALL_SRCS/git/install.sh"
 # shellcheck source=/dev/null
 source "$INSTALL_SRCS/tmux/install.sh"
 
+# shellcheck source=/dev/null
+source "$INSTALL_SRCS/alacritty/install.sh"
+
 cd "$CALL_DIR"

@@ -1,0 +1,73 @@
+env:
+  TERM: alacritty
+
+window:
+  title: Alacritty
+  dynamic_title: false
+  dynamic_padding: false
+  decorations: full
+  opacity: 1.0
+  startup_mode: Fullscreen
+
+font:
+  normal:
+    family: PragmataPro Mono
+    style: Regular
+  bold:
+    family: PragmataPro Mono
+    style: Bold
+  italic:
+    family: PragmataPro Mono
+    style: Italic
+  bold_italic:
+    family: PragmataPro Mono
+    style: Bold Italic
+  size: 11.0
+
+colors:
+  primary:
+    background: '#1B1E1C'
+    foreground: '#F8F8F2'
+
+  normal:
+   black:   '#272822'
+   red:     '#F92672'
+   green:   '#A6E22E'
+   yellow:  '#F4BF75'
+   blue:    '#66D9EF'
+   magenta: '#AE81FF'
+   cyan:    '#A1EFE4'
+   white:   '#F8F8F2'
+
+  bright:
+   black:   '#75715E'
+   red:     '#F92672'
+   green:   '#A6E22E'
+   yellow:  '#F4BF75'
+   blue:    '#66D9EF'
+   magenta: '#AE81FF'
+   cyan:    '#A1EFE4'
+   white:   '#F9F8F5'
+
+cursor:
+  style:
+    shape: Block
+    blinking: On
+
+live_config_reload: true
+
+mouse:
+  hide_when_typing: true
+
+shell:
+  program: /usr/bin/tmux
+  args:
+    - new
+    - -AD
+    - -s main
+
+selection:
+  save_to_clipboard: true
+
+mouse_bindings:
+  - { mouse: Right, action: Paste }

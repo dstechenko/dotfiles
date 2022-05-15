@@ -154,9 +154,9 @@
 
 (require 'dired-x)
 
-(use-package gruvbox-theme
+(use-package monokai-theme
   :config
-  (load-theme 'gruvbox-dark-medium t))
+  (load-theme 'monokai t))
 
 (use-package auto-package-update
   :config
@@ -244,6 +244,7 @@
    '((accent . (telephone-line-major-mode-segment))
      (nil    . (telephone-line-filesize-segment))
      (nil    . (telephone-line-airline-position-segment))))
+
   (telephone-line-mode 1))
 
 (use-package git-gutter
