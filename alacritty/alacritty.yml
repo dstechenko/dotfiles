@@ -49,6 +49,10 @@ colors:
    cyan:    '#A1EFE4'
    white:   '#F9F8F5'
 
+  cursor:
+   text:    '#1B1E1C'
+   cursor:  '#F8F8F2'
+
 cursor:
   style:
     shape: Block
