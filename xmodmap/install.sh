@@ -6,5 +6,7 @@ set -euxo pipefail
 
 xmodmap -pke > "${HOME:?}/.Xmodmap"
 
+echo " "                                      >> "${HOME:?}/.Xmodmap"
 echo "! Auto-generated section"               >> "${HOME:?}/.Xmodmap"
 cat  "$INSTALL_SRCS/xmodmap/xmodmap_override" >> "${HOME:?}/.Xmodmap"
+echo " "                                      >> "${HOME:?}/.Xmodmap"
