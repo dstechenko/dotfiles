@@ -7,7 +7,6 @@ window:
   dynamic_padding: false
   decorations: full
   opacity: 1.0
-  startup_mode: Fullscreen
 
 font:
   normal:
@@ -22,7 +21,7 @@ font:
   bold_italic:
     family: PragmataPro Mono
     style: Bold Italic
-  size: 11.0
+  size: 4
 
 colors:
   primary:
