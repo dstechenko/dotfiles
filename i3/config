@@ -7,6 +7,8 @@ exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dpms
 exec_always --no-startup-id xrdb ~/.Xresources
 
+# exec xinitrc stuff
+
 exec_always --no-startup-id sleep 5 && xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id sleep 5 && nm-applet
 
@@ -26,21 +28,21 @@ set $left  "j"
 set $right "l"
 
 set $set_monitor_display --no-startup-id xrandr \
-     --output eDP-1                             \
-     --mode 1920x1080                           \
      --fb 3840x1600                             \
+     --output eDP                               \
+     --mode 1920x1080                           \
      --panning 3840x1600                        \
-     --output HDMI-2                            \
+     --output HDMI-A-0                          \
      --mode 3840x1600                           \
-     --same-as eDP-1
+     --same-as eDP
 
-set $set_laptop_display --no-startup-id xrandr \
-     --output eDP-1                            \
-     --mode 1920x1080                          \
-     --fb 1920x1080
+# set $set_laptop_display --no-startup-id xrandr \
+#      --output eDP-1                            \
+#      --mode 1920x1080                          \
+#      --fb 1920x1080
 
 bindsym $mod+o       exec $set_monitor_display
-bindsym $mod+shift+o exec $set_laptop_display
+# bindsym $mod+shift+o exec $set_laptop_display
 
 # exec $set_monitor_display
 
@@ -56,7 +58,7 @@ font pango:PragmataPro Mono 11
 for_window [class="^.*$"] border pixel $border
 
 bindsym $mod+space  exec rofi -show run -display-run "."
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+u      exec i3lock --color "$bg" -e -f -u
 
 bindsym $mod+shift+q kill
@@ -66,7 +68,7 @@ bindsym $mod+$down  focus down
 bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
-bindsym $mod+shift+$left  move left
+bindsym $mod+shift+$left  move; left
 bindsym $mod+shift+$down  move down
 bindsym $mod+shift+$up    move up
 bindsym $mod+shift+$right move right
@@ -144,45 +146,45 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-        position          top
-        workspace_buttons yes
-        status_command    i3status --config ~/.config/i3/i3status.conf
-        separator_symbol  "|"
-        colors {
-               background           $bg
-               statusline           $fg
-               separator            $fg
-               focused_workspace    $yellow $yellow $bg
-               inactive_workspace   $fg     $fg     $bg
-               active_workspace     $fg     $fg     $bg
-               urgent_workspace     $fg     $fg     $red
-               binding_mode         $yellow $yellow $bg
-        }
-}
+# bar {
+#         position          top
+#         workspace_buttons yes
+#         status_command    i3status --config ~/.config/i3/i3status.conf
+#         separator_symbol  "|"
+#         colors {
+#                background           $bg
+#                statusline           $fg
+#                separator            $fg
+#                focused_workspace    $yellow $yellow $bg
+#                inactive_workspace   $fg     $fg     $bg
+#                active_workspace     $fg     $fg     $bg
+#                urgent_workspace     $fg     $fg     $red
+#                binding_mode         $yellow $yellow $bg
+#         }
+# }
 
-client.focused          $yellow $yellow $fg $yellow $yellow
-client.focused_inactive $bg     $bg     $fg $bg     $bg
-client.unfocused        $bg     $bg     $fg $bg     $bg
-client.urgent           $red    $red    $fg $red    $red
+# client.focused          $yellow $yellow $fg $yellow $yellow
+# client.focused_inactive $bg     $bg     $fg $bg     $bg
+# client.unfocused        $bg     $bg     $fg $bg     $bg
+# client.urgent           $red    $red    $fg $red    $red
 
-exec_always --no-startup-id killall dunst \
-            && dunst                      \
-            -lb "$bg" -nb "$bg" -cb "$bg" \
-            -lf "$fg" -bf "$fg" -cf "$fg" \
-            -nf "$fg"                     \
-            -frame_color "$yellow"        \
-            -frame_width "$border"        \
-            -fn "PragmataPro Mono 11"     \
-            -s                            \
-            -geometry "400x60-10+40"      \
-            -format "<b>%s</b>\n%b"       \
-            -shrink                       \
-            -lto 3 -nto 5 -cto 0          \
-            -align "left"                 \
-            -transparency 0               \
-            -padding 8                    \
-            -horizontal_padding 8
+# exec_always --no-startup-id killall dunst \
+#             && dunst                      \
+#             -lb "$bg" -nb "$bg" -cb "$bg" \
+#             -lf "$fg" -bf "$fg" -cf "$fg" \
+#             -nf "$fg"                     \
+#             -frame_color "$yellow"        \
+#             -frame_width "$border"        \
+#             -fn "PragmataPro Mono 11"     \
+#             -s                            \
+#             -geometry "400x60-10+40"      \
+#             -format "<b>%s</b>\n%b"       \
+#             -shrink                       \
+#             -lto 3 -nto 5 -cto 0          \
+#             -align "left"                 \
+#             -transparency 0               \
+#             -padding 8                    \
+#             -horizontal_padding 8
 
 exec_always --no-startup-id xsetroot -solid "$fbg"
 
