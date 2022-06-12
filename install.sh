@@ -24,13 +24,7 @@ source "$INSTALL_SRCS/git/install.sh"
 source "$INSTALL_SRCS/tmux/install.sh"
 
 # shellcheck source=/dev/null
-source "$INSTALL_SRCS/i3/install.sh"
-
-# shellcheck source=/dev/null
 source "$INSTALL_SRCS/xinitrc/install.sh"
-
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/xresources/install.sh"
 
 # shellcheck source=/dev/null
 source "$INSTALL_SRCS/xmodmap/install.sh"

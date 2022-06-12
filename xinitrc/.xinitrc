@@ -11,5 +11,3 @@ fi
 if [[ -f "${HOME}/.Xresources" ]]; then
     xrdb -load "${HOME}/.Xresources"
 fi
-
-exec i3
