@@ -24,12 +24,6 @@ source "$INSTALL_SRCS/git/install.sh"
 source "$INSTALL_SRCS/tmux/install.sh"
 
 # shellcheck source=/dev/null
-source "$INSTALL_SRCS/xinitrc/install.sh"
-
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/xmodmap/install.sh"
-
-# shellcheck source=/dev/null
 source "$INSTALL_SRCS/alacritty/install.sh"
 
 cd "$CALL_DIR"
