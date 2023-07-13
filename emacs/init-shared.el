@@ -154,9 +154,12 @@
 
 (require 'dired-x)
 
-(use-package monokai-theme
+(use-package gruvbox-theme
   :config
-  (load-theme 'monokai t))
+  (load-theme 'gruvbox-dark-hard t))
+
+(use-package all-the-icons
+  :ensure t)
 
 (use-package auto-package-update
   :config
@@ -168,7 +171,6 @@
 
 (use-package helm
   :config
-  (require 'helm-config)
   (setq
    helm-completion-style                  'emacs
    completion-styles                      '(flex)
