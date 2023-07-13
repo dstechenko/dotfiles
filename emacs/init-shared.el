@@ -351,10 +351,6 @@
   (auto-compile-on-load-mode 1)
   (auto-compile-on-save-mode 1))
 
-(use-package eldoc
-  :commands
-  eldoc-mode)
-
 (use-package emacs
   :bind
   (:map emacs-lisp-mode-map
@@ -365,7 +361,6 @@
    . (lambda ()
        (setq-default flycheck-emacs-lisp-load-path 'inherit)
        (setq         show-trailing-whitespace             t)
-       (eldoc-mode)
        (yas-minor-mode)
        (show-paren-mode)
        (smartparens-strict-mode))))
