@@ -4,10 +4,10 @@
 
 set -euxo pipefail
 
-rm -rf "${HOME:?}/Pictures/wallpaper.jpg"
-cp     "$INSTALL_SRCS/media/wallpaper.jpg" \
-       "${HOME:?}/Pictures/wallpaper.jpg"
+rm -rf "${HOME:?}/Pictures/wallpaper.*"
+cp     "$INSTALL_SRCS/media/wallpaper.*" \
+       "${HOME:?}/Pictures/"
 
-rm -rf "${HOME:?}/Pictures/profile.jpg"
-cp     "$INSTALL_SRCS/media/profile.jpg" \
-       "${HOME:?}/Pictures/profile.jpg"
+rm -rf "${HOME:?}/Pictures/profile.*"
+cp     "$INSTALL_SRCS/media/profile.*" \
+       "${HOME:?}/Pictures/"
