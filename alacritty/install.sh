@@ -4,6 +4,6 @@
 
 set -euxo pipefail
 
-rm -rf "${HOME:?}/.config/alacritty/alacritty.yml"
-cp     "$INSTALL_SRCS/alacritty/alacritty.yml" \
-       "${HOME:?}/.config/alacritty/alacritty.yml"
+rm -rf "${HOME:?}/.config/alacritty/alacritty.toml"
+cp     "$INSTALL_SRCS/alacritty/alacritty.toml" \
+       "${HOME:?}/.config/alacritty/alacritty.toml"

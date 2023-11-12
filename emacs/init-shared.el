@@ -154,12 +154,9 @@
 
 (require 'dired-x)
 
-(use-package gruvbox-theme
+(use-package monokai-pro-theme
   :config
-  (load-theme 'gruvbox-dark-hard t))
-
-(use-package all-the-icons
-  :ensure t)
+  (load-theme 'monokai-pro t))
 
 (use-package auto-package-update
   :config

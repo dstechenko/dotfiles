@@ -1,0 +1,76 @@
+live_config_reload = true
+
+[colors.bright]
+black = "#727072"
+red = "#FF6188"
+green = "#A9DC76"
+yellow = "#FFD866"
+blue = "#FC9867"
+magenta = "#AB9DF2"
+cyan = "#78DCE8"
+white = "#FCFCFA"
+
+[colors.cursor]
+cursor = "#F8F8F2"
+text = "#1B1E1C"
+
+[colors.normal]
+black = "#403E41"
+red = "#FF6188"
+green = "#A9DC76"
+yellow = "#FFD866"
+blue = "#FC9867"
+magenta = "#AB9DF2"
+cyan = "#78DCE8"
+white = "#FCFCFA"
+
+[colors.primary]
+background = "#2D2A2E"
+foreground = "#FCFCFA"
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "Paste"
+mouse = "Right"
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+args = ["new", "-AD", "-s main"]
+program = "/usr/bin/tmux"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+dynamic_title = false
+opacity = 1.0
+title = "Alacritty"
