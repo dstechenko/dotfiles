@@ -10,6 +10,11 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
+# Set path if managed by path helper
+if [ -x /usr/libexec/path_helper ]; then
+  eval "$(/usr/libexec/path_helper)"
+fi
+
 # Keep oodles of command history
 HISTFILESIZE=-1
 HISTSIZE=1000000
@@ -23,8 +28,7 @@ export    PS1="[$HOSTNAME]\$ "
 export LC_ALL="en_US.UTF-8"
 export   LANG="en_US.UTF-8"
 
-alias  editor="$EDITOR"
-alias  pifind="
-    sudo watch -c -t -n 2 '
-         arp -a         | cut -f1 -d \" \"       | grep -v ? ;
-         arp-scan -l -g | grep -i -m 1 raspberry | cut -f1     | xargs -r ping -q -c 1 >> /dev/null'"
+# Prevent MacOS from whining about bash for now
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+alias edit="$EDITOR"
