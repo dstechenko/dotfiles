@@ -20,6 +20,9 @@ HISTFILESIZE=-1
 HISTSIZE=1000000
 shopt -s histappend
 
+# Add scripts to execute on demand
+export PATH="${PATH}:${HOME:?}/scripts"
+
 # Export environment variables, aliases
 export   TERM="xterm-256color"
 export EDITOR="emacs -nw"
