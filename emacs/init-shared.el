@@ -185,7 +185,7 @@
   (("C-c h"   . helm-mini)
    ("C-h a"   . helm-apropos)
    ("C-x b"   . helm-buffers-list)
-   ("C-x C-b" . helm-buffers-list)
+   ("C-x C-b" . helm-bookmarks)
    ("C-x C-f" . helm-find-files)
    ("C-x C-g" . helm-for-files)
    ("C-x c t" . helm-top)

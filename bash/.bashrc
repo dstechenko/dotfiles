@@ -22,6 +22,7 @@ shopt -s histappend
 
 # Add scripts to execute on demand
 export PATH="${PATH}:${HOME:?}/scripts"
+export PATH="${PATH}:/opt/homebrew/bin"
 
 # Export environment variables, aliases
 export   TERM="xterm-256color"
