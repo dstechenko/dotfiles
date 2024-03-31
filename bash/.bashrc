@@ -23,6 +23,7 @@ shopt -s histappend
 # Add scripts to execute on demand
 export PATH="${HOME:?}/scripts:${PATH}"
 export PATH="/opt/homebrew/bin:${PATH}"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Export environment variables, aliases
 export   TERM="xterm-256color"
