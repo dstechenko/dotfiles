@@ -21,8 +21,8 @@ HISTSIZE=1000000
 shopt -s histappend
 
 # Add scripts to execute on demand
-export PATH="${PATH}:${HOME:?}/scripts"
-export PATH="${PATH}:/opt/homebrew/bin"
+export PATH="${HOME:?}/scripts:${PATH}"
+export PATH="/opt/homebrew/bin:${PATH}"
 
 # Export environment variables, aliases
 export   TERM="xterm-256color"
