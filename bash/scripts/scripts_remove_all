@@ -2,4 +2,4 @@
 # Copyright (C) Dmytro Stechenko
 # License: http://www.gnu.org/licenses/gpl.html
 
-rm -rf "${HOME:?}/scripts"
+rm -rf "${HOME:?}/Scripts"

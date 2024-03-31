@@ -21,7 +21,7 @@ HISTSIZE=1000000
 shopt -s histappend
 
 # Add scripts to execute on demand
-export PATH="${HOME:?}/scripts:${PATH}"
+export PATH="${HOME:?}/Scripts:${PATH}"
 export PATH="/opt/homebrew/bin:${PATH}"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 

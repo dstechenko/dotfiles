@@ -12,9 +12,9 @@ rm -rf "${HOME:?}/.bash_profile"
 cp     "$INSTALL_SRCS/bash/.bash_profile" \
        "${HOME:?}/.bash_profile"
 
-[ -d "${HOME:?}/scripts" ] || mkdir "${HOME:?}/scripts"
-cp "$INSTALL_SRCS/bash/scripts"/* "${HOME:?}/scripts"
-chmod +x "${HOME:?}/scripts"/*
+[ -d "${HOME:?}/Scripts" ] || mkdir "${HOME:?}/Scripts"
+cp "$INSTALL_SRCS/bash/Scripts"/* "${HOME:?}/Scripts"
+chmod +x "${HOME:?}/Scripts"/*
 
 echo ""                                            >> "${HOME:?}/.bashrc"
 echo "# Auto-generated section"                    >> "${HOME:?}/.bashrc"
