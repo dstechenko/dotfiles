@@ -154,9 +154,9 @@
 
 (require 'dired-x)
 
-(use-package monokai-pro-theme
+(use-package ayu-theme
   :config
-  (load-theme 'monokai-pro t))
+  (load-theme 'ayu-dark t))
 
 (use-package auto-package-update
   :config
