@@ -25,12 +25,13 @@ export PATH="${PATH}:${HOME:?}/scripts"
 export PATH="${PATH}:/opt/homebrew/bin"
 
 # Export environment variables, aliases
-export   TERM="xterm-256color"
-export EDITOR="emacs -nw"
-export VISUAL="$EDITOR"
-export    PS1="[$HOSTNAME]\$ "
-export LC_ALL="en_US.UTF-8"
-export   LANG="en_US.UTF-8"
+export     TERM="xterm-256color"
+export COLORTERM="truecolor"
+export    EDITOR="emacs -nw"
+export    VISUAL="$EDITOR"
+export       PS1="[$HOSTNAME]\$ "
+export    LC_ALL="en_US.UTF-8"
+export      LANG="en_US.UTF-8"
 
 # Prevent MacOS from whining about bash for now
 export BASH_SILENCE_DEPRECATION_WARNING=1
