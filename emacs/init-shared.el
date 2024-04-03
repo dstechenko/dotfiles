@@ -44,15 +44,6 @@
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
-(defun add-aspell-pws (beg end)
-  (interactive "r")
-  (if (use-region-p)
-      (shell-command
-       (concat
-        (expand-bin "add_aspell_pws.sh")
-        " ~/.aspell.en.pws "
-        (buffer-substring beg end)))))
-
 ;;;
 ;; CONFIGS
 ;;;
@@ -211,20 +202,6 @@
   (global-page-break-lines-mode))
 
 (use-package flycheck)
-
-(use-package flyspell
-  :hook
-  ((text-mode . flyspell-mode)
-   (prog-mode . flyspell-prog-mode))
-
-  :config
-  (add-to-list
-   'ispell-skip-region-alist
-   '("^#include" forward-line))
-  (setq
-   ispell-program-name "aspell"
-   ispell-extra-args   '("--sug-mode=ultra")
-   ispell-list-command "--list"))
 
 (use-package telephone-line
   :config
@@ -411,7 +388,6 @@
 ;;;
 
 ;; Set common keybindings
-(global-set-key (kbd     "<f12>") 'reset-frames)
 (global-set-key (kbd       "C-k") 'kill-whole-line)
 (global-set-key (kbd   "M-g M-l") 'linum-mode)
 (global-set-key (kbd      "M-\\") 'comment-or-uncomment-region)
@@ -419,7 +395,6 @@
 (global-set-key (kbd     "C-x l") 'revert-buffer)
 (global-set-key (kbd "C-x C-k a") 'close-all-buffers)
 (global-set-key (kbd "C-x C-k o") 'close-other-buffers)
-(global-set-key (kbd     "C-M-y") 'add-aspell-pws)
 
 ;; Unset xref-find functionality
 (global-unset-key     (kbd "M-."))
