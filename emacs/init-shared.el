@@ -8,6 +8,10 @@
 ;; FUNCTIONS
 ;;;
 
+(defun expand-user (path)
+  "Expands `PATH' with User home directory."
+  (expand-file-name path (getenv "HOME")))
+
 (defun expand-emacs (path)
   "Expands `PATH' with Emacs home directory."
   (expand-file-name path user-emacs-directory))
@@ -200,7 +204,7 @@
 
 (use-package bookmark
   :config
-  (setq bookmark-default-file (expand-tmp "bookmarks")))
+  (setq bookmark-default-file (expand-user ".bookmarks")))
 
 (use-package page-break-lines
   :config
