@@ -13,3 +13,5 @@ mkdir -p "${HOME:?}/.emacs.d/bin"
 rm -rf "${HOME:?}/.emacs.d/bin/add_aspell_pws.sh"
 cp     "${INSTALL_SRCS}/aspell/add_aspell_pws.sh" \
        "${HOME:?}/.emacs.d/bin/add_aspell_pws.sh"
+
+chmod +x "${HOME:?}/.emacs.d/bin/add_aspell_pws.sh"
