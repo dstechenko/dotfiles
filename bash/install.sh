@@ -13,7 +13,7 @@ cp     "$INSTALL_SRCS/bash/.bash_profile" \
        "${HOME:?}/.bash_profile"
 
 [ -d "${HOME:?}/Scripts" ] || mkdir "${HOME:?}/Scripts"
-cp "$INSTALL_SRCS/bash/Scripts"/* "${HOME:?}/Scripts"
+cp "$INSTALL_SRCS/bash/scripts"/* "${HOME:?}/Scripts"
 chmod +x "${HOME:?}/Scripts"/*
 
 echo ""                                            >> "${HOME:?}/.bashrc"
