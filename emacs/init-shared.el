@@ -395,6 +395,7 @@
 (global-set-key (kbd     "C-x l") 'revert-buffer)
 (global-set-key (kbd "C-x C-k a") 'close-all-buffers)
 (global-set-key (kbd "C-x C-k o") 'close-other-buffers)
+(global-set-key (kbd       "M-,") 'rgrep)
 
 ;; Unset xref-find functionality
 (global-unset-key     (kbd "M-."))
