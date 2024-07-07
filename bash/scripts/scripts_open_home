@@ -1,0 +1,5 @@
+#!/bin/bash
+# Copyright (C) Dmytro Stechenko
+# License: http://www.gnu.org/licenses/gpl.html
+
+tmux new -A -s home
