@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "emacs-mcx.useMetaPrefixMacCmd": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "explorer.confirmDelete": false,
+    "window.newWindowProfile": "Default"
+}
