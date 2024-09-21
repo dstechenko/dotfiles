@@ -1,10 +1,17 @@
 {
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "window.restoreWindows": "none",
+    "extensions.experimental.deferredStartupFinishedActivation": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup",
+    "explorer.confirmDragAndDrop": false,
     "workbench.colorTheme": "Default Light Modern",
     "workbench.iconTheme": "vs-minimal",
+    "emacs-mcx.useMetaPrefixMacCmd": true,
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "right",
-    "emacs-mcx.useMetaPrefixMacCmd": true,
-    "editor.fontFamily": "JetBrains Mono",
-    "explorer.confirmDelete": false,
-    "window.newWindowProfile": "Default"
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorStyleInactive": "none",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
 }
