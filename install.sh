@@ -12,16 +12,10 @@ cd "$INSTALL_SRCS"
 git pull origin master
 
 # shellcheck source=/dev/null
-source "$INSTALL_SRCS/emacs/install.sh"
-
-# shellcheck source=/dev/null
 source "$INSTALL_SRCS/bash/install.sh"
 
 # shellcheck source=/dev/null
 source "$INSTALL_SRCS/git/install.sh"
-
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/tmux/install.sh"
 
 # shellcheck source=/dev/null
 source "$INSTALL_SRCS/media/install.sh"
