@@ -14,4 +14,11 @@
     "terminal.integrated.cursorStyleInactive": "none",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
+    "explorer.confirmDelete": false,
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "codeium.enableCodeLens": false,
 }
