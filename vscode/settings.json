@@ -21,4 +21,13 @@
         "workbench.action.tasks.runTask"
     ],
     "codeium.enableCodeLens": false,
+    "git.openRepositoryInParentFolders": "never",
+    "clang-format.fallbackStyle": "InheritParentConfig",
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_fallbackStyle": "",
+    "C_Cpp.formatting": "clangFormat",
 }
