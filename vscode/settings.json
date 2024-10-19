@@ -5,11 +5,8 @@
     "editor.fontFamily": "JetBrains Mono",
     "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup",
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Default Light Modern",
-    "workbench.iconTheme": "vs-minimal",
     "emacs-mcx.useMetaPrefixMacCmd": true,
     "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "right",
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorStyleInactive": "none",
     "terminal.integrated.cursorBlinking": true,
@@ -30,4 +27,10 @@
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_fallbackStyle": "",
     "C_Cpp.formatting": "clangFormat",
+    "clang-tidy.executable": "/opt/homebrew/opt/llvm/bin/clang-tidy",
+    "files.associations": {
+        "*.overlay": "dts"
+    },
+    "workbench.iconTheme": "vs-minimal",
+    "clang-tidy.buildPath": "build",
 }
