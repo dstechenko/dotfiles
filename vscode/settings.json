@@ -1,49 +1,97 @@
 {
-    "terminal.integrated.defaultProfile.osx": "bash",
+    "editor.inlineSuggest.allowSuggestOnTriggerCharacters": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "nuclide.arclint",
+        "editor.formatOnSave": true
+    },
+    "[c]": {
+        "editor.defaultFormatter": "nuclide.arclint",
+        "editor.formatOnSave": true
+    },
+    "[proto]": {
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "nuclide.arclint",
+        "editor.formatOnSave": true
+    },
+    "[kotlin]": {
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "[starlark]": {
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "meta.global.history.enabled": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "[java]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "terminal.integrated.systemd.shouldUse": true,
     "window.restoreWindows": "none",
     "extensions.experimental.deferredStartupFinishedActivation": true,
-    "editor.fontFamily": "PragmataPro Mono",
+    "editor.fontFamily": "JetBrains Mono",
     "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup",
     "explorer.confirmDragAndDrop": false,
+    "interactive-smartlog.pull": "arc pull",
+    "interactive-smartlog.fetch": "jf get",
+    "interactive-smartlog.autoRunMergeDrivers": true,
+    "workbench.iconTheme": "vs-minimal",
     "emacs-mcx.useMetaPrefixMacCmd": true,
     "workbench.startupEditor": "none",
+    "interactive-smartlog.prefer-new-isl": true,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorStyleInactive": "none",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
-    "explorer.confirmDelete": false,
-    "cmake.showOptionsMovedNotification": false,
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ],
-    "codeium.enableCodeLens": false,
+    "[hack]": {
+        "editor.defaultFormatter": "nuclide.hack"
+    },
     "git.openRepositoryInParentFolders": "never",
-    "clang-format.fallbackStyle": "InheritParentConfig",
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format"
+    "wasabi.interactiveDevelopment.introMessageNumTimesShown": 1,
+    "wasabi.interactiveDevelopment.disableIntroMessage": true,
+    "terminal.integrated.scrollback": 1000000000000000000,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash",
+        },
     },
-    "editor.formatOnSaveMode": "modifications",
-    "editor.formatOnSave": true,
-    "C_Cpp.clang_format_fallbackStyle": "",
-    "C_Cpp.formatting": "clangFormat",
-    "clang-tidy.executable": "/opt/homebrew/opt/llvm/bin/clang-tidy",
-    "files.associations": {
-        "*.overlay": "dts"
-    },
-    "workbench.iconTheme": "vs-minimal",
-    "clang-tidy.buildPath": "build",
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "workbench.panel.defaultLocation": "right",
     "workbench.panel.opensMaximized": "always",
+    "reality-labs.autoLaunchTestWizard": false,
+    "reality-labs.showGauntletCodeLens": false,
     "editor.tabSize": 8,
-    "terminal.integrated.tabs.enabled": false,
-    "editor.codeLensFontFamily": "PragmataPro Mono",
-    "editor.inlayHints.fontFamily": "PragmataPro Mono",
-    "editor.inlineSuggest.fontFamily": "PragmataPro Mono",
-    "debug.console.fontFamily": "PragmataPro Mono",
+    "editor.lightbulb.enabled": "on",
+    "[objective-c]": {
+        "editor.defaultFormatter": "nuclide.cpp"
+    },
+    "[objective-cpp]": {
+        "editor.defaultFormatter": "nuclide.cpp"
+    },
+    "[cuda-cpp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "[tcc-cpp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "[ocaml]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "nuclide.arclint"
+    },
+    "editor.codeLensFontFamily": "JetBrains Mono",
+    "editor.inlineSuggest.fontFamily": "JetBrains Mono",
+    "debug.console.fontFamily": "JetBrains Mono",
     "scm.inputFontFamily": "JetBrains Mono",
-    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "chat.editor.fontFamily": "JetBrains Mono",
+    "notebook.output.fontFamily": "JetBrains Mono",
+    "editor.inlayHints.fontFamily": "JetBrains Mono",
     "notebook.markup.fontFamily": "JetBrains Mono",
-    "notebook.output.fontFamily": "PragmataPro Mono",
-    "chat.editor.fontFamily": "PragmataPro Mono",
-    "scm.inputFontSize": 12,
+    "explorer.autoReveal": false,
+    "terminal.integrated.tabs.enabled": false,
 }
