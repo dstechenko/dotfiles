@@ -95,4 +95,5 @@
     "explorer.autoReveal": false,
     "terminal.integrated.tabs.enabled": false,
     "workbench.colorTheme": "Default Light Modern",
+    "workbench.activityBar.location": "top",
 }
