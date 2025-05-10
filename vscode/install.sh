@@ -7,7 +7,7 @@ set -euxo pipefail
   CALL_DIR=$(pwd)
 VSCODE_DIR=$(realpath $(dirname  "$0"))
 
-cp "${VSCODE_DIR}/settings.json"    ${HOME:?}/Library/Application\ Support/*Code*/User/
-cp "${VSCODE_DIR}/keybindings.json" ${HOME:?}/Library/Application\ Support/*Code*/User/
+cp "$INSTALL_SRCS/settings.json"    ${HOME:?}/Library/Application\ Support/*Code*/User/
+cp "$INSTALL_SRCS/keybindings.json" ${HOME:?}/Library/Application\ Support/*Code*/User/
 
 cd "${CALL_DIR}"
