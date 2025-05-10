@@ -94,4 +94,5 @@
     "notebook.markup.fontFamily": "JetBrains Mono",
     "explorer.autoReveal": false,
     "terminal.integrated.tabs.enabled": false,
+    "workbench.colorTheme": "Default Light Modern",
 }
