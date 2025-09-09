@@ -87,7 +87,7 @@
 (setq-default
  find-file-visit-truename       t
  fill-column                    80
- tab-width                      2
+ tab-width                      8
  c-basic-offset                 2
  python-indent-offset           4
  show-trailing-whitespace       nil
