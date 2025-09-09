@@ -28,7 +28,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Export environment variables, aliases
 export     TERM="xterm-256color"
 export COLORTERM="truecolor"
-export    EDITOR="code --wait"
+export    EDITOR="emacs -nw"
 export    VISUAL="$EDITOR"
 export       PS1="[$HOSTNAME]\$ "
 export    LC_ALL="en_US.UTF-8"
