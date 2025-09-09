@@ -48,13 +48,9 @@
 ;; CONFIGS
 ;;;
 
-;; Set names
-
 (setq
  user-full-name     "Dmytro Stechenko"
  frame-title-format "Emacs")
-
-;; Set minor modes
 
 (delete-selection-mode   1)
 (transient-mark-mode     1)
@@ -65,12 +61,8 @@
 (blink-cursor-mode      -1)
 (menu-bar-mode          -1)
 
-;; Set global minor modes
-
 (global-auto-revert-mode 1)
 (global-visual-line-mode 1)
-
-;; Set config variables
 
 (setq
  read-file-name-completion-ignore-case t
@@ -92,8 +84,6 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Set config default variables
-
 (setq-default
  find-file-visit-truename       t
  fill-column                    80
@@ -103,22 +93,16 @@
  show-trailing-whitespace       nil
  indent-tabs-mode               nil)
 
-;; Set repositories
-
 (setq package-archives
       '(("gnu"          . "http://elpa.gnu.org/packages/")
         ("org"          . "http://orgmode.org/elpa/")
         ("melpa"        . "http://melpa.org/packages/")
         ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
-;; Set custom file handling
-
 (ensure-dir-exists (expand-tmp ""))
 (setq custom-file  (expand-tmp "custom.el"))
 (ensure-file-exists custom-file)
 (load custom-file t)
-
-;; Set default hooks
 
 (add-hook
  'prog-mode-hook
@@ -129,8 +113,6 @@
 ;;;
 ;; PACKAGES
 ;;;
-
-;; Load package manager
 
 (require 'package)
 (package-initialize)
@@ -145,8 +127,6 @@
 
 (setq use-package-always-ensure t)
 
-;; Load default packages
-
 (require 'dired-x)
 
 (use-package modus-themes
@@ -159,7 +139,7 @@
 
 (use-package highlight-symbol
   :hook
-  (prog-mode . highlight-symbol-nav-mode))
+  (prog-mode . highlight-symbol-mode))
 
 (use-package helm
   :config
@@ -288,7 +268,6 @@
 ;; GLOBAL BINDINGS
 ;;;
 
-;; Set common keybindings
 (global-set-key (kbd       "C-k") 'kill-whole-line)
 (global-set-key (kbd   "M-g M-l") 'linum-mode)
 (global-set-key (kbd      "M-\\") 'comment-or-uncomment-region)
@@ -298,7 +277,6 @@
 (global-set-key (kbd "C-x C-k o") 'close-other-buffers)
 (global-set-key (kbd       "M-,") 'rgrep)
 
-;; Unset xref-find functionality
 (global-unset-key     (kbd "M-."))
 (global-unset-key     (kbd "M-?"))
 (global-unset-key   (kbd "C-M-."))
