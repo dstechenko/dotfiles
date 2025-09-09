@@ -138,8 +138,8 @@
   (auto-package-update-maybe))
 
 (use-package highlight-symbol
-  :config
-  (highlight-symbol-mode))
+  :hook
+  (prog-mode . highlight-symbol-mode))
 
 (use-package helm
   :config
