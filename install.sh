@@ -21,6 +21,9 @@ source "$INSTALL_SRCS/git/install.sh"
 source "$INSTALL_SRCS/tmux/install.sh"
 
 # shellcheck source=/dev/null
+source "$INSTALL_SRCS/emacs/install.sh"
+
+# shellcheck source=/dev/null
 source "$INSTALL_SRCS/media/install.sh"
 
 cd "$CALL_DIR"
