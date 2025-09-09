@@ -129,9 +129,9 @@
 
 (require 'dired-x)
 
-(use-package modus-themes
+(use-package color-theme-sanityinc-tomorrow
   :config
-  (load-theme 'modus-operandi t))
+  (load-theme 'sanityinc-tomorrow-bright t))
 
 (use-package auto-package-update
   :config
