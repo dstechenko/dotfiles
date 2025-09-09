@@ -149,9 +149,9 @@
 
 (require 'dired-x)
 
-(use-package ayu-theme
+(use-package modus-themes
   :config
-  (load-theme 'ayu-dark t))
+  (load-theme 'modus-operandi t))
 
 (use-package auto-package-update
   :config
