@@ -205,9 +205,6 @@
 (use-package git-gutter
   :bind
   ("M-g M-h" . git-gutter-mode)
-
-  :config
-
   :config
   (setq git-gutter:handled-backends '(git hg))
   (custom-set-variables
@@ -219,33 +216,9 @@
   :config
   (global-anzu-mode 1))
 
-(use-package company
-  :commands
-  company-mode
-
-  :bind
-  ("M-RET" . company-complete)
-
-  :hook
-  (prog-mode . company-mode)
-
-  :config
-  (customize-set-variable
-   'company-minimum-prefix-length 1)
-  (customize-set-variable
-   'company-backends
-   '(company-cmake
-     company-files
-     company-semantic
-     (company-dabbrev-code company-keywords)))
-  (setq
-   company-tooltip-align-annotations t
-   company-dabbrev-downcase          nil))
-
 (use-package goto-last-change
   :commands
   goto-last-change
-
   :bind
   ("M-/" . goto-last-change))
 
@@ -256,7 +229,6 @@
 (use-package expand-region
   :commands
   er/expand-region
-
   :bind
   ("M-o" . er/expand-region))
 
@@ -274,8 +246,6 @@
   :custom
   (warning-minimum-level :error))
 
-;; Load elisp packages
-
 (use-package auto-compile
   :init
   (auto-compile-on-load-mode 1)
@@ -285,7 +255,6 @@
   :bind
   (:map emacs-lisp-mode-map
         ("RET" . comment-indent-new-line))
-
   :hook
   (emacs-lisp-mode
    . (lambda ()
@@ -293,18 +262,13 @@
        (setq         show-trailing-whitespace             t)
        (show-paren-mode))))
 
-;; Load markdown packages
-
 (use-package markdown-mode
   :commands
   (markdown-mode gfm-mode)
-
   :mode
   (("README\\.md\\'" . gfm-mode)
    ("\\.md\\'"       . markdown-mode)
    ("\\.markdown\\'" . markdown-mode)))
-
-;; Load cpp packages
 
 (use-package modern-cpp-font-lock
   :hook
@@ -312,15 +276,11 @@
    . (lambda ()
        (modern-c++-font-lock-mode 1))))
 
-;; Load asm packages
-
 (use-package asm-mode
   :commands
   asm-mode
-
   :config
   (setq asm-comment-char ?\#)
-
   :mode
   (("\\.s\\'"   . asm-mode)))
 
