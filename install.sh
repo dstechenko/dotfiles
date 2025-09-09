@@ -20,7 +20,4 @@ source "$INSTALL_SRCS/git/install.sh"
 # shellcheck source=/dev/null
 source "$INSTALL_SRCS/media/install.sh"
 
-# shellcheck source=/dev/null
-source "$INSTALL_SRCS/vscode/install.sh"
-
 cd "$CALL_DIR"
