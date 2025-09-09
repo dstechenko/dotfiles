@@ -171,7 +171,6 @@
    helm-input-idle-delay                  0.01
    helm-mode-fuzzy-match                  t
    helm-completion-in-region-fuzzy-match  t
-   helm-yas-display-key-on-candidate      t
    helm-quick-update                      t
    helm-ff-skip-boring-files              t
    helm-M-x-requires-pattern              nil)
@@ -202,30 +201,6 @@
   (global-page-break-lines-mode))
 
 (use-package flycheck)
-
-(use-package telephone-line
-  :config
-  (telephone-line-defsegment
-    telephone-line-config-project-mode-segment
-    () config-project-mode)
-
-  (setq
-   telephone-line-primary-right-separator   'telephone-line-abs-right
-   telephone-line-secondary-right-separator 'telephone-line-abs-hollow-right
-   telephone-line-primary-left-separator    'telephone-line-abs-left
-   telephone-line-secondary-left-separator  'telephone-line-abs-hollow-left)
-
-  (setq
-   telephone-line-lhs
-   '((nil    . (telephone-line-buffer-modified-segment))
-     (nil    . (telephone-line-config-project-mode-segment))
-     (accent . (telephone-line-buffer-name-segment)))
-   telephone-line-rhs
-   '((accent . (telephone-line-major-mode-segment))
-     (nil    . (telephone-line-filesize-segment))
-     (nil    . (telephone-line-airline-position-segment))))
-
-  (telephone-line-mode 1))
 
 (use-package git-gutter
   :bind
@@ -274,29 +249,6 @@
   :bind
   ("M-/" . goto-last-change))
 
-(use-package yasnippet
-  :commands
-  (yas-minor-mode yas-reload-all)
-
-  :config
-  (yas-reload-all))
-
-(use-package smartparens
-  :after
-  smartparens-config
-
-  :commands
-  sp-pair
-
-  :bind
-  ("C-M-y" . sp-down-sexp)
-
-  :config
-  (sp-use-smartparens-bindings)
-  (sp-pair "(" ")" :wrap "s-(")
-  (sp-pair "[" "]" :wrap "s-[")
-  (sp-pair "{" "}" :wrap "s-{"))
-
 (use-package whitespace-cleanup-mode
   :config
   (global-whitespace-cleanup-mode 1))
@@ -339,18 +291,7 @@
    . (lambda ()
        (setq-default flycheck-emacs-lisp-load-path 'inherit)
        (setq         show-trailing-whitespace             t)
-       (yas-minor-mode)
-       (show-paren-mode)
-       (smartparens-strict-mode))))
-
-;; Load org packages
-
-(use-package org
-  :commands
-  org-mode
-
-  :mode
-  ("\\.org\\'" . org-mode))
+       (show-paren-mode))))
 
 ;; Load markdown packages
 
