@@ -80,7 +80,8 @@
  show-help-function                    nil
  sentence-end-double-space             nil
  vc-handled-backends                   nil
- ring-bell-function                   'ignore)
+ ring-bell-function                   'ignore
+ Man-notify-method                    'pushy)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
