@@ -42,9 +42,9 @@ W='\[\e[0m\]'
 # Prompt
 if [ $(id -u) -eq 0 ];
 then
-  export PS1="$W[$R\j$W] $G\u$W@$B\h$W# "
+  export PS1="$W[$R\j$W]$W# "
 else
-  export PS1="$W[$R\j$W] $G\u$W@$B\h$W$ "
+  export PS1="$W[$R\j$W]$W$ "
 fi
 
 # Prevent MacOS from whining about bash for now
