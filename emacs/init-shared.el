@@ -130,9 +130,9 @@
 
 (require 'dired-x)
 
-(use-package color-theme-sanityinc-tomorrow
+(use-package standard-themes
   :config
-  (load-theme 'sanityinc-tomorrow-bright t))
+  (load-theme 'standard-light t))
 
 (use-package auto-package-update
   :config
