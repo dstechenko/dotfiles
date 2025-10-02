@@ -80,6 +80,7 @@
  show-help-function                    nil
  sentence-end-double-space             nil
  vc-handled-backends                   nil
+ c-default-style                      "linux"
  ring-bell-function                   'ignore
  Man-notify-method                    'pushy)
 
@@ -89,7 +90,7 @@
  find-file-visit-truename       t
  fill-column                    80
  tab-width                      8
- c-basic-offset                 2
+ c-basic-offset                 8
  python-indent-offset           4
  show-trailing-whitespace       nil
  indent-tabs-mode               nil)
